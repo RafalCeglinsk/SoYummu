@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMainPageRecipes } from "./actions";
+import { getMainPageRecipes } from "./operations";
 
 const isPendingAction = (action) => {
   return action.type.endsWith("/pending");

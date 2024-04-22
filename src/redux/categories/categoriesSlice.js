@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCategoriesList } from "./operations";
+import { getCategories } from "./operations";
 
 const isPendingAction = (action) => {
   return action.type.endsWith("/pending");
@@ -29,15 +29,15 @@ export const categoriesSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(getCategoriesList.pending, (state) => {
+      .addCase(getCategories.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getCategoriesList.fulfilled, (state, { payload }) => {
+      .addCase(getCategories.fulfilled, (state, { payload }) => {
         state.error = null;
         state.items = [...payload.items];
         state.isLoading = false;
       })
-      .addCase(getCategoriesList.rejected, (state, action) => {
+      .addCase(getCategories.rejected, (state, action) => {
         state.isLoading = false;
         state.error = true;
         state.items = [];

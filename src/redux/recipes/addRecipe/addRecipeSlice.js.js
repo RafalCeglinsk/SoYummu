@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addRecipeThunk } from "./actions";
+import { addRecipe } from "./operations";
 import { getCategories } from "../../categories/operations";
 
 const isPendingAction = (action) => {
@@ -53,7 +53,7 @@ const addRecipesSlice = createSlice({
         state.status = "succeeded";
         state.categories = action.payload;
       })
-      .addCase(addRecipeThunk.fulfilled, (state, action) => {
+      .addCase(addRecipe.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.recipes.push(action.payload);
       })

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getIngredients, getIngredientByName } from "./actions";
+import { getIngredients, getIngredientByName } from "./operations";
 
 const initialState = {
   ingredients: [],
