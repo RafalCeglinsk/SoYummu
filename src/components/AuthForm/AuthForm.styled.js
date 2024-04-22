@@ -16,22 +16,9 @@ import desktopLogoRetina from "../../images/AuthPage/desktopLogox2.png";
 import desktopBackground from "../../images/AuthPage/desktopBackgroundx1.png";
 import desktopBackgroundRetina from "../../images/AuthPage/desktopBackgroundx2.png";
 
-import {
-  FormLock,
-  FormUserInput,
-  FormEnvelope,
-  FormUser,
-} from "../RenderSvg/RenderSvg";
-
 const device = {
   tablet: "768px",
   desktop: "1440px",
-};
-
-const iconMap = {
-  name: FormUser,
-  email: FormEnvelope,
-  password: FormLock,
 };
 
 export const Form = styled.form`
@@ -99,10 +86,6 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
   background-color: transparent;
-  background-image: url(${(props) => iconMap[props.name]});
-  background-repeat: no-repeat;
-  background-position: 5px center;
-  padding-left: 40px;
   border: 1px solid var(--color-default-1);
   opacity: 0.8;
   border-radius: 6px;
@@ -143,7 +126,8 @@ export const FormButton = styled.button`
 export const Logo = styled.div`
   width: 285px;
   height: 250px;
-  background-image: url(${mobileLogo});
+  background-image: -webkit-image-set(url(${mobileLogo})),
+    -webkit-image-set(url(${mobileLogoRetina}) 2x);
   background-repeat: no-repeat;
   margin-bottom: -32px;
 
@@ -151,14 +135,16 @@ export const Logo = styled.div`
     width: 409px;
     height: 359px;
     margin-bottom: -15px;
-    background-image: url(${tabletLogo});
+    background-image: -webkit-image-set(url(${tabletLogo})),
+      -webkit-image-set(url(${tabletLogoRetina}) 2x);
   }
 
   @media (min-width: ${device.desktop}) {
     width: 532px;
     height: 468px;
     z-index: 2;
-    background-image: url(${desktopLogo});
+    background-image: -webkit-image-set(url(${desktopLogo})),
+      -webkit-image-set(url(${desktopLogoRetina}) 2x);
   }
 `;
 
@@ -184,14 +170,18 @@ export const Background = styled.div`
   height: 490px;
   z-index: -50;
   background-image: url(${mobileBackground});
+  background-image: -webkit-image-set(url(${mobileBackground})),
+    -webkit-image-set(url(${mobileBackgroundRetina}) 2x);
 
   @media (min-width: ${device.tablet}) {
     height: 606px;
-    background-image: url(${tabletBackground});
+    background-image: -webkit-image-set(url(${tabletBackground})),
+      -webkit-image-set(url(${tabletBackgroundRetina}) 2x);
   }
 
   @media (min-width: ${device.desktop}) {
     height: 325px;
-    background-image: url(${desktopBackground});
+    background-image: -webkit-image-set(url(${desktopBackground})),
+      -webkit-image-set(url(${desktopBackgroundRetina}) 2x);
   }
 `;

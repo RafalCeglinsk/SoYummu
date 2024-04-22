@@ -72,6 +72,7 @@ export const AuthForm = () => {
                   {...register(field, { required: true })}
                   error={errors[field]}
                   placeholder={field}
+                  type={field === "Password" ? "password" : "text"}
                 />
               ))}
             </StyledLabel>
