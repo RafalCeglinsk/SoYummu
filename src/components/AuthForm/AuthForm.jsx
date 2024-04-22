@@ -48,12 +48,14 @@ export const AuthForm = () => {
   const { fields, action, buttonText, linkText, linkPath, headerText } =
     formConfig[location];
 
-  const onSubmit = async (data) => {
-    try {
-      await dispatch(action(data));
-      if (location === "/auth/login") navigate("/main");
-    } catch (error) {
-      console.error("Błąd logowania:", error);
+  const onSubmit = async (e) => {
+    if (location === "/auth/register") {
+      dispatch(
+        register({ name: e.Name, email: e.Email, password: e.Password })
+      );
+    } else {
+      dispatch(login({ email: e.Email, password: e.Password }));
+      navigate("/main");
     }
   };
 
