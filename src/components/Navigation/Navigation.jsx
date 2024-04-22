@@ -2,11 +2,11 @@ import React from 'react';
 
 import { NavLinkStyled, NavContainer } from './Navigation.styled';
 
-const Nav = () => {
+const Nav = ({handleCloseMenu}) => {
   return (
 <>
  <NavContainer>
-        <NavLinkStyled to="/categories" >
+        <NavLinkStyled to="/categories" onClick={handleCloseMenu}>
           Categories
         </NavLinkStyled>
 
