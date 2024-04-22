@@ -1,13 +1,13 @@
 import React from 'react';
 
-
+import { NavLinkStyled } from './Navigation.styled';
 
 const Nav = () => {
   return (
 <>
       <li>
-        <NavLinkStyled to="/search?ingredients=" >
-          Ingredients
+        <NavLinkStyled to="/categories" >
+          Categories
         </NavLinkStyled>
       </li>
       <li>
@@ -26,8 +26,13 @@ const Nav = () => {
         </NavLinkStyled>
       </li>
       <li>
-        <NavLinkStyled to="/shopping-list">
+        <NavLinkStyled to="/shoppingList">
           Shopping List
+        </NavLinkStyled>
+      </li>
+      <li>
+        <NavLinkStyled to="/search?ingredients=">
+    Search
         </NavLinkStyled>
       </li>
 </>
