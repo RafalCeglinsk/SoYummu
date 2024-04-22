@@ -64,4 +64,4 @@ const addRecipesSlice = createSlice({
 
 export const { updateField } = addRecipesSlice.actions;
 
-export const recipesReducer = addRecipesSlice.reducer;
+export const addRecipesReducer = addRecipesSlice.reducer;

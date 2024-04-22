@@ -42,4 +42,4 @@ const mainRecipesSlice = createSlice({
   },
 });
 
-export const mainReducer = mainRecipesSlice.reducer;
+export const mainPageReducer = mainRecipesSlice.reducer;
