@@ -45,4 +45,5 @@ const searchSlice = createSlice({
 });
 
 export const { setSearchQuery } = searchSlice.actions;
+
 export const searchReducer = searchSlice.reducer;
