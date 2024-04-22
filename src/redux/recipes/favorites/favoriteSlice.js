@@ -50,3 +50,5 @@ export const favoriteSlice = createSlice({
       });
   },
 });
+
+export const favoriteReducer = favoriteSlice.reducer;
