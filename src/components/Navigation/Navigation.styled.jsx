@@ -16,12 +16,13 @@ gap: 30px;
 
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
-color:red;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
+  letter-spacing: -0.36px;
   text-align: center;
   color: var(  --color-text-6);
   transition: color var(--transition-time) var(--cubic);
+
 
   &:hover,
   &.active {
