@@ -20,6 +20,13 @@ color:red;
   font-weight: 500;
   font-size: 14px;
   text-align: center;
+  color: var(  --color-text-6);
+  transition: color var(--transition-time) var(--cubic);
+
+  &:hover,
+  &.active {
+    color: var(  --color-text-5);
+  }
   `;
 
 
