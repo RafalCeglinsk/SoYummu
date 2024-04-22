@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-import Nav from "./components/Navigation/Navigation";
+
+import { Header } from "./components/Header/Header";
 import Categories from "./pages/Categories";
 import AddRecipes from "./pages/AddRecipes";
 import MyRecipies from "./pages/MyRecipies";
@@ -11,7 +12,8 @@ import Search from "./pages/Search";
 function App() {
   return (
     <>
-    <Nav/>
+    <Header/>
+
       <Routes>
    
           <Route path="/categories" element={<Categories />} />
