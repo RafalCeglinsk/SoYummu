@@ -10,6 +10,7 @@ import Search from "./pages/Search";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import { HomePage } from "./pages/Home";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Header />
 
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/auth/register"
           element={
