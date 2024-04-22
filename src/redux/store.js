@@ -19,8 +19,8 @@ import { favoriteReducer } from "./recipes/favorites/favoriteSlice";
 import { mainPageReducer } from "./recipes/main-page/mainPageSlice.js";
 import { popularReducer } from "./recipes/popular/popularSlice.js";
 import { recipesReducer } from "./recipes/recipes/recipesSlice";
-import { searchReducer } from "./recipes/search/searchSlice";
 import { shoppingReducer } from "./shoppingList/shoppingListSlice";
+import { searchReducer } from "./searchBar/searchBarSlice.js";
 
 const authPersistConfig = {
   key: "auth",
