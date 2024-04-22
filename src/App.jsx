@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-
 import { Header } from "./components/Header/Header";
 import Categories from "./pages/Categories";
 import AddRecipes from "./pages/AddRecipes";
@@ -12,18 +11,15 @@ import Search from "./pages/Search";
 function App() {
   return (
     <>
-    <Header/>
+      <Header />
 
       <Routes>
-   
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/add" element={<AddRecipes />} />
-          <Route path="/my" element={<MyRecipies />} />
-          <Route path="/favorite" element={<Favorites />} />
-          <Route path="/shoppingList" element={<ShoppingList />} />
-          <Route path="/search?" element={<Search />} />
-
-   
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/add" element={<AddRecipes />} />
+        <Route path="/my" element={<MyRecipies />} />
+        <Route path="/favorite" element={<Favorites />} />
+        <Route path="/shoppingList" element={<ShoppingList />} />
+        <Route path="/search?" element={<Search />} />
       </Routes>
     </>
   );
