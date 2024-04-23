@@ -8,6 +8,11 @@ import { CloseButton } from "../Header.styled";
 import { HamburgerContainer } from "./Hamburger.styled";
 
 export const HamburgerMenu = ({ openState, handleCloseMenu }) => {
+  
+    const handleNavCloseMenu = () => {
+        handleCloseMenu(); 
+      };
+
   return (
     <Menu
       right
@@ -23,8 +28,8 @@ export const HamburgerMenu = ({ openState, handleCloseMenu }) => {
         <CgClose onClick={handleCloseMenu} />
         </CloseButton>
 
-        <Nav onClick={handleCloseMenu} />
-        
+        <Nav  handleCloseMenu={handleNavCloseMenu} />
+
       </HamburgerContainer>
     </Menu>
   );
