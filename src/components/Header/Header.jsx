@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
+import { StartLogoBig } from "../RenderSvg/RenderSvg";
 import { HamburgerMenu } from "./Hamburger/Hamburger";
 import Nav from "../Navigation/Navigation";
 
-import { NavContainer, HamburgerButton } from "./Header.styled";
+import { NavContainer, HamburgerButton, HeaderContainer } from "./Header.styled";
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -16,8 +17,10 @@ export const Header = () => {
 
   return (
     <>
+    <HeaderContainer>
+    <StartLogoBig/>
       <NavContainer>
-      
+    
         <Nav />
       </NavContainer>
       <HamburgerButton>
@@ -30,6 +33,7 @@ export const Header = () => {
         openState={isMenuOpen}
         handleCloseMenu={toggleBurgerMenu}
       />
+      </HeaderContainer>
     </>
   );
 };

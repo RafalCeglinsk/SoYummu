@@ -4,19 +4,20 @@ import { NavLinkStyled, NavContainer } from './Navigation.styled';
 
 const Nav = ({handleCloseMenu}) => {
   return (
-<>
+<nav>
  <NavContainer>
+
         <NavLinkStyled to="/categories" onClick={handleCloseMenu}>
           Categories
         </NavLinkStyled>
-
    
+
         <NavLinkStyled to="/add">
           Add Recipe
         </NavLinkStyled>
- 
- 
-        <NavLinkStyled to="/my">
+
+
+      <NavLinkStyled to="/my">
           My Recipes
         </NavLinkStyled>
 
@@ -33,9 +34,10 @@ const Nav = ({handleCloseMenu}) => {
         <NavLinkStyled to="/search?ingredients=">
     Search
         </NavLinkStyled>
-        </NavContainer>
-</>
 
+        </NavContainer>
+
+        </nav>
   );
 };
 
