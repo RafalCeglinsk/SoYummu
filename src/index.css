@@ -82,3 +82,10 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+.modal-show{
+  margin-top: -32px;
+  @media (min-width: 1440px) {
+    display: none;
+}
+}
