@@ -19,7 +19,7 @@ const handleRejected = (state, action) => {
 };
 
 const initialState = {
-  items: [],
+  mainPageRecipes: [],
   isLoading: false,
   error: null,
 };
@@ -30,10 +30,9 @@ const mainRecipesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getMainPageRecipes.fulfilled, (state, { payload }) => {
-        state.error = null;
-        state.items = [...payload.items];
-        state.isLoading = false;
+      .addCase(getMainPageRecipes.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.mainPageRecipes = action.payload;
       })
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected)

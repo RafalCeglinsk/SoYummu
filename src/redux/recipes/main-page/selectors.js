@@ -1,1 +1,1 @@
-export const selectMainPage = (state) => state.mainrecipes.items;
+export const selectMainPage = (state) => state.mainPage.mainPageRecipes;
