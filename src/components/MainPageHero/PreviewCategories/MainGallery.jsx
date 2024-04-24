@@ -19,6 +19,16 @@ export const MainGallery = () => {
     dispatch(getMainPageRecipes());
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setViewMode(getViewMode());
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <GalleryUl>
       {categories.map((categoryRecipes, _id) => (

@@ -18,6 +18,6 @@ export const getRecipesLimit = (viewMode, categoryRecipes) => {
     case "desktop":
       return categoryRecipes.length;
     default:
-      return 1;
+      return 4;
   }
 };
