@@ -129,7 +129,7 @@ export const Logo = styled.div`
   background-image: -webkit-image-set(url(${mobileLogo})),
     -webkit-image-set(url(${mobileLogoRetina}) 2x);
   background-repeat: no-repeat;
-  margin-bottom: -32px;
+  /* margin-bottom: -32px; */
 
   @media (min-width: ${device.tablet}) {
     width: 409px;

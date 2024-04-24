@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
 
 import { StartLogoBig } from "../RenderSvg/RenderSvg";
 import { HamburgerMenu } from "./Hamburger/Hamburger";
@@ -18,7 +19,8 @@ export const Header = () => {
   return (
     <>
     <HeaderContainer>
-    <StartLogoBig/>
+      <NavLink to="/main" > <StartLogoBig/></NavLink>
+   
       <NavContainer>
     
         <Nav />

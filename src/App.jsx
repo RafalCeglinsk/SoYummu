@@ -11,6 +11,7 @@ import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import { HomePage } from "./pages/Home";
+import Main from "./pages/Main";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <RestrictedRoute redirectTo="/main" component={<LoginPage />} />
           }
         />
+             <Route path="/main" element={<Main />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/add" element={<AddRecipes />} />
         <Route path="/my" element={<MyRecipies />} />
