@@ -6,7 +6,9 @@ export const getMainPageRecipes = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get("/recipes/main-page");
-      return response.data;
+      const object = response.data.recipesMainPage;
+      const objectArr = Object.values(object);
+      return objectArr;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

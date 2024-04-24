@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { UseDispatch, useDispatch } from "react-redux";
-import { getCategories } from "../../../redux/categories/operations";
+import { useDispatch, useSelector } from "react-redux";
 
 import { GalleryUl, MainGalleryH2, ButtonWrapper } from "./MainGallery.styled";
 import { PreviewCategories } from "./PreviewCategories";
-// import { fetchCategories } from "../../../api/mainRecipesApi";
-// import { getViewMode } from "../../../api/viewModeUtils";
 import { ButtonSeeAll } from "../../Buttons/GalleryButtonSeeAll";
+import { getViewMode } from "../../../hooks/useWidth";
+import { getMainPageRecipes } from "../../../redux/recipes/main-page/operations";
+import { selectMainPage } from "../../../redux/recipes/main-page/selectors";
 
 export const MainGallery = () => {
-  const [categories, setCategories] = useState([]);
-  const [viewMode, setViewMode] = useState(getViewMode());
-  const dispatch = useDispatch()
+  // const [viewMode, setViewMode] = useState(getViewMode());
+  const dispatch = useDispatch();
+  const categories = useSelector(selectMainPage);
+  console.log(categories);
 
   useEffect(() => {
-   dispatch{getCategories()}
-  }, []);
-
-  useEffect(() => {
-   
+    dispatch(getMainPageRecipes());
   }, []);
 
   return (
@@ -29,7 +26,7 @@ export const MainGallery = () => {
           <MainGalleryH2>{categoryRecipes[0].category}</MainGalleryH2>
           <PreviewCategories
             categoryRecipes={categoryRecipes}
-            viewMode={viewMode}
+            // viewMode={viewMode}
           />
           <ButtonWrapper>
             <Link to={`/categories/${categoryRecipes[0].category}`}>

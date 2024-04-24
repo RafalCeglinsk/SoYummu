@@ -29,18 +29,10 @@ export const categoriesSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(getCategories.pending, (state) => {
-        state.isLoading = true;
-      })
       .addCase(getCategories.fulfilled, (state, { payload }) => {
         state.error = null;
         state.items = [...payload.items];
         state.isLoading = false;
-      })
-      .addCase(getCategories.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = true;
-        state.items = [];
       })
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected)
