@@ -88,6 +88,6 @@ a {
     display: none;
 }
 }
-.bm-overlay{
+.bm-overlay, .bm-menu-wrap {
   top:0px;
 }
