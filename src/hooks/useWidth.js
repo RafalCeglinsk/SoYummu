@@ -1,6 +1,6 @@
 export const getViewMode = () => {
   const width = window.innerWidth;
-  if (width >= 1280) {
+  if (width >= 1440) {
     return "desktop";
   } else if (width >= 768) {
     return "tablet";

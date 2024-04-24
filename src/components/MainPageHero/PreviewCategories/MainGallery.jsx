@@ -10,7 +10,7 @@ import { getMainPageRecipes } from "../../../redux/recipes/main-page/operations"
 import { selectMainPage } from "../../../redux/recipes/main-page/selectors";
 
 export const MainGallery = () => {
-  // const [viewMode, setViewMode] = useState(getViewMode());
+  const [viewMode, setViewMode] = useState(getViewMode());
   const dispatch = useDispatch();
   const categories = useSelector(selectMainPage);
   console.log(categories);
@@ -26,7 +26,7 @@ export const MainGallery = () => {
           <MainGalleryH2>{categoryRecipes[0].category}</MainGalleryH2>
           <PreviewCategories
             categoryRecipes={categoryRecipes}
-            // viewMode={viewMode}
+            viewMode={viewMode}
           />
           <ButtonWrapper>
             <Link to={`/categories/${categoryRecipes[0].category}`}>
