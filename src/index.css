@@ -84,8 +84,10 @@ a {
 }
 
 .modal-show{
-  margin-top: -32px;
   @media (min-width: 1440px) {
     display: none;
 }
+}
+.bm-overlay{
+  top:0px;
 }
