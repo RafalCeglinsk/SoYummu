@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { UseDispatch, useDispatch } from "react-redux";
+import { getCategories } from "../../../redux/categories/operations";
 
 import { GalleryUl, MainGalleryH2, ButtonWrapper } from "./MainGallery.styled";
 import { PreviewCategories } from "./PreviewCategories";
@@ -10,28 +12,14 @@ import { ButtonSeeAll } from "../../Buttons/GalleryButtonSeeAll";
 export const MainGallery = () => {
   const [categories, setCategories] = useState([]);
   const [viewMode, setViewMode] = useState(getViewMode());
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchCategories();
-        setCategories(data);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-
-    fetchData();
+   dispatch{getCategories()}
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      setViewMode(getViewMode());
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+   
   }, []);
 
   return (
