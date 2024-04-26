@@ -24,9 +24,8 @@ export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   font-weight: 500;
   font-size:${({ isfooter }) => (isfooter ? "14px" : "18px")};
-  /* letter-spacing: -0.36px; */
-  /* text-align: center; */
-  /* color: var(  --color-text-6); */
+  letter-spacing: -0.36px;
+
   color: ${({ isfooter }) => (isfooter ? "white" :" var(--color-text-6)")};
   transition: color var(--transition-time) var(--cubic);
 
