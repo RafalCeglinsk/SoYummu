@@ -17,9 +17,13 @@ padding-top:0px;
 }
 &.NavFooter{
   flex-direction: column;
+  padding-top:0px;
+  gap:24px;
+
 }
 &.NavFooter>a{
-  color: white;
+  color:var(  --color-text-7);
+  font-size:14px;
 }
 `
 
