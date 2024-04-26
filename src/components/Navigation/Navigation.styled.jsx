@@ -6,25 +6,28 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-gap:40px;
-padding-top: 15vw;
+gap:${({ isfooter }) => (isfooter ? "24px" : "40px")};
+padding-top: ${({ isfooter }) => (isfooter ? "0px" : "15vw")};
+
 
 @media (min-width: 1440px) {
 display: flex;
-flex-direction: row;
-gap: 30px;
+flex-direction: ${({ isfooter }) => (isfooter ? "column" : "row")};
+gap:${({ isfooter }) => (isfooter ? "24px" : "40px")};
 padding-top:0px;
 }
+
 `
 
 
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size:${({ isfooter }) => (isfooter ? "14px" : "18px")};
   /* letter-spacing: -0.36px; */
   /* text-align: center; */
-  color: var(  --color-text-6);
+  /* color: var(  --color-text-6); */
+  color: ${({ isfooter }) => (isfooter ? "white" :" var(--color-text-6)")};
   transition: color var(--transition-time) var(--cubic);
 
 

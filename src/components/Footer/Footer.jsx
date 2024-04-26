@@ -11,19 +11,16 @@ import {
   FooterText,
   FooterBarText,
   RightText,
-} from "./footer.styled";
 
+} from "./Footer.styled";
 function Footer() {
-
-
-
   return (
     <>
       <FooterContent>
         <FooterTextContainer className="container">
           <div>
             <LogoWrapper>
-              <StartLogoSmall/>
+              <StartLogoSmall />
               <span>So Yummy</span>
             </LogoWrapper>
             <FooterText>
@@ -33,7 +30,8 @@ function Footer() {
               <li>Convenient and easy to use</li>
             </FooterText>
           </div>
-          <Nav />
+             <Nav isfooter />
+       
           {/* <SubscribeForm /> */}
         </FooterTextContainer>
         <SocialMediaBar />

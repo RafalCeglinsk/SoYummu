@@ -130,4 +130,4 @@ export const MainContainer = styled.main`
     background-size: 696px 1037px;
     background-image: -webkit-image-set(url(${spinachFooterLeft}) 2x);
   }
-`;
+`
