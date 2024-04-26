@@ -8,6 +8,8 @@ import { CurvedButtonMain } from "../components/Buttons/CurvedButton";
 import { MainWrapper } from "../components/MainPageHero/MainPage.styled";
 import { SbMobileStyle } from "../components/MainPageHero/MainPage.styled";
 
+import Footer from "../components/Footer/Footer";
+
 const Main = () => {
   return (
     <>
@@ -22,6 +24,7 @@ const Main = () => {
           <CurvedButtonMain text="Other categories" />
         </Link>
       </MainWrapper>
+      <Footer/>
     
     </>
   );
