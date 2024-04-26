@@ -23,7 +23,7 @@ export const Header = () => {
    
       <NavContainer>
     
-        <Nav />
+      <Nav isHeader={true} />
       </NavContainer>
       <HamburgerButton>
 

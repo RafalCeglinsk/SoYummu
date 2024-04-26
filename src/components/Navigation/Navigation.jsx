@@ -2,36 +2,36 @@ import React from 'react';
 
 import { NavLinkStyled, NavContainer } from './Navigation.styled';
 
-const Nav = ({handleCloseMenu, isfooter}) => {
+const Nav = ({handleCloseMenu,isHeader, isFooter}) => {
   return (
 <nav>
- <NavContainer isfooter={isfooter}>
+<NavContainer className={isFooter ? 'NavFooter' : ''}>
 
-        <NavLinkStyled to="/categories" onClick={handleCloseMenu} isfooter={isfooter}>
+        <NavLinkStyled to="/categories" onClick={handleCloseMenu}>
           Categories
         </NavLinkStyled>
    
 
-        <NavLinkStyled to="/add" onClick={handleCloseMenu} isfooter={isfooter}>
+        <NavLinkStyled to="/add" onClick={handleCloseMenu} >
           Add Recipe
         </NavLinkStyled>
 
 
-      <NavLinkStyled to="/my" onClick={handleCloseMenu} isfooter={isfooter}>
+      <NavLinkStyled to="/my" onClick={handleCloseMenu} >
           My Recipes
         </NavLinkStyled>
 
-        <NavLinkStyled to="/favorite" onClick={handleCloseMenu} isfooter={isfooter}>
+        <NavLinkStyled to="/favorite" onClick={handleCloseMenu} >
           Favorite
         </NavLinkStyled>
 
 
-        <NavLinkStyled to="/shoppingList" onClick={handleCloseMenu}isfooter={isfooter}>
+        <NavLinkStyled to="/shoppingList" onClick={handleCloseMenu}>
           Shopping List
         </NavLinkStyled>
 
 
-        <NavLinkStyled to="/search?ingredients=" onClick={handleCloseMenu}isfooter={isfooter}>
+        <NavLinkStyled to="/search?ingredients=" onClick={handleCloseMenu}>
     Search
         </NavLinkStyled>
 

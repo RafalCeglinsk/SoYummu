@@ -31,7 +31,7 @@ function Footer() {
               <li>Convenient and easy to use</li>
             </FooterText>
           </div>
-             <Nav isfooter />
+          <Nav isFooter={true} />
        
           <SubscribeForm />
         </FooterTextContainer>
