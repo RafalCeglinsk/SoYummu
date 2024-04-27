@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { GalleryUl,
   GalleryLi,
   RecipeImg,
-  RecipeDescription } from "../../GalleryElement/GalleryElement.styled";
+  RecipeDescription } from "./SearchedRecipesList.styled";
 
 export const SearchedRecipesList = ({ recipes }) => {
   return (

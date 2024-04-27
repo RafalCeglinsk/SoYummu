@@ -12,6 +12,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import { HomePage } from "./pages/Home";
 import Main from "./pages/Main";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
         <Route path="/my" element={<MyRecipies />} />
         <Route path="/favorite" element={<Favorites />} />
         <Route path="/shoppingList" element={<ShoppingList />} />
-        <Route path="/search?" element={<Search />} />
+        <Route path="/search?" element={<SearchPage />} />
       </Routes>
     </>
   );
