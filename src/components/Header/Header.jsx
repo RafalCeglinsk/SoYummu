@@ -24,6 +24,7 @@ export const Header = () => {
 
   return (
     <>
+
       {location.pathname !== "/auth/login" &&
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
@@ -44,6 +45,7 @@ export const Header = () => {
             />
           </HeaderContainer>
         )}
+
     </>
   );
 };

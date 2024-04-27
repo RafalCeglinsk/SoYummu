@@ -1,43 +1,36 @@
-import React from 'react';
+import React from "react";
 
-import { NavLinkStyled, NavContainer } from './Navigation.styled';
+import { NavLinkStyled, NavContainer } from "./Navigation.styled";
 
-const Nav = ({handleCloseMenu}) => {
+const Nav = ({ handleCloseMenu, isHeader, isFooter }) => {
   return (
-<nav>
- <NavContainer>
-
+    <nav>
+      <NavContainer className={isFooter ? "NavFooter" : ""}>
         <NavLinkStyled to="/categories" onClick={handleCloseMenu}>
           Categories
         </NavLinkStyled>
-   
 
         <NavLinkStyled to="/add" onClick={handleCloseMenu}>
           Add Recipe
         </NavLinkStyled>
 
-
-      <NavLinkStyled to="/my" onClick={handleCloseMenu}>
+        <NavLinkStyled to="/my" onClick={handleCloseMenu}>
           My Recipes
         </NavLinkStyled>
 
-        <NavLinkStyled to="/favorite" onClick={handleCloseMenu} >
+        <NavLinkStyled to="/favorite" onClick={handleCloseMenu}>
           Favorite
         </NavLinkStyled>
-
 
         <NavLinkStyled to="/shoppingList" onClick={handleCloseMenu}>
           Shopping List
         </NavLinkStyled>
 
-
         <NavLinkStyled to="/search?ingredients=" onClick={handleCloseMenu}>
-    Search
+          Search
         </NavLinkStyled>
-
-        </NavContainer>
-
-        </nav>
+      </NavContainer>
+    </nav>
   );
 };
 
