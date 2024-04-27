@@ -28,7 +28,9 @@ export const Header = () => {
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
           <HeaderContainer>
-            <StartLogoBig />
+            <NavLink to="/main">
+              <StartLogoBig />
+            </NavLink>
             <NavContainer>
               <Nav />
             </NavContainer>
