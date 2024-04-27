@@ -7,7 +7,11 @@ import { StartLogoBig } from "../RenderSvg/RenderSvg";
 import { HamburgerMenu } from "./Hamburger/Hamburger";
 import Nav from "../Navigation/Navigation";
 
-import { NavContainer, HamburgerButton, HeaderContainer } from "./Header.styled";
+import {
+  NavContainer,
+  HamburgerButton,
+  HeaderContainer,
+} from "./Header.styled";
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -18,23 +22,22 @@ export const Header = () => {
 
   return (
     <>
-    <HeaderContainer>
-      <NavLink to="/main" > <StartLogoBig/></NavLink>
-   
-      <NavContainer>
-    
-        <Nav />
-      </NavContainer>
-      <HamburgerButton>
+      <HeaderContainer>
+        <NavLink to="/main">
+          <StartLogoBig />
+        </NavLink>
 
-        <GiHamburgerMenu onClick={toggleBurgerMenu}/>
+        <NavContainer>
+          <Nav />
+        </NavContainer>
+        <HamburgerButton>
+          <GiHamburgerMenu onClick={toggleBurgerMenu} />
+        </HamburgerButton>
 
-      </HamburgerButton>
-
-      <HamburgerMenu
-        openState={isMenuOpen}
-        handleCloseMenu={toggleBurgerMenu}
-      />
+        <HamburgerMenu
+          openState={isMenuOpen}
+          handleCloseMenu={toggleBurgerMenu}
+        />
       </HeaderContainer>
     </>
   );
