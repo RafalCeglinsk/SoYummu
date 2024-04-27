@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Form = styled.form`
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  color:var(--color-default-1);
+  color: var(--color-default-1);
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -15,15 +15,14 @@ export const Form = styled.form`
   @media (min-width: 1440px) {
     flex-direction: column;
     width: 338px;
-    gap: 0;
-  }
 
- 
+    gap: 0px;
+  }
 `;
 
 export const Input = styled.input`
   box-sizing: border-box;
-  color:var(--color-default-1);
+  color: var(--color-default-1);
   padding: 9px 9px 9px 42px;
   background: transparent;
   border-radius: 6px;
@@ -49,7 +48,7 @@ export const Input = styled.input`
 
   @media (min-width: 1440px) {
     width: 339px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.36px;
@@ -69,7 +68,7 @@ export const Button = styled.button`
   transition: color var(--transition-time) var(--cubic);
 
   &:hover {
-    color:var(--color-default-2);
+    color: var(--color-default-2);
   }
 
   @media (min-width: 768px) {
@@ -100,7 +99,7 @@ export const FormText = styled.p`
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.28px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 
   @media (min-width: 1440px) {
     display: block;
