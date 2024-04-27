@@ -12,7 +12,6 @@ import {
   FooterText,
   FooterBarText,
   RightText,
-
 } from "./Footer.styled";
 function Footer() {
   return (
@@ -25,14 +24,14 @@ function Footer() {
               <span>So Yummy</span>
             </LogoWrapper>
             <FooterText>
-              <li>Database of recipes that can be replenished</li>
-              <li>Flexible search for desired and unwanted ingredients</li>
-              <li>Ability to add your own recipes with photos</li>
-              <li>Convenient and easy to use</li>
+              <li> ∙ Database of recipes that can be replenished</li>
+              <li> ∙ Flexible search for desired and unwanted ingredients</li>
+              <li> ∙ Ability to add your own recipes with photo</li>
+              <li> ∙ Convenient and easy to use</li>
             </FooterText>
           </div>
           <Nav isFooter={true} />
-       
+
           <SubscribeForm />
         </FooterTextContainer>
         <SocialMediaBar />
