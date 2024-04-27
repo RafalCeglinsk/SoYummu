@@ -45,7 +45,7 @@ export const AuthForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation().pathname;
-  const { fields, action, buttonText, linkText, linkPath, headerText } =
+  const { fields, buttonText, linkText, linkPath, headerText } =
     formConfig[location];
 
   const onSubmit = async (e) => {
