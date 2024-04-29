@@ -1,18 +1,19 @@
 import React from "react";
 import { SearchPageStyled, NoResults } from "./SearchPage.styled.jsx";
 import SearchBar from "../../components/SearchPage/SearchBar/SearchBar.jsx";
-import { MainTitle } from "../../components/MainPageTittle/MainPageTittle.jsx";
+// import { MainTitle } from "../../components/MainPageTittle/";
 import { useSelector } from "react-redux";
 import { SearchedRecipesList } from "../../components/SearchPage/SearchedRecipesList/SearchedRecipesList.jsx";
-import Footer from "../../components/footer/footer.jsx";
-import SearchImg from "../../images/SearchForSomethingElse/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png";
+
+// import SearchImg from "../../images/SearchForSomethingElse/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png";
+import SearchImg from "../../images/NoImage/NoImageSmall.png"
 const SearchPage = () => {
   const searchResults = useSelector((state) => {
     return state.search.searchResults;
   });
   return (
     <>
-    <MainTitle>Search</MainTitle>
+    {/* // <MainTitle>Search</MainTitle> */}
 
     <SearchPageStyled>
     
@@ -27,7 +28,7 @@ const SearchPage = () => {
         </NoResults>
       )}
     </SearchPageStyled>
-    <Footer/>
+
     </>
   );
 };

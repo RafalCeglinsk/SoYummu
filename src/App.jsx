@@ -1,7 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { Header } from "./components/Header/Header";
-import Categories from "./pages/Categories";
+import CategoriesPage from "./pages/CategoriesPage";
 import AddRecipes from "./pages/AddRecipes";
 import MyRecipies from "./pages/MyRecipies";
 import Favorites from "./pages/Favorites";
@@ -12,6 +12,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import { HomePage } from "./pages/Home";
 import Main from "./pages/Main";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
   return (
@@ -31,13 +32,18 @@ function App() {
             <RestrictedRoute redirectTo="/main" component={<LoginPage />} />
           }
         />
-             <Route path="/main" element={<Main />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/main" element={<Main />} />
+        <Route
+          path="/categories"
+          element={<Navigate to="/categories/beef" replace />}
+        />
+
+        <Route path="/categories/:category" element={<CategoriesPage />} />
         <Route path="/add" element={<AddRecipes />} />
         <Route path="/my" element={<MyRecipies />} />
         <Route path="/favorite" element={<Favorites />} />
         <Route path="/shoppingList" element={<ShoppingList />} />
-        <Route path="/search?" element={<Search />} />
+        <Route path="/search?" element={<SearchPage />} />
       </Routes>
     </>
   );
