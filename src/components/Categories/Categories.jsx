@@ -17,7 +17,7 @@ export const Categories = () => {
   const categories = useSelector(selectCategory);
 
   useEffect(() => {
-    dispatch(getCategory());
+    dispatch(getCategory(category));
   }, [dispatch, category]);
   return (
     <div>

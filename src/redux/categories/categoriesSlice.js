@@ -32,12 +32,12 @@ export const categoriesSlice = createSlice({
     builder
       .addCase(getCategories.fulfilled, (state, { payload }) => {
         state.error = null;
-        state.items = [...payload.items];
+        state.categories = payload;
         state.isLoading = false;
       })
       .addCase(getCategory.fulfilled, (state, { payload }) => {
         state.error = null;
-        state.items = payload;
+        state.category = payload;
         state.isLoading = false;
       })
       .addMatcher(isPendingAction, handlePending)
