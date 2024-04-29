@@ -6,7 +6,10 @@ export const getIngredients = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get("/ingredients/list");
-      return response.data;
+      return response.data.result.map((ingredient) => ({
+        value: ingredient._id,
+        label: ingredient.ttl,
+      }));
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

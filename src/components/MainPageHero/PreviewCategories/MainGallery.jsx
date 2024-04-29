@@ -17,7 +17,7 @@ export const MainGallery = () => {
 
   useEffect(() => {
     dispatch(getMainPageRecipes());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const handleResize = () => {

@@ -2,12 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { GalleryElement } from "../GalleryElement/GalleryElement";
 
 import { CategoriesWrapper } from "./Categories.styled";
-import { getCategories, getCategory } from "../../redux/categories/operations";
+import { getCategory } from "../../redux/categories/operations";
 import { useEffect } from "react";
-import {
-  selectCategories,
-  selectCategory,
-} from "../../redux/categories/selectors";
+import { selectCategory } from "../../redux/categories/selectors";
 import { HorizontalScrollList } from "./HorizontalScrollList/HorizontalScrollList";
 import { useParams } from "react-router-dom";
 
