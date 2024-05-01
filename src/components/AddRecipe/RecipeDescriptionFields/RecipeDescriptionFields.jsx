@@ -150,8 +150,12 @@ const RecipeDescriptionFields = ({ recipeData, setRecipeData }) => {
 
   const titleValue = recipeData ? recipeData.title : "";
   const descriptionValue = recipeData ? recipeData.description : "";
-  const selectedCategory = categories.find(
-    (option) => option.value === recipeData?.category
+  const selectedCategory = categories.map((item) => ({
+    value: item,
+    label: item,
+  }));
+  const selectedCategoryValue = selectedCategory.find(
+    (item) => item.value === recipeData?.category
   );
 
   return (
@@ -183,10 +187,10 @@ const RecipeDescriptionFields = ({ recipeData, setRecipeData }) => {
           <Select
             id="category"
             styles={customSelectStyles}
-            options={categories}
+            options={selectedCategory}
             placeholder="Select..."
-            value={selectedCategory}
-            onChange={(option) => handleChange("category", option.value)}
+            value={selectedCategoryValue}
+            onChange={(item) => handleChange("category", item.value)}
           />
         </SelectContainer>
         <SelectContainer>
@@ -196,9 +200,7 @@ const RecipeDescriptionFields = ({ recipeData, setRecipeData }) => {
             styles={customSelectStyles}
             options={timeOptions}
             placeholder="Select..."
-            value={timeOptions.find(
-              (option) => option.value === recipeData?.time
-            )}
+            value={timeOptions.find((item) => item.value === recipeData?.time)}
             onChange={(option) => handleChange("time", option.value)}
           />
         </SelectContainer>
