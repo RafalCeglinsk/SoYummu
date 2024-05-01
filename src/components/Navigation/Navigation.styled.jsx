@@ -26,7 +26,7 @@ export const NavContainer = styled.ul`
   &.NavFooter > a {
     color: var(--color-text-7);
     font-size: 14px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02px;
   }
 `;
 

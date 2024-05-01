@@ -10,10 +10,9 @@ export const GalleryUl = styled.ul`
     gap: 50px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     gap: 100px;
   }
-
 `;
 
 export const GalleryLi = styled.li`
@@ -26,7 +25,7 @@ export const GalleryLi = styled.li`
   @media screen and (min-width: 768px) {
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     gap: 14px;
   }
 `;
@@ -43,7 +42,7 @@ export const RecipeImg = styled.img`
     padding-top: 40px;
     max-width: 366px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     max-width: 300px;
   }
 
@@ -95,12 +94,10 @@ export const ElementWrapper = styled.div`
   border-radius: 8px;
 `;
 export const ButtonWrapper = styled.div`
-display: none;
-@media screen and (min-width: 768px) {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 24px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 24px;
   }
-
- 
-`
+`;
