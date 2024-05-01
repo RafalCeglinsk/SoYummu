@@ -18,10 +18,13 @@ import PopularRecipe from "../PopularRecipe/PopularRecipe";
 import { SocialMediaBar } from "../../SocialMediaBar/SocialMediaBar";
 import Notiflix from "notiflix";
 import { addRecipe } from "../../../redux/recipes/addRecipe/operations";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectToken } from "../../../redux/auth/selectors";
 
 const AddRecipeForm = () => {
   const dispatch = useDispatch();
+  const token = useSelector(selectToken);
+  console.log(token);
 
   const [recipeData, setRecipeData] = useState({
     recipeImg: null,
@@ -49,16 +52,16 @@ const AddRecipeForm = () => {
 
     requiredFields.forEach((field) => {
       if (field === "ingredients" && recipeData[field].length === 0) {
-        Notiflix.Notify.failure("Proszę dodać co najmniej jeden składnik.");
+        Notiflix.Notify.failure("Please add atleast 1 ingredient");
         isFormValid = false;
       } else if (!recipeData[field] || !recipeData[field].toString().trim()) {
-        Notiflix.Notify.failure(`Pole ${field} jest wymagane.`);
+        Notiflix.Notify.failure(`Field ${field} is required.`);
         isFormValid = false;
       }
     });
 
     if (!recipeData.recipeImg) {
-      Notiflix.Notify.failure("Zdjęcie przepisu jest wymagane.");
+      Notiflix.Notify.failure("Photo is required");
       isFormValid = false;
     }
 
@@ -77,7 +80,10 @@ const AddRecipeForm = () => {
     if (recipeData.recipeImg) {
       formData.append("recipeImg", recipeData.recipeImg);
     }
-    dispatch(addRecipe(formData), []);
+    dispatch(addRecipe({ recipeData: formData, token: token }));
+    if (isFormValid) {
+      return console.log("Recipe added successfully");
+    }
   };
 
   return (
