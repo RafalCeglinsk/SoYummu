@@ -52,7 +52,7 @@ const ImageUploadField = ({ onImageUpload, setRecipeData }) => {
   return (
     <ImageUploadContainer
       onClick={handleContainerClick}
-      isImageUploaded={!!imagePreviewUrl}
+      $isImageUploaded={!!imagePreviewUrl}
     >
       {imagePreviewUrl ? (
         <ImagePreview src={imagePreviewUrl} alt="Recipe" />

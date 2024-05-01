@@ -17,8 +17,7 @@ import { selectPopularRecipes } from "../../../redux/recipes/popular/selectors";
 
 const PopularRecipe = () => {
   const recipes = useSelector(selectPopularRecipes);
-  console.log(recipes);
-  const error = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {

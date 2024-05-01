@@ -24,8 +24,6 @@ import { selectToken } from "../../../redux/auth/selectors";
 const AddRecipeForm = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
-  console.log(token);
-
   const [recipeData, setRecipeData] = useState({
     recipeImg: null,
     title: "",
