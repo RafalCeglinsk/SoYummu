@@ -31,7 +31,7 @@ const PopularRecipe = () => {
         {recipes.length > 0 ? (
           recipes.slice(0, 4).map((recipe, _id) => (
             <RecipeCard key={recipe.title}>
-              <StyledLink to={`/recipes/${_id}`}>
+              <StyledLink to={`/recipes/${recipe._id}`}>
                 <RecipeImage src={recipe.thumb} alt={recipe.title} />
                 <RecipeInfo>
                   <RecipeTitle>{recipe.title}</RecipeTitle>
