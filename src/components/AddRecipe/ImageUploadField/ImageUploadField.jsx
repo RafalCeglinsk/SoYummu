@@ -1,5 +1,8 @@
 import React from "react";
-import { ImageUploadContainer, ImageUploadButton } from "./styles";
+import {
+  ImageUploadContainer,
+  ImageUploadButton,
+} from "./ImageUploadField.styled";
 import { RenderFacebook } from "../../RenderSvg/RenderSvg";
 
 const ImageUploadField = ({ onImageUpload }) => {

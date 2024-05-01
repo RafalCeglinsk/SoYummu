@@ -13,7 +13,7 @@ import {
   ImageUploadButton,
   Form,
   ImagePreview,
-} from "./styles";
+} from "./RecipeDescriptionFields.styled";
 import { getCategories } from "../../../redux/categories/operations";
 import { updateField } from "../../../redux/recipes/addRecipe/addRecipeSlice.js";
 import { selectCategories } from "../../../redux/categories/selectors.js";

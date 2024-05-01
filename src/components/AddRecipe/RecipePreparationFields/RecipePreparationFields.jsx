@@ -3,7 +3,7 @@ import {
   PreparationContainer,
   PreparationTitle,
   PreparationTextarea,
-} from "./styles";
+} from "./RecipePreperationFields.styled";
 
 const RecipePreparationFields = ({ recipeData, setRecipeData }) => {
   const handleChange = (e) => {

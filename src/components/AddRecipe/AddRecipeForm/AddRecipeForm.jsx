@@ -10,7 +10,7 @@ import {
   StyledH1,
   StyledH2,
   FollowUs,
-} from "./styles";
+} from "./AddRecipeForm.styled";
 import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import RecipePreparationFields from "../RecipePreparationFields/RecipePreparationFields";
 import RecipeIngredientsFields from "../RecipeIngredientsFields/RecipeIngredientsFields";

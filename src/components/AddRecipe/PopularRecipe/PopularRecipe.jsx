@@ -10,7 +10,7 @@ import {
   PopularRecipeTitle,
   RecipeInfo,
   StyledLink,
-} from "./styles";
+} from "./PopularRecipe.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { getPopularRecipes } from "../../../redux/recipes/popular/operations";
 import { selectPopularRecipes } from "../../../redux/recipes/popular/selectors";

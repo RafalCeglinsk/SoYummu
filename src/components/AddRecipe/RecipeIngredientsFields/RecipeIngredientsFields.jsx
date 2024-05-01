@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Select from "react-select";
 import {
   IngredientsContainer,
@@ -11,7 +11,7 @@ import {
   unitSelect,
   ingredientSelect,
   Span,
-} from "./styles";
+} from "./RecipeIngredientsFields.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { getIngredients } from "../../../redux/ingredients/operations";
 import { selectIngredients } from "../../../redux/ingredients/selectors";
@@ -25,7 +25,6 @@ const unitOptions = [
 
 const RecipeIngredientsFields = ({ recipeData, setRecipeData }) => {
   const ingredients = useSelector(selectIngredients);
-  console.log("Ingredients", ingredients);
   const dispatch = useDispatch();
 
   useEffect(() => {
