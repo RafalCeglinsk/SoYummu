@@ -1,1 +1,1 @@
-export const selectPopularRecipes = (state) => state.popular.recipes;
+export const selectPopularRecipes = (state) => state.popular.items;

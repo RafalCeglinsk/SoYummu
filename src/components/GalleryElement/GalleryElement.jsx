@@ -7,7 +7,6 @@ import {
 } from "../SearchPage/SearchedRecipesList/SearchedRecipesList.styled";
 export const GalleryElement = ({ category }) => {
   const recipes = category;
-  console.log(recipes);
   return (
     <GalleryUl>
       {recipes.map((recipe, _id) => (

@@ -13,11 +13,9 @@ export const MainGallery = () => {
   const [viewMode, setViewMode] = useState(getViewMode());
   const dispatch = useDispatch();
   const categories = useSelector(selectMainPage);
-  console.log(categories);
-
   useEffect(() => {
     dispatch(getMainPageRecipes());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const handleResize = () => {

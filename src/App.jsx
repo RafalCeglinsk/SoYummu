@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import { HomePage } from "./pages/Home";
 import Main from "./pages/Main";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import AddRecipeForm from "./components/AddRecipe/AddRecipeForm/AddRecipeForm";
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
         />
 
         <Route path="/categories/:category" element={<CategoriesPage />} />
-        <Route path="/add" element={<AddRecipes />} />
+        <Route path="/add" element={<AddRecipeForm />} />
         <Route path="/my" element={<MyRecipies />} />
         <Route path="/favorite" element={<Favorites />} />
         <Route path="/shoppingList" element={<ShoppingList />} />

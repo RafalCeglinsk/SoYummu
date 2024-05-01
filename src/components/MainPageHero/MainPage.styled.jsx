@@ -15,7 +15,7 @@ import BgTriDesk from "../../images/MainPageHero/Triangle-desktop.png";
 export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
-gap:30px;
+  gap: 30px;
   align-items: center;
   padding: 132px 10px 83px 0px;
   background-image: -webkit-image-set(url(${BgMbLeft}) 2x),
@@ -29,12 +29,12 @@ gap:30px;
       -webkit-image-set(url(${BgTbDown}) 2x), url(${BgTriangle});
     background-position: top left, top -25px right, top -480px right -350px;
     padding-top: 159px;
-    gap:50px;
+    gap: 50px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     background-image: -webkit-image-set(url(${BgDskLeft}) 2x),
-    -webkit-image-set(url(${BgDskDown}) 2x), url(${BgTriDesk});
-            background-position: top left, top  right , top right ;
+      -webkit-image-set(url(${BgDskDown}) 2x), url(${BgTriDesk});
+    background-position: top left, top right, top right;
   }
 `;
 
@@ -69,7 +69,7 @@ export const TitleWrapper = styled.div`
     gap: 24px;
     padding-top: 30px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     padding-top: 95px;
   }
 `;
@@ -86,7 +86,7 @@ export const MainTitle = styled.div`
     font-size: 72px;
     text-align: center;
   }
-  @media screen and (min-width: 1280) {
+  @media screen and (min-width: 1440px) {
     font-size: 100px;
   }
 `;
@@ -102,15 +102,13 @@ export const TextContent = styled.div`
     font-size: 14px;
     text-align: left;
   }
-  @media screen and (min-width: 1280) {
+  @media screen and (min-width: 1440px) {
     font-size: 20px;
     line-height: 1.3;
     max-width: 465px;
   }
 `;
 export const SbMobileStyle = styled.div`
-
-
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -121,7 +119,7 @@ export const SbTabletStyle = styled.div`
     display: block;
     width: 100%;
   }
-  @media screen and (min-width: 1280) {
+  @media screen and (min-width: 1440px) {
     padding-top: 34px;
   }
 `;
