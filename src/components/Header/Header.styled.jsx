@@ -7,9 +7,7 @@ export const HeaderContainer=styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  @media (min-width: 1440px) {
-padding: 10px 100px;
-}
+
 `
 
 export const NavContainer=styled.div`
