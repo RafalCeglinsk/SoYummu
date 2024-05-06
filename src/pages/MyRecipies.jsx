@@ -1,8 +1,13 @@
-
+import { PageTitle } from "../components/PageTitle/PageTitle";
+import Footer from "../components/Footer/Footer";
 function MyRecipies() {
     return (
       <div >
-  <p>THIS IS MyRecipies PAGE </p>
+        <PageTitle>My Recipies</PageTitle>
+
+  <p> ******* THIS IS MyRecipies PAGE ********** </p>
+
+    <Footer/>
       </div>
     );
   }
