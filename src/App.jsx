@@ -6,7 +6,7 @@ import AddRecipes from "./pages/AddRecipes";
 import MyRecipies from "./pages/MyRecipies";
 import Favorites from "./pages/Favorites";
 import ShoppingList from "./pages/ShoppingList";
-import Search from "./pages/Search";
+
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
