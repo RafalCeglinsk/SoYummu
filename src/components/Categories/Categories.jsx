@@ -20,7 +20,6 @@ export const Categories = () => {
   return (
     <div>
       <CategoriesWrapper>
-     <PageTitle>Categories</PageTitle> 
         <HorizontalScrollList />
         <GalleryElement category={categories} />
       </CategoriesWrapper>
