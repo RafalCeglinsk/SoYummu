@@ -3,7 +3,7 @@
 function Favorites() {
     return (
       <div >
-        <PageTitle>Favorite</PageTitle>
+        <PageTitle>Favorites</PageTitle>
   <p>*********************************THIS IS Favorites PAGE *******************</p>
   <Footer/>
       </div>
