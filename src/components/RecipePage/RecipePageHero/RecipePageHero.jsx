@@ -1,8 +1,8 @@
 import { AddButton } from "./button";
 import {
-  BackgroundSection,
-  Header,
-  HeaderDiv,
+  HeroWrapper,
+  RecipeTitle,
+  RecipeTitleDiv,
   RecipeDesc,
   TimeContainer,
   TimerP,
@@ -11,16 +11,16 @@ import { Clock } from "../../RenderSvg/RenderSvg";
 
 export const RecipePageHero = ({ recipe }) => {
   return (
-    <BackgroundSection>
-      <HeaderDiv>
-        <Header>{recipe.title}</Header>
+    <HeroWrapper>
+
+        <RecipeTitle>{recipe.title}</RecipeTitle>
         <RecipeDesc>{recipe.description}</RecipeDesc>
         <AddButton recipe={recipe} />
-      </HeaderDiv>
+
       <TimeContainer>
         <Clock />
         <TimerP>{recipe.time} min</TimerP>
       </TimeContainer>
-    </BackgroundSection>
+    </HeroWrapper>
   );
 };

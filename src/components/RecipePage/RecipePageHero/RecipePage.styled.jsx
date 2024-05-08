@@ -6,56 +6,53 @@ import recipetabletBG2x from "../../../images/RecipePage/recipeTabletBG2x.png";
 import recipemobileBG from "../../../images/RecipePage/recipeMobileBG.png";
 import recipemobileBG2x from "../../../images/RecipePage/recipeMobileBG2x.png";
 
-export const BackgroundSection = styled.section`
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-image: -webkit-image-set(url(${recipemobileBG})),
-    -webkit-image-set(url(${recipemobileBG2x}) 2x);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  @media screen and (min-width: 768px) {
-    background-image: -webkit-image-set(url(${recipetabletBG})),
-      -webkit-image-set(url(${recipetabletBG2x}) 2x);
-    align-items: center;
-  }
-  @media screen and (min-width: 1440px) {
-    background-image: -webkit-image-set(url(${recipedesktopBG})),
-      -webkit-image-set(url(${recipedesktopBG2x}) 2x);
-  }
-`;
+export const HeroWrapper = styled.section`
 
-export const HeaderDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 38px 0px 38px;
+gap:18px;
+padding-top: 72px;
+
+  background-image: -webkit-image-set(url(${recipemobileBG})),
+    -webkit-image-set(url(${recipemobileBG2x}) 2x);
+   background-color: var(--color-text-5);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
   @media screen and (min-width: 768px) {
-    padding: 72px 131.5px 24px 131.5px;
+    background-image: -webkit-image-set(url(${recipetabletBG})),
+      -webkit-image-set(url(${recipetabletBG2x}) 2x);
+      gap: 24px;
+
   }
   @media screen and (min-width: 1440px) {
-    padding: 100px 392px 30px 392px;
+    background-image: -webkit-image-set(url(${recipedesktopBG})),
+      -webkit-image-set(url(${recipedesktopBG2x}) 2x);
+      padding-top: 90px;
   }
 `;
 
-export const Header = styled.h1`
-  padding: 0px 13.5px 18px 13.5px;
+
+export const RecipeTitle = styled.h1`
+  width: 100%;
+  max-width: 300px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  text-align: left;
   color: var(--color-text-5);
+  text-align: center;
   @media screen and (min-width: 768px) {
     font-size: 44px;
     line-height: 1;
+    max-width: 500px;
   }
   @media screen and (min-width: 1440px) {
-    text-align: center;
+    max-width: 650px;
   }
 `;
 
@@ -66,12 +63,14 @@ export const RecipeDesc = styled.div`
   font-size: 12px;
   line-height: 1.3;
   letter-spacing: 0.02em;
+  max-width: 500px;
   @media screen and (min-width: 768px) {
     font-size: 18px;
+    max-width: 650px;
   }
 `;
 export const Button = styled.button`
-  margin-bottom: 42px;
+  margin-bottom: 22px;
   background-color: transparent;
   border-radius: 15px 35px;
   padding: 10px 18px;
@@ -85,7 +84,7 @@ export const Button = styled.button`
   line-height: 15px;
   
   @media screen and (min-width: 768px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-size: 16px;
     line-height: 24px;
     padding: 18px 44px;
