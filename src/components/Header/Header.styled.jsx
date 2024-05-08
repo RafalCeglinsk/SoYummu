@@ -6,10 +6,8 @@ export const HeaderContainer=styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  @media (min-width: 1440px) {
-padding: 10px 100px;
-}
+  padding: 10px 0px;
+
 `
 
 export const NavContainer=styled.div`

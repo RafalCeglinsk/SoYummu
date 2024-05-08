@@ -19,7 +19,7 @@ const Nav = ({ handleCloseMenu, isHeader, isFooter }) => {
         </NavLinkStyled>
 
         <NavLinkStyled to="/favorite" onClick={handleCloseMenu}>
-          Favorite
+          Favorites
         </NavLinkStyled>
 
         <NavLinkStyled to="/shoppingList" onClick={handleCloseMenu}>
