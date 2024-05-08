@@ -24,7 +24,7 @@ export const RecipePage = () => {
     <div>
       <RecipePageHero recipe={recipe} />
       <RecipeIngredientsList recipe={recipe} />
-      <RecipePreparation recipe={recipe} />
+      {/* <RecipePreparation recipe={recipe} /> */}
     </div>
   );
 };

@@ -1,32 +1,21 @@
 import styled from "styled-components";
 
 export const SectionWrapper = styled.div`
-  padding: 32px 16px 50px 16px;
+  padding: 32px 16px;
   @media screen and (min-width: 768px) {
-    padding: 50px 32px 96px 32px;
-  }
-  @media screen and (min-width: 1440px) {
-    padding: 50px 100px 100px 100px;
-  }
-`;
-
-export const HeadContainer = styled.div`
-  background-color: var(--color-icons-3);
-  padding: 12px 14px;
-  border-radius: 8px;
-  height: auto;
-  text-align: left;
-  @media screen and (min-width: 768px) {
-    padding: 21px 32px;
-  }
-  @media screen and (min-width: 1440px) {
-    padding: 21px 40px;
-    display: flex;
+    padding: 50px 32px;
   }
 `;
 
 export const HeadUl = styled.ul`
+  padding: 12px 14px;
+  border-radius: 8px;
+  background-color: var(--color-icons-3);
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
   list-style-type: none;
   color: var(--color-text-7);
   font-weight: 600;
@@ -35,36 +24,15 @@ export const HeadUl = styled.ul`
   letter-spacing: 0.03em;
   @media screen and (min-width: 768px) {
     font-size: 18px;
-    line-height: 1.5;
-    align-items: center;
-    justify-content: space-between;
-  }
-`;
-
-export const LiIngredients = styled.li``;
-
-export const LiNumber = styled.li`
-  padding-left: 138px;
-  @media screen and (min-width: 768px) {
-    padding-left: 314px;
+    padding: 21px 32px;
   }
   @media screen and (min-width: 1440px) {
-    padding-left: 551px;
-  }
-`;
-
-export const LiAdd = styled.li`
-  padding-left: 18px;
-  @media screen and (min-width: 768px) {
-    padding-left: 38px;
-  }
-  @media screen and (min-width: 1440px) {
-    padding-left: 109px;
+    padding: 21px 40px;
   }
 `;
 
 export const IngredientsListContainer = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   padding-top: 24px;
   gap: 16px;
@@ -74,7 +42,7 @@ export const IngredientsListContainer = styled.div`
   }
   @media screen and (min-width: 1440px) {
     margin-top: 50px;
-  }
+  } */
 `;
 export const IngredientsListUl = styled.ul`
   display: flex;

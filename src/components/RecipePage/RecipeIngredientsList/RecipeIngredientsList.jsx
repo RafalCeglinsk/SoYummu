@@ -3,10 +3,6 @@ import { SectionWrapper } from "./RecipeIngredients.styled";
 import {
   IngredientsListContainer,
   HeadUl,
-  HeadContainer,
-  LiIngredients,
-  LiNumber,
-  LiAdd,
   IngredientsListUl,
   IngredientsListLi,
 } from "./RecipeIngredients.styled";
@@ -25,13 +21,12 @@ export const RecipeIngredientsList = ({ recipe }) => {
   };
   return (
     <SectionWrapper>
-      <HeadContainer>
-        <HeadUl>
-          <LiIngredients>Ingredients</LiIngredients>
-          <LiNumber>Number</LiNumber>
-          <LiAdd>Add to list</LiAdd>
-        </HeadUl>
-      </HeadContainer>
+      <HeadUl>
+        <li>Ingredients</li>
+        <li>Number</li>
+        <li>Add to list</li>
+      </HeadUl>
+
       <IngredientsListContainer>
         {ingredients.map((ingredient, id) => (
           <IngredientsListUl key={id}>

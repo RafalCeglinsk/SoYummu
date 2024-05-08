@@ -7,35 +7,31 @@ import recipemobileBG from "../../../images/RecipePage/recipeMobileBG.png";
 import recipemobileBG2x from "../../../images/RecipePage/recipeMobileBG2x.png";
 
 export const HeroWrapper = styled.section`
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-gap:18px;
-padding-top: 72px;
+  gap: 18px;
+  padding-top: 72px;
 
   background-image: -webkit-image-set(url(${recipemobileBG})),
     -webkit-image-set(url(${recipemobileBG2x}) 2x);
-   background-color: var(--color-text-5);
+  background-color: var(--color-text-5);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-
   @media screen and (min-width: 768px) {
     background-image: -webkit-image-set(url(${recipetabletBG})),
       -webkit-image-set(url(${recipetabletBG2x}) 2x);
-      gap: 24px;
-
+    gap: 24px;
   }
   @media screen and (min-width: 1440px) {
     background-image: -webkit-image-set(url(${recipedesktopBG})),
       -webkit-image-set(url(${recipedesktopBG2x}) 2x);
-      padding-top: 90px;
+    padding-top: 90px;
   }
 `;
-
 
 export const RecipeTitle = styled.h1`
   width: 100%;
@@ -82,7 +78,7 @@ export const Button = styled.button`
   font-size: 10px;
   font-weight: 400;
   line-height: 15px;
-  
+
   @media screen and (min-width: 768px) {
     margin-bottom: 40px;
     font-size: 16px;
@@ -90,14 +86,11 @@ export const Button = styled.button`
     padding: 18px 44px;
     border: solid var(--color-icons-3) 2px;
   }
-  &:hover{
+  &:hover {
     background-color: var(--color-icons-3);
-    color: var(  --color-text-7);
-   transform: translateX(1px);
-}
-
-
-
+    color: var(--color-text-7);
+    transform: translateX(1px);
+  }
 `;
 
 export const TimeContainer = styled.div`
