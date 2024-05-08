@@ -5,11 +5,11 @@ import { RecipePageHero } from "./RecipePageHero/RecipePageHero";
 import { RecipePreparation } from "./RecipePreparation/RecipePreparation";
 import { RecipeIngredientsList } from "./RecipeIngredientsList/RecipeIngredientsList";
 import { getRecipeId } from "../../redux/recipes/recipes/operations";
-import { selectPopularRecipes } from "../../redux/recipes/popular/selectors";
+import { selectRecipe } from "../../redux/recipes/recipes/selectors";
 
 export const RecipePage = () => {
   const { recipeId } = useParams();
-  const recipe = useSelector(selectPopularRecipes);
+  const recipe = useSelector(selectRecipe);
   const dispatch = useDispatch();
 
   useEffect(() => {

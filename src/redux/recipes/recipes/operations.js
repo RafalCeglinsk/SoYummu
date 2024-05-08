@@ -7,7 +7,6 @@ export const getAllRecipes = createAsyncThunk(
     try {
       const response = await axios.get("/recipes");
       const recipes = response.data;
-      console.log(recipes);
       return recipes;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -20,11 +19,8 @@ export const getRecipeId = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await axios.get(`recipes/${id}`);
-      console.log("response", response);
       const data = response.data;
-      console.log("data", data);
       const recipe = data.recipe;
-      console.log("recipe", recipe);
       return recipe;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -39,7 +35,6 @@ export const getMyRecipes = createAsyncThunk(
       const response = await axios.get("/ownRecipes", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(response);
       return response;
     } catch (error) {
       console.log(error.message);
