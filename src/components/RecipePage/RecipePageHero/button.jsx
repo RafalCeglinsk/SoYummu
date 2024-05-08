@@ -34,7 +34,7 @@ export const AddButton = ({ recipe }) => {
 
   return (
     <Button onClick={handleClick}>
-      {isFavorite ? "Remove from favorite" : "Add to favorite"}
+      <span>{isFavorite ? "Remove from favorite" : "Add to favorite"}</span>
     </Button>
   );
 };

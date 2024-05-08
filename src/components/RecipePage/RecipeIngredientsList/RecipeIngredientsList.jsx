@@ -39,7 +39,6 @@ export const RecipeIngredientsList = ({ recipe }) => {
               <img src={ingredient.thb} alt={ingredient.ttl} />
               <span>{ingredient.ttl}</span>
               <div>{ingredient.measure}</div>
-
               <input
                 type="checkbox"
                 id={`checkbox-${ingredient.ttl}`}

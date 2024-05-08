@@ -21,6 +21,7 @@ export const HeadContainer = styled.div`
   }
   @media screen and (min-width: 1440px) {
     padding: 21px 40px;
+    display: flex;
   }
 `;
 
@@ -35,6 +36,8 @@ export const HeadUl = styled.ul`
   @media screen and (min-width: 768px) {
     font-size: 18px;
     line-height: 1.5;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
@@ -46,7 +49,7 @@ export const LiNumber = styled.li`
     padding-left: 314px;
   }
   @media screen and (min-width: 1440px) {
-    padding-left: 761px;
+    padding-left: 551px;
   }
 `;
 

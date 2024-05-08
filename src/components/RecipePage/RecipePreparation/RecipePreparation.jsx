@@ -11,6 +11,7 @@ import {
 
 export const RecipePreparation = ({ recipe }) => {
   const instructions = recipe.instructions;
+  console.log(instructions);
   const steps = instructions.split("\r\n\r");
 
   return (
@@ -32,8 +33,8 @@ export const RecipePreparation = ({ recipe }) => {
         ) : (
           <Placeholder>No instructions to display</Placeholder>
         )}
-        <RecipeImage src={recipe.thumb} alt="Recipe" />
       </Description>
+      <RecipeImage src={recipe.thumb} alt={recipe.title} />
     </RecipeWrapper>
   );
 };

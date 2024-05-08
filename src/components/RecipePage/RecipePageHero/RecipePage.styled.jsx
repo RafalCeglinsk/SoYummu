@@ -86,14 +86,17 @@ export const Button = styled.button`
   align-items: center;
   @media screen and (min-width: 768px) {
     padding: 18px 44px;
+    width: 270px;
+    height: 59px;
   }
 
   & > span {
     color: var(--color-icons-1);
     font-size: 12px;
+    line-height: 0.6;
     text-align: left;
     white-space: nowrap;
-    @media screen and(min-width: 768px) {
+    @media screen and (min-width: 768px) {
       font-size: 16px;
     }
   }
