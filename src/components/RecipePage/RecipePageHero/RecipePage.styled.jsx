@@ -71,35 +71,34 @@ export const RecipeDesc = styled.div`
   }
 `;
 export const Button = styled.button`
-  margin: 24px 0px 42px 0px;
+  margin-bottom: 42px;
   background-color: transparent;
   border-radius: 15px 35px;
   padding: 10px 18px;
-  width: 150px;
-  height: 35px;
   border: solid var(--color-icons-3) 1px;
   outline: none;
   cursor: pointer;
   color: var(--color-icons-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: background-color var(--transition-time) var(--cubic);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px;
+  
   @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
+    font-size: 16px;
+    line-height: 24px;
     padding: 18px 44px;
-    width: 270px;
-    height: 59px;
+    border: solid var(--color-icons-3) 2px;
   }
+  &:hover{
+    background-color: var(--color-icons-3);
+    color: var(  --color-text-7);
+   transform: translateX(1px);
+}
 
-  & > span {
-    color: var(--color-icons-1);
-    font-size: 12px;
-    line-height: 0.6;
-    text-align: left;
-    white-space: nowrap;
-    @media screen and (min-width: 768px) {
-      font-size: 16px;
-    }
-  }
+
+
 `;
 
 export const TimeContainer = styled.div`
