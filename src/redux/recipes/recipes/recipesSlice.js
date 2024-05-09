@@ -24,6 +24,7 @@ const handleRejected = (state, action) => {
 };
 
 const initialState = {
+  ownRecipes: [],
   items: null,
   isLoading: false,
   error: null,
@@ -45,7 +46,7 @@ export const recipesSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(getMyRecipes.fulfilled, (state, { payload }) => {
-        state.items = payload;
+        state.ownRecipes = payload;
         state.isLoading = false;
         state.error = null;
       })

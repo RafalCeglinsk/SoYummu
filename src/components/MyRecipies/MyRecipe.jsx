@@ -13,7 +13,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectToken } from "../../redux/auth/selectors.js";
-import { selectRecipe } from "../../redux/recipes/recipes/selectors.js";
+import { selectOwnRecipe } from "../../redux/recipes/recipes/selectors.js";
 import {
   deleteRecipe,
   getMyRecipes,
@@ -21,7 +21,7 @@ import {
 
 export const MyRecipe = () => {
   const token = useSelector(selectToken);
-  const recipes = useSelector(selectRecipe);
+  const recipes = useSelector(selectOwnRecipe);
   console.log(recipes);
   const dispatch = useDispatch();
 
