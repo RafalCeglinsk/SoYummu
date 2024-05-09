@@ -32,7 +32,7 @@ export const favoriteSlice = createSlice({
     builder
       .addCase(getFavorites.fulfilled, (state, { payload }) => {
         state.error = null;
-        state.items = [...payload.items];
+        state.items = payload;
         state.isLoading = false;
       })
       .addCase(toggleFavorite.fulfilled, (state, { payload }) => {
