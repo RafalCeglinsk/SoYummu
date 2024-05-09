@@ -1,2 +1,2 @@
-export const selectIsFavorite = (state) => state.favorites.isFavorite;
-export const selectFavorites = (state) => state.favorites.items;
+export const selectIsFavorite = (state) => state.favorite.isFavorite;
+export const selectFavorites = (state) => state.favorite.items;

@@ -14,6 +14,7 @@ import { HomePage } from "./pages/Home";
 import Main from "./pages/Main";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import AddRecipeForm from "./components/AddRecipe/AddRecipeForm/AddRecipeForm";
+import { RecipesPage } from "./pages/RecipePage";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         />
 
         <Route path="/categories/:category" element={<CategoriesPage />} />
+        <Route path="/recipes/:recipeId" element={<RecipesPage />} />
         <Route path="/add" element={<AddRecipeForm />} />
         <Route path="/my" element={<MyRecipies />} />
         <Route path="/favorite" element={<Favorites />} />

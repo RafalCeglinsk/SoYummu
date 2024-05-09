@@ -36,17 +36,10 @@ body {
   margin: 0;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14px;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0px 16px;
-  
-  @media (min-width: 768px) {
-    padding: 0px 32px;
-  }
 
-  @media (min-width: 1440px) {
-    padding: 0px 100px;
-  }
 }
 
 code {
