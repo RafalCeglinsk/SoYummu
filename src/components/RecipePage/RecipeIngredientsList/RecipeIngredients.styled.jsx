@@ -28,13 +28,17 @@ export const HeadUl = styled.ul`
   }
   @media screen and (min-width: 1440px) {
     padding: 21px 40px;
+    font-size:24px;
+  }
+  & li:nth-child(1) {
+    width: 50%;
   }
 `;
 
 export const IngredientsListContainer = styled.div`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  padding-top: 24px;
+  padding-top: 16px;
   gap: 16px;
   @media screen and (min-width: 768px) {
     margin-top: 32px;
@@ -42,25 +46,27 @@ export const IngredientsListContainer = styled.div`
   }
   @media screen and (min-width: 1440px) {
     margin-top: 50px;
-  } */
+  }
 `;
 export const IngredientsListUl = styled.ul`
-  display: flex;
-  align-items: center;
   border-radius: 8px;
   background-color: var(--color-ingredient-bg);
-  width: 100%;
 `;
 
 export const IngredientsListLi = styled.li`
-  position: relative;
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-wrap: nowrap;
+
   justify-content: space-between;
-  & > img {
-    padding-left: 10px;
+  padding: 10px;
+  @media screen and (min-width: 768px) {
+    padding: 16px 24px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 1px 32px;
+  }
+  & img {
     width: 65px;
     height: 65px;
     @media screen and (min-width: 768px) {
@@ -72,31 +78,13 @@ export const IngredientsListLi = styled.li`
       height: 180px;
     }
   }
-  & > span {
+  & span {
     font-size: 12px;
-    font-weight: 500;
     line-height: 1.16;
     letter-spacing: -0.24px;
     @media screen and (min-width: 768px) {
       font-size: 24px;
       line-height: 1;
-    }
-    @media screen and (min-width: 1440px) {
-      width: 547px;
-    }
-  }
-  & > div {
-    padding: 4px 14px;
-    background-color: var(--color-text-5);
-    border-radius: 4px;
-    color: var(--color-text-7);
-    font-size: 10px;
-    font-weight: 600;
-    line-height: 1.5;
-
-    @media screen and (min-width: 768px) {
-      font-size: 18px;
-      line-height: 1.5;
     }
     @media screen and (min-width: 1440px) {
     }
@@ -113,9 +101,7 @@ export const IngredientsListLi = styled.li`
   label:before {
     content: "";
 
-    position: absolute;
-    top: 32%;
-    right: 5%;
+    display: flex;
     width: 18px;
     height: 18px;
     border: 2px solid var(--checkbox-color);
@@ -123,32 +109,60 @@ export const IngredientsListLi = styled.li`
     @media screen and (min-width: 768px) {
       width: 35px;
       height: 35px;
-      top: 35%;
     }
     @media screen and (min-width: 1440px) {
-      top: 37%;
     }
   }
 
   input[type="checkbox"]:checked + label:after {
     content: "";
     position: absolute;
-    top: 35%;
-    right: 6.5%;
+    top: 2px;
+    left: 7px;
     width: 6px;
     height: 12px;
     border: 1px solid var(--color-icons-3);
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
+
     @media screen and (min-width: 768px) {
-      width: 17px;
+      width: 12px;
       height: 25px;
-      top: 33%;
-      right: 6%;
+      top: 3%;
+      left: 20%;
     }
     @media screen and (min-width: 1440px) {
       right: 5.5%;
-      top: 35%;
+      top: 5%;
     }
+  }
+`;
+export const CheckBoxWrapper = styled.div`
+  display: flex;
+  position: relative;
+  padding-right: 20px;
+`;
+
+export const IngredientWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vw;
+  width: 50%;
+`;
+export const Measure = styled.span`
+  padding: 4px ;
+  background-color: var(--color-text-5);
+  border-radius: 4px;
+  color: var(--color-text-7);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+  @media screen and (min-width: 1440px) {
   }
 `;

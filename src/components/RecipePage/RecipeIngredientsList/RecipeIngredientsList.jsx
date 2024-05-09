@@ -5,6 +5,9 @@ import {
   HeadUl,
   IngredientsListUl,
   IngredientsListLi,
+  IngredientWrapper,
+  CheckBoxWrapper,
+  Measure
 } from "./RecipeIngredients.styled";
 import { addShopping } from "../../../redux/shoppingList/operations";
 
@@ -31,15 +34,20 @@ export const RecipeIngredientsList = ({ recipe }) => {
         {ingredients.map((ingredient, id) => (
           <IngredientsListUl key={id}>
             <IngredientsListLi>
-              <img src={ingredient.thb} alt={ingredient.ttl} />
-              <span>{ingredient.ttl}</span>
-              <div>{ingredient.measure}</div>
-              <input
-                type="checkbox"
-                id={`checkbox-${ingredient.ttl}`}
-                onChange={() => handleCheckbox(ingredient)}
-              />
-              <label htmlFor={`checkbox-${ingredient.ttl}`}></label>
+              <IngredientWrapper>
+                <img src={ingredient.thb} alt={ingredient.ttl} />
+                <span>{ingredient.ttl}</span>
+              </IngredientWrapper>
+
+              <Measure>{ingredient.measure}</Measure>
+              <CheckBoxWrapper>
+                <input
+                  type="checkbox"
+                  id={`checkbox-${ingredient.ttl}`}
+                  onChange={() => handleCheckbox(ingredient)}
+                />
+                <label htmlFor={`checkbox-${ingredient.ttl}`}></label>
+              </CheckBoxWrapper>
             </IngredientsListLi>
           </IngredientsListUl>
         ))}
