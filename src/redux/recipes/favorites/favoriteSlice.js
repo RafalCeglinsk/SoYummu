@@ -37,11 +37,12 @@ export const favoriteSlice = createSlice({
       })
       .addCase(toggleFavorite.fulfilled, (state, { payload }) => {
         state.error = null;
-        state.isFavorite = payload.isFavorite;
+        state.isFavorite = payload;
       })
       .addCase(removeFavorite.fulfilled, (state, { payload }) => {
         state.error = null;
         state.items = state.items.filter((item) => item.id !== payload.id);
+        state.isFavorite = false;
       })
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected)

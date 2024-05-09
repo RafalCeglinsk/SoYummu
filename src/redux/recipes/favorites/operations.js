@@ -20,9 +20,14 @@ export const getFavorites = createAsyncThunk(
 
 export const toggleFavorite = createAsyncThunk(
   "favorites/toggle",
-  async (credentials, thunkAPI) => {
+  async ({ credentials, token }, thunkAPI) => {
+    console.log(token);
     try {
-      const response = await axios.post(`/favorites/`, credentials);
+      const response = await axios.post(`/favorites`, credentials, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       return response.data;
     } catch (error) {
       console.log("Error:", error);
@@ -33,9 +38,13 @@ export const toggleFavorite = createAsyncThunk(
 
 export const removeFavorite = createAsyncThunk(
   "favorites/remove",
-  async (recipeId, thunkAPI) => {
+  async ({ recipeId, token }, thunkAPI) => {
     try {
-      const response = await axios.delete(`/favorites/${recipeId}`);
+      const response = await axios.delete(`/favorites/${recipeId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       return response.data;
     } catch (error) {
       console.log("Error:", error);
