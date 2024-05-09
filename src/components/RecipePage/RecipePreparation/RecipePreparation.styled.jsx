@@ -3,23 +3,37 @@ import styled from "styled-components";
 export const RecipeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 20px;
+  align-items: flex-start;
+  padding: 0px 16px;
+  margin-bottom: 100px;
+  @media screen and (min-width: 768px) {
+    padding: 0px 32px;
+
+    }
+
+  @media screen and (min-width: 1440px) {
+
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    }
+
 `;
 
 export const RecipeImage = styled.img`
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  border-radius: 8px;
-  margin-bottom: 100px;
-  @media screen and (min-width: 1440px) {
-  }
+object-fit: cover;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 443px;
+
+    @media screen and (min-width: 768px) {
+      width: 433px;
+      height: 332px;
+    }
 `;
 
 export const Placeholder = styled.div`
-  width: 100%;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +45,12 @@ export const Placeholder = styled.div`
 
 export const Description = styled.div`
   margin-bottom: 40px;
+  @media screen and (min-width: 1440px) {
+
+max-width:65%;
+
+}
+
 `;
 
 export const StyledOl = styled.ol`
@@ -41,13 +61,6 @@ export const StyledOl = styled.ol`
 `;
 
 export const StyledLi = styled.li`
-  display: flex;
-  list-style-type: none;
-  position: relative;
-  @media screen and (min-width: 1440px) {
-    max-width: 50%;
-  }
-
   &::before {
     content: counter(step-counter);
     position: absolute;
@@ -65,10 +78,19 @@ export const StyledLi = styled.li`
     font-weight: 600;
   }
   & > p {
-    padding-left: 51px;
-    font-size: 20px;
+    padding-left: 50px;
+    font-size: 12px;
     line-height: 1.16;
     letter-spacing: -0.2px;
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+
+    }
+
+  @media screen and (min-width: 1440px) {
+      font-size: 20px;
+
+    }
   }
 `;
 
