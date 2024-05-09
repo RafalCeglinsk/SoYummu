@@ -24,7 +24,7 @@ const handleRejected = (state, action) => {
 };
 
 const initialState = {
-  items: [],
+  items: null,
   isLoading: false,
   error: null,
 };
