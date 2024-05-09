@@ -35,7 +35,9 @@ export const getMyRecipes = createAsyncThunk(
       const response = await axios.get("/ownRecipes", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      return response;
+      const data = response.data;
+      const result = data.result;
+      return result;
     } catch (error) {
       console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);

@@ -25,7 +25,7 @@ const initialState = {
     name: null,
     email: null,
   },
-  token: persistedToken || null,
+  token: "",
   isLoggedIn: false,
   isRefreshing: false,
 };
