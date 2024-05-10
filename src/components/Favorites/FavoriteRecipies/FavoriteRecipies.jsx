@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../../../redux/auth/selectors";
 import { FavoritesElement } from "../../FavoritesElement/FavoritesElement";
 import { selectFavorites } from "../../../redux/recipes/favorites/selectors";
-import { getFavorites } from "../../../redux/recipes/favorites/operations";
+import {
+  getFavorites,
+  removeFavorite,
+  toggleFavorite,
+} from "../../../redux/recipes/favorites/operations";
 
 const FavoriteRecipes = () => {
   const dispatch = useDispatch();
@@ -14,7 +18,11 @@ const FavoriteRecipes = () => {
     dispatch(getFavorites(token));
   }, [token, dispatch]);
 
-  return <FavoritesElement recipes={favorites} />;
+  const handleDelete = (recipeId) => {
+    dispatch(removeFavorite({ token, recipeId }));
+  };
+
+  return <FavoritesElement recipes={favorites} handleDelete={handleDelete} />;
 };
 
 export default FavoriteRecipes;

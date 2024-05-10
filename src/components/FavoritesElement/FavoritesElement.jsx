@@ -13,22 +13,21 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectToken } from "../../redux/auth/selectors.js";
-import {
-  deleteRecipe,
-  getMyRecipes,
-} from "../../redux/recipes/recipes/operations.js";
+import { getMyRecipes } from "../../redux/recipes/recipes/operations.js";
+import error404 from "../../images/404/error404.jpg";
 
-export const FavoritesElement = ({ recipes }) => {
+export const FavoritesElement = ({ recipes, handleDelete }) => {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
+  console.log(recipes);
 
   useEffect(() => {
     dispatch(getMyRecipes(token));
   }, [dispatch, token]);
 
-  const handleDelete = (recipeId) => {
-    dispatch(deleteRecipe({ token, recipeId }));
-  };
+  if (recipes.lenght === 0) {
+    return <img src={error404} alt="error" />;
+  }
 
   return (
     <>
