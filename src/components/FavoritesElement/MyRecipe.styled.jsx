@@ -1,16 +1,25 @@
 import styled from 'styled-components';
 
-export const item = styled.img`
+export const PageWarpper=styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap:18px;
+  padding: 40px 16px;
   @media (min-width: 768px) {
+    padding: 40px 32px;
+    gap:40px;
   }
   @media (min-width: 1280px) {
+    padding: 50px 100px;
+    gap:50px;
   }
-`;
+`
+
 export const FavRecipeItem = styled.li`
+   background-color: var( --color-bg-modal);
   position: relative;
   display: flex;
-  padding: 14px;
-
+  padding: 14px 9px;
   border-radius: 8px;
   @media (min-width: 768px) {
     padding: 28px;
@@ -35,12 +44,7 @@ export const RecipeImageThumb = styled.div`
     height: 324px;
     margin-right: 40px;
   }
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: #22252A;
-    background-color: #22252A;
-  }
+
 `;
 export const RecipeImage = styled.img`
   max-height: 100%;
@@ -50,59 +54,50 @@ export const RecipeImage = styled.img`
     transform: scale(1.03);
   }
 `;
-export const Details = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+
 export const RecipeTitle = styled.h3`
-  max-width: 154px;
-  font-size: 14px;
+width: 80%;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.24px;
-  margin-top: 0px;
   margin-bottom: 14px;
   @media (min-width: 768px) {
-    max-width: 342px;
-    margin-bottom: 28px;
     font-size: 24px;
+    margin-bottom: 34px;
   }
-  @media (min-width: 1280px) {
-    max-width: 690px;
-    margin-bottom: 50px;
-  }
+
 `;
 export const RecipeDescription = styled.p`
   font-weight: 400;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin-right: 43px;
+  max-width: 80%;
   @media (min-width: 768px) {
     font-size: 14px;
     line-height: 1.29;
-    margin-right: 130px;
   }
   @media (min-width: 1280px) {
     font-size: 18px;
     line-height: 1.33;
-    margin-right: 164px;
   }
 `;
-export const RecipePrepTime = styled.p`
+export const RecipePrepTime = styled.div`
+display: flex;
+align-items: center;
+gap:5px;
   font-size: 10px;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.24px;
-  margin: 0;
-  margin-top: 16px;
+
   @media (min-width: 768px) {
     font-size: 14px;
-    line-height: 1.43;
   }
 `;
 export const DeleteButton = styled.button`
   position: absolute;
+  cursor: pointer;
   padding: 5px;
   top: 14px;
   right: 9px;
@@ -111,14 +106,16 @@ export const DeleteButton = styled.button`
   border: none;
   border-radius: 4px;
   transition: background-color 0.2s ease-in-out;
+  background-color: var(  --color-icons-3);
+  &:hover {
+    background-color: var( --color-text-1);
+  }
   svg {
     stroke: #FAFAFA;
     width: 100%;
     height: 100%;
   }
-  &:hover {
-    cursor: pointer;
-  }
+ 
   @media (min-width: 768px) {
     top: 28px;
     right: 24px;
@@ -141,7 +138,6 @@ export const SeeRecipeBtn = styled.button`
   border: none;
   border-radius: 24px 44px;
   cursor: pointer;
-  font-weight: 400;
   font-size: 10px;
   line-height: 1.5;
   width: 87px;
@@ -171,4 +167,5 @@ export const FavRecipeTopInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
 `;

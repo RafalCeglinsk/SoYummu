@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { IoTrashOutline } from "react-icons/io5";
+import { FaRegClock } from "react-icons/fa6";
 import {
+  PageWarpper,
   FavRecipeItem,
   RecipeImageThumb,
   RecipeImage,
@@ -30,7 +33,7 @@ export const FavoritesElement = ({ recipes, handleDelete }) => {
   }
 
   return (
-    <>
+    <PageWarpper>
       {recipes.map((recipe) => (
         <FavRecipeItem>
           <Link to={`/recipes/${recipe._id}`}>
@@ -43,14 +46,19 @@ export const FavoritesElement = ({ recipes, handleDelete }) => {
               <RecipeTitle>{recipe.title}</RecipeTitle>
               <RecipeDescription>{recipe.description}</RecipeDescription>
             </div>
-            <RecipePrepTime>{recipe.time}</RecipePrepTime>
+            <RecipePrepTime>
+              <FaRegClock />
+              {recipe.time} min
+            </RecipePrepTime>
           </FavRecipeTopInfo>
-          <DeleteButton onClick={() => handleDelete(recipe._id)}></DeleteButton>
+          <DeleteButton onClick={() => handleDelete(recipe._id)}>
+            <IoTrashOutline />
+          </DeleteButton>
           <Link to={`/recipes/${recipe._id}`}>
             <SeeRecipeBtn>See Recipe</SeeRecipeBtn>
           </Link>
         </FavRecipeItem>
       ))}
-    </>
+    </PageWarpper>
   );
 };
