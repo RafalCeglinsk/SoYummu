@@ -26,18 +26,15 @@ export const FavoritesElement = ({ recipes }) => {
     dispatch(getMyRecipes(token));
   }, [dispatch, token]);
 
-  const onDelete = (id) => {
-    dispatch(deleteRecipe(id, token));
+  const handleDelete = (recipeId) => {
+    dispatch(deleteRecipe({ token, recipeId }));
   };
 
-  if (!recipes) {
-    return null;
-  }
   return (
     <>
       {recipes.map((recipe) => (
         <FavRecipeItem>
-          <Link to={`/recipe/${recipe._id}`}>
+          <Link to={`/recipes/${recipe._id}`}>
             <RecipeImageThumb>
               <RecipeImage src={recipe.thumb} alt={recipe.title} />
             </RecipeImageThumb>
@@ -49,7 +46,7 @@ export const FavoritesElement = ({ recipes }) => {
             </div>
             <RecipePrepTime>{recipe.time}</RecipePrepTime>
           </FavRecipeTopInfo>
-          <DeleteButton onClick={() => onDelete(recipe._id)}></DeleteButton>
+          <DeleteButton onClick={() => handleDelete(recipe._id)}></DeleteButton>
           <Link to={`/recipes/${recipe._id}`}>
             <SeeRecipeBtn>See Recipe</SeeRecipeBtn>
           </Link>
