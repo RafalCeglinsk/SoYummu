@@ -1,13 +1,13 @@
-import { PageTitle } from "../components/PageTitle/PageTitle";
-import Footer from "../components/Footer/Footer";
-function ShoppingList() {
-    return (
-      <div >
-        <PageTitle>Shopping List </PageTitle>
-  <p>****************************THIS IS ShoppingList PAGE </p>
-  <Footer/>
-      </div>
-    );
-  }
-  
-  export default ShoppingList;
+import { PageTitle } from "../components/PageTitle/PageTitle.jsx";
+import IngredientsShoppingList from "../components/IndegredientsShoppingList/IndegredientsShoppingList.jsx";
+
+const ShoppingList = () => {
+  return (
+    <>
+      <PageTitle>Shopping List</PageTitle>
+      <IngredientsShoppingList />
+    </>
+  );
+};
+
+export default ShoppingList;

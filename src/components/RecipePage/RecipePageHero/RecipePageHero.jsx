@@ -2,7 +2,6 @@ import { AddButton } from "./button";
 import {
   HeroWrapper,
   RecipeTitle,
-  RecipeTitleDiv,
   RecipeDesc,
   TimeContainer,
   TimerP,

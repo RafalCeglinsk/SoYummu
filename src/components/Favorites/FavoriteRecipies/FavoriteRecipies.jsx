@@ -6,7 +6,6 @@ import { selectFavorites } from "../../../redux/recipes/favorites/selectors";
 import {
   getFavorites,
   removeFavorite,
-  toggleFavorite,
 } from "../../../redux/recipes/favorites/operations";
 
 const FavoriteRecipes = () => {
