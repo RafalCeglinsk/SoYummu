@@ -2,6 +2,14 @@ import styled from "styled-components";
 
 export const Title = styled.div`
 margin-bottom: 40px;
+padding:0px 16px;
+@media screen and (min-width: 768px) {
+  padding:0px 32px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding:0px 100px;
+    }
+
 
   & h2 {
     font-weight: 600;

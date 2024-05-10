@@ -10,7 +10,7 @@ export const FavRecipeItem = styled.li`
   position: relative;
   display: flex;
   padding: 14px;
-  width: 100%;
+
   border-radius: 8px;
   @media (min-width: 768px) {
     padding: 28px;
