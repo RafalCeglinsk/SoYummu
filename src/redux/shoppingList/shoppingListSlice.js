@@ -41,7 +41,7 @@ const shoppingSlice = createSlice({
       .addCase(deleteShopping.fulfilled, (state, action) => {
         state.isLoading = false;
         state.shoppingList = state.shoppingList.filter(
-          (item) => item.id !== action.payload
+          (item) => item.ingredientId._id !== action.payload.id
         );
       })
       .addMatcher(isPendingAction, handlePending)

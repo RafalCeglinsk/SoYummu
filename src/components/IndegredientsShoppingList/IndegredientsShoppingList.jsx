@@ -36,10 +36,9 @@ const IngredientsShoppingList = () => {
 
   const deleteButton = (item) => {
     const credentials = {
-      ingredientId: item.ingredientId._id,
+      id: item.ingredientId._id,
       measure: item.measure,
     };
-
     dispatch(deleteShopping({ token, ...credentials }));
   };
   return (
