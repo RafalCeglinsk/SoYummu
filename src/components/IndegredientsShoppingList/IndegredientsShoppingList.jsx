@@ -76,34 +76,36 @@ const IngredientsShoppingList = () => {
             ) : (
               <>
                 {shoppingItems.map((item) => {
-                  console.log(item);
-                  return (
-                    <StyledIngridientsItem key={item._id}>
-                      <StyledImageCardThumb>
-                        <StyledImage
-                          src={item.ingredientId.thb}
-                          alt={item.ingredientId.desc}
-                          height="60"
-                        />
-                        <p>{item.ttl}</p>
-                      </StyledImageCardThumb>
-                      <StyledFlexQuantity>
-                        <StyledFlexRow>
-                          {item.measure &&
-                            item.measure.split("/r/n").map((el, index) => (
-                              <StyledQuantity key={index}>
-                                <p>{el}</p>
-                                <StyledCloseIcon
-                                  onClick={() => deleteButton(item)}
-                                >
-                                  Delete
-                                </StyledCloseIcon>
-                              </StyledQuantity>
-                            ))}
-                        </StyledFlexRow>
-                      </StyledFlexQuantity>
-                    </StyledIngridientsItem>
-                  );
+                  if (item && item.ingredientId) {
+                    return (
+                      <StyledIngridientsItem key={item.ingredientId._id}>
+                        <StyledImageCardThumb>
+                          <StyledImage
+                            src={item.ingredientId.thb}
+                            alt={item.ingredientId.desc}
+                            height="60"
+                          />
+                          <p>{item.ttl}</p>
+                        </StyledImageCardThumb>
+                        <StyledFlexQuantity>
+                          <StyledFlexRow>
+                            (
+                            <StyledQuantity>
+                              <p>{item.measure}</p>
+                              <StyledCloseIcon
+                                onClick={() => deleteButton(item)}
+                              >
+                                Delete
+                              </StyledCloseIcon>
+                            </StyledQuantity>
+                            )
+                          </StyledFlexRow>
+                        </StyledFlexQuantity>
+                      </StyledIngridientsItem>
+                    );
+                  } else {
+                    return null;
+                  }
                 })}
               </>
             )}
