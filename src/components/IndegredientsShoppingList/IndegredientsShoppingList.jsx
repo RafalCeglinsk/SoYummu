@@ -21,22 +21,27 @@ import {
 } from "../../redux/shoppingList/operations.js";
 import vegetableBasket from "../../images/IndegredientsShoppingList/vegetableBasket.jpg";
 import vegetableBasket2x from "../../images/IndegredientsShoppingList/vegetableBasket2x.jpg";
+import { selectToken } from "../../redux/auth/selectors.js";
+import { selectShoppingList } from "../../redux/shoppingList/selectors.js";
 
 const IngredientsShoppingList = () => {
-  const { token } = useSelector((state) => state.auth);
-  const shoppingItems = useSelector((state) => {
-    return state.shopping.items;
-  });
+  const token = useSelector(selectToken);
+  const shoppingItems = useSelector(selectShoppingList);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getShopping(token));
   }, [token, dispatch]);
 
-  const deleteButton = (id) => {
-    dispatch(deleteShopping(id));
-  };
+  const deleteButton = (item) => {
+    const credentials = {
+      ingredientId: item.ingredientId._id,
+      measure: item.measure,
+    };
 
+    dispatch(deleteShopping({ token, ...credentials }));
+  };
   return (
     <StyledIngridientsContainer>
       {shoppingItems.isLoading ? null : (
@@ -71,14 +76,16 @@ const IngredientsShoppingList = () => {
             ) : (
               <>
                 {shoppingItems.map((item) => {
-                  const id = item.ingredientId._id;
-                  const ttl = item.ingredientId.ttl;
-                  const thb = item.ingredientId.thb;
+                  console.log(item);
                   return (
-                    <StyledIngridientsItem key={item}>
+                    <StyledIngridientsItem key={item._id}>
                       <StyledImageCardThumb>
-                        <StyledImage src={thb} alt={item.desc} height="60" />
-                        <p>{ttl}</p>
+                        <StyledImage
+                          src={item.ingredientId.thb}
+                          alt={item.ingredientId.desc}
+                          height="60"
+                        />
+                        <p>{item.ttl}</p>
                       </StyledImageCardThumb>
                       <StyledFlexQuantity>
                         <StyledFlexRow>
@@ -87,7 +94,7 @@ const IngredientsShoppingList = () => {
                               <StyledQuantity key={index}>
                                 <p>{el}</p>
                                 <StyledCloseIcon
-                                  onClick={() => deleteButton(id)}
+                                  onClick={() => deleteButton(item)}
                                 >
                                   Delete
                                 </StyledCloseIcon>

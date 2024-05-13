@@ -4,12 +4,15 @@ import axios from "axios";
 
 export const deleteShopping = createAsyncThunk(
   "shopping/delete",
-  async ({ id, token }, thunkAPI) => {
+  async ({ token, ingredientId, measure }, thunkAPI) => {
     try {
-      const response = await axios.delete(`/shopping-lists/${id}`, {
+      const response = await axios.delete(`/shopping-lists/${ingredientId}`, {
         headers: { Authorization: `Bearer ${token}` },
+        params: {
+          measure,
+        },
       });
-      return response;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectedWithValue(error.message);
     }
