@@ -51,9 +51,9 @@ export const recipesSlice = createSlice({
         state.error = null;
       })
       .addCase(deleteRecipe.fulfilled, (state, { payload }) => {
-        state.ownRecipes = state.ownRecipes.filter(
-          (item) => item.id !== payload.id
-        );
+        state.ownRecipes = state.ownRecipes.filter((item) => {
+          return item._id !== payload._id;
+        });
         state.isLoading = false;
         state.error = null;
       })
