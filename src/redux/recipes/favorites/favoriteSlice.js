@@ -19,7 +19,6 @@ const handleRejected = (state, action) => {
 };
 
 const initialState = {
-  isFavorite: false,
   error: null,
   isLoading: false,
   items: [],
@@ -31,18 +30,19 @@ export const favoriteSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getFavorites.fulfilled, (state, { payload }) => {
+        console.log(payload);
         state.error = null;
         state.items = payload;
         state.isLoading = false;
       })
       .addCase(toggleFavorite.fulfilled, (state, { payload }) => {
+        const id = payload.result._id;
+        state.items = [...state.items, id];
         state.error = null;
-        state.isFavorite = payload;
       })
       .addCase(removeFavorite.fulfilled, (state, { payload }) => {
         state.error = null;
-        state.items = state.items.filter((item) => item.id !== payload.id);
-        state.isFavorite = false;
+        state.items = state.items.filter((item) => item.id !== payload._id);
       })
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected)

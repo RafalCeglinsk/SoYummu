@@ -6,13 +6,13 @@ import { selectFavorites } from "../../../redux/recipes/favorites/selectors";
 import {
   getFavorites,
   removeFavorite,
-  toggleFavorite,
 } from "../../../redux/recipes/favorites/operations";
 
 const FavoriteRecipes = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const favorites = useSelector(selectFavorites);
+  console.log(favorites);
 
   useEffect(() => {
     dispatch(getFavorites(token));

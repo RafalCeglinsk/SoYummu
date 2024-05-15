@@ -21,7 +21,6 @@ export const getFavorites = createAsyncThunk(
 export const toggleFavorite = createAsyncThunk(
   "favorites/toggle",
   async ({ credentials, token }, thunkAPI) => {
-    console.log(token);
     try {
       const response = await axios.post(`/favorites`, credentials, {
         headers: {

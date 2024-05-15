@@ -22,7 +22,6 @@ import error404 from "../../images/404/error404.jpg";
 export const FavoritesElement = ({ recipes, handleDelete }) => {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
-  console.log(recipes);
 
   useEffect(() => {
     dispatch(getMyRecipes(token));
@@ -35,7 +34,7 @@ export const FavoritesElement = ({ recipes, handleDelete }) => {
   return (
     <PageWarpper>
       {recipes.map((recipe) => (
-        <FavRecipeItem>
+        <FavRecipeItem key={recipe._id}>
           <Link to={`/recipes/${recipe._id}`}>
             <RecipeImageThumb>
               <RecipeImage src={recipe.thumb} alt={recipe.title} />

@@ -11,7 +11,6 @@ import {
 
 export const RecipePreparation = ({ recipe }) => {
   const instructions = recipe.instructions;
-  console.log(instructions);
   const steps = instructions.split("\r\n\r");
 
   return (
