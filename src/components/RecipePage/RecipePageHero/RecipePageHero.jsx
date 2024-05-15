@@ -12,10 +12,9 @@ import { Clock } from "../../RenderSvg/RenderSvg";
 export const RecipePageHero = ({ recipe }) => {
   return (
     <HeroWrapper>
-
-        <RecipeTitle>{recipe.title}</RecipeTitle>
-        <RecipeDesc>{recipe.description}</RecipeDesc>
-        <AddButton recipe={recipe} />
+      <RecipeTitle>{recipe.title}</RecipeTitle>
+      <RecipeDesc>{recipe.description}</RecipeDesc>
+      <AddButton recipe={recipe} />
 
       <TimeContainer>
         <Clock />

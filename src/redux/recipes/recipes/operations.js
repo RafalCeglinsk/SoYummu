@@ -35,7 +35,9 @@ export const getMyRecipes = createAsyncThunk(
       const response = await axios.get("/ownRecipes", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      return response;
+      const data = response.data;
+      const result = data.result;
+      return result;
     } catch (error) {
       console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
@@ -45,10 +47,12 @@ export const getMyRecipes = createAsyncThunk(
 
 export const deleteRecipe = createAsyncThunk(
   "recipes/delete",
-  async (recipeId, thunkAPI) => {
+  async ({ recipeId, token }, thunkAPI) => {
     try {
-      const response = await axios.delete(`/ownRecipes/${recipeId}`);
-      return response.data;
+      const response = await axios.delete(`/ownRecipes/${recipeId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      return { data: response.data, _id: recipeId };
     } catch (error) {
       console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);

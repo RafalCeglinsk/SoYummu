@@ -1,15 +1,13 @@
-import { PageTitle } from "../components/PageTitle/PageTitle";
 import Footer from "../components/Footer/Footer";
-function MyRecipies() {
-    return (
-      <div >
-        <PageTitle>My Recipies</PageTitle>
+import { MyRecipe } from "../components/MyRecipies/MyRecipe";
+import { PageTitle } from "../components/PageTitle/PageTitle";
 
-  <p> ******* THIS IS MyRecipies PAGE ********** </p>
-
-    <Footer/>
-      </div>
-    );
-  }
-  
-  export default MyRecipies;
+export const MyRecipePage = () => {
+  return (
+    <div>
+      <PageTitle>My Recipes</PageTitle>
+      <MyRecipe />
+      <Footer />
+    </div>
+  );
+};

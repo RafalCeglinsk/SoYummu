@@ -2,11 +2,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import { Header } from "./components/Header/Header";
 import CategoriesPage from "./pages/CategoriesPage";
-import AddRecipes from "./pages/AddRecipes";
-import MyRecipies from "./pages/MyRecipies";
+import { MyRecipePage } from "./pages/MyRecipies";
 import Favorites from "./pages/Favorites";
 import ShoppingList from "./pages/ShoppingList";
-
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
@@ -43,7 +41,7 @@ function App() {
         <Route path="/categories/:category" element={<CategoriesPage />} />
         <Route path="/recipes/:recipeId" element={<RecipesPage />} />
         <Route path="/add" element={<AddRecipeForm />} />
-        <Route path="/my" element={<MyRecipies />} />
+        <Route path="/my" element={<MyRecipePage />} />
         <Route path="/favorite" element={<Favorites />} />
         <Route path="/shoppingList" element={<ShoppingList />} />
         <Route path="/search?" element={<SearchPage />} />
