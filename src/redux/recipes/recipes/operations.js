@@ -52,7 +52,7 @@ export const deleteRecipe = createAsyncThunk(
       const response = await axios.delete(`/ownRecipes/${recipeId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      return response.data;
+      return { data: response.data, _id: recipeId };
     } catch (error) {
       console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);

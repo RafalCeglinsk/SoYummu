@@ -42,7 +42,9 @@ export const favoriteSlice = createSlice({
       })
       .addCase(removeFavorite.fulfilled, (state, { payload }) => {
         state.error = null;
-        state.items = state.items.filter((item) => item.id !== payload._id);
+        state.items = state.items.filter((item) => {
+          return item._id !== payload._id;
+        });
       })
       .addMatcher(isPendingAction, handlePending)
       .addMatcher(isRejectAction, handleRejected)

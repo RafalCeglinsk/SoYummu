@@ -44,7 +44,7 @@ export const removeFavorite = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       });
-      return response.data;
+      return { data: response.data, _id: recipeId };
     } catch (error) {
       console.log("Error:", error);
       return thunkAPI.rejectWithValue(error.response.data);

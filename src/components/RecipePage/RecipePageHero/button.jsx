@@ -1,9 +1,6 @@
 import { Button } from "./RecipePage.styled";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectFavorites,
-  selectIsFavorite,
-} from "../../../redux/recipes/favorites/selectors";
+import { selectIsFavorite } from "../../../redux/recipes/favorites/selectors";
 import {
   removeFavorite,
   toggleFavorite,

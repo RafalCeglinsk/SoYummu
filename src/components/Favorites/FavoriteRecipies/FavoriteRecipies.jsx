@@ -12,7 +12,6 @@ const FavoriteRecipes = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const favorites = useSelector(selectFavorites);
-  console.log(favorites);
 
   useEffect(() => {
     dispatch(getFavorites(token));

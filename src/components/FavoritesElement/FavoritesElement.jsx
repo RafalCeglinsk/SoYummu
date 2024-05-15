@@ -13,24 +13,8 @@ import {
   SeeRecipeBtn,
   FavRecipeTopInfo,
 } from "./MyRecipe.styled.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { selectToken } from "../../redux/auth/selectors.js";
-import { getMyRecipes } from "../../redux/recipes/recipes/operations.js";
-import error404 from "../../images/404/error404.jpg";
 
 export const FavoritesElement = ({ recipes, handleDelete }) => {
-  const token = useSelector(selectToken);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMyRecipes(token));
-  }, [dispatch, token]);
-
-  if (recipes.lenght === 0) {
-    return <img src={error404} alt="error" />;
-  }
-
   return (
     <PageWarpper>
       {recipes.map((recipe) => (
