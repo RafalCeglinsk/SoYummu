@@ -87,7 +87,7 @@ const IngredientsShoppingList = () => {
                           <p>{item.ingredientId.ttl}</p>
                         </StyledImageCardThumb>
                         <StyledFlexQuantity>
-                          <StyledFlexRow>
+                  
                             
                             <StyledQuantity>
                               <p>{item.measure}</p>
@@ -98,7 +98,7 @@ const IngredientsShoppingList = () => {
                               </StyledCloseIcon>
             
                             
-                          </StyledFlexRow>
+              
                         </StyledFlexQuantity>
                       </StyledIngridientsItem>
                     );
