@@ -105,14 +105,14 @@ const StyledImage = styled.img`
   }
 `;
 
-const StyledQuantity = styled.div`
+const StyledQuantity = styled.p`
   display: flex;
-  padding-left: 2px;
-  padding-right: 2px;
+ padding: 3px;
   justify-content: center;
   align-items: center;
   min-width: 37px;
-  height: 23px;
+  max-width: 45%;
+  height: fit-content;
   margin-bottom: 4px;
   color: #fafafa;
   font-size: 10px;
@@ -122,8 +122,7 @@ const StyledQuantity = styled.div`
   background-color: #8baa36;
   border-radius: 8px;
   @media (min-width: 768px) {
-    min-width: 68px;
-    height: 35px;
+   padding: 10px;
     font-size: 18px;
   }
 `;
