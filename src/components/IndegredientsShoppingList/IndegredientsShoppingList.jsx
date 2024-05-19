@@ -47,7 +47,7 @@ const IngredientsShoppingList = () => {
         <>
           {shoppingItems.length > 0 && (
             <StyledIngridientsHeader>
-              <h3>Product</h3>
+              <p>Product</p>
               <StyledIngrsHeadThumb>
                 <p>Number</p>
                 <p>Remove</p>
