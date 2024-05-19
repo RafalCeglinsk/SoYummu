@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SectionWrapper } from "./RecipeIngredients.styled";
 import {
   IngredientsListContainer,
@@ -7,12 +7,14 @@ import {
   IngredientsListLi,
   IngredientWrapper,
   CheckBoxWrapper,
-  Measure
+  Measure,
 } from "./RecipeIngredients.styled";
 import { addShopping } from "../../../redux/shoppingList/operations";
+import { selectToken } from "../../../redux/auth/selectors";
 
 export const RecipeIngredientsList = ({ recipe }) => {
   const ingredients = recipe.ingredients;
+  const token = useSelector(selectToken);
   const dispatch = useDispatch();
   const handleCheckbox = (ingredient) => {
     const credentials = {
@@ -20,7 +22,7 @@ export const RecipeIngredientsList = ({ recipe }) => {
       recipeId: recipe._id,
       measure: ingredient.measure,
     };
-    dispatch(addShopping(credentials));
+    dispatch(addShopping({ credentials, token }));
   };
   return (
     <SectionWrapper>

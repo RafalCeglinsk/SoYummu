@@ -4,13 +4,17 @@ import axios from "axios";
 
 export const deleteShopping = createAsyncThunk(
   "shopping/delete",
-  async (id) => {
+  async ({ token, id, measure }, thunkAPI) => {
     try {
-      const response = await axios.delete(`/shopping-lists/${id}`);
-      return response;
+      const response = await axios.delete(`/shopping-lists/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+        params: {
+          measure,
+        },
+      });
+      return { id: id, data: response.data };
     } catch (error) {
-      console.log(error.message);
-      throw error;
+      return thunkAPI.rejectedWithValue(error.message);
     }
   }
 );
@@ -34,12 +38,15 @@ export const getShopping = createAsyncThunk(
 
 export const addShopping = createAsyncThunk(
   "addShopping/post",
-  async (credentials) => {
+  async ({ credentials, token }, thunkAPI) => {
     try {
-      const result = await axios.post("/shopping-lists", credentials);
+      const result = await axios.post("/shopping-lists", credentials, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      console.log(result);
       return result.data;
     } catch (error) {
-      console.log(error.message);
+      return thunkAPI.rejectedWithValue(error.message);
     }
   }
 );
