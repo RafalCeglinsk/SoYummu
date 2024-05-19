@@ -84,20 +84,20 @@ const IngredientsShoppingList = () => {
                             alt={item.ingredientId.desc}
                             height="60"
                           />
-                          <p>{item.ttl}</p>
+                          <p>{item.ingredientId.ttl}</p>
                         </StyledImageCardThumb>
                         <StyledFlexQuantity>
                           <StyledFlexRow>
-                            (
+                            
                             <StyledQuantity>
                               <p>{item.measure}</p>
+                              </StyledQuantity>
                               <StyledCloseIcon
                                 onClick={() => deleteButton(item)}
                               >
-                                Delete
                               </StyledCloseIcon>
-                            </StyledQuantity>
-                            )
+            
+                            
                           </StyledFlexRow>
                         </StyledFlexQuantity>
                       </StyledIngridientsItem>
