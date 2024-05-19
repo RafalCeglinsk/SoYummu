@@ -15,7 +15,7 @@ const EmptyStyled = styled.p `
       letter-spacing: -0.28px;
    }
 
-   @media screen and (min-width: 1280px) {
+   @media screen and (min-width: 1440px) {
       font-size: 18px;
       line-height: 24px;
       letter-spacing: -0.36px;
@@ -35,7 +35,7 @@ const PictrueContainerStyled = styled.div`
 
 const StyledListContainerIngridient = styled.ul`
    padding: 0;
-   @media (min-width: 1280px) {
+   @media (min-width: 1440px) {
       padding: 0 40px;
    }
 `;
@@ -73,7 +73,7 @@ const StyledIngridientsHeader = styled.div`
       margin-bottom: 50px;
       padding: 20px;
    }
-   @media (min-width: 1280px) {
+   @media (min-width: 1440px) {
       min-width: 1216px;
       max-width: 1280px;
       padding: 21px 40px;
@@ -89,7 +89,7 @@ const StyledIngrsHeadThumb = styled.div`
    @media (min-width: 768px) {
       min-width: 231px;
    }
-   @media (min-width: 1280px) {
+   @media (min-width: 1440px) {
       min-width: 294px;
    }
 `;
@@ -105,7 +105,7 @@ const StyledImageCardThumb = styled.div`
       font-size: 16px;
       line-height: 1.5;
    }
-   @media (min-width: 1280px) {
+   @media (min-width: 1440px) {
       line-height: 1.5;
    }
    & p {
@@ -151,7 +151,7 @@ const StyledFlexQuantity = styled.div`
    @media (min-width: 768px) {
       min-width: 198px;
    }
-   @media (min-width: 1280px) {
+   @media (min-width: 1440px) {
       min-width: 262px;
    }
 `;
@@ -168,7 +168,7 @@ const StyledIngridientsItem = styled.li`
       margin-bottom: 44px;
       height: 140px;
    }
-   @media (min-width: 1280px) {
+   @media (min-width: 1440px) {
       padding-right: 28px;
    }
 `;
