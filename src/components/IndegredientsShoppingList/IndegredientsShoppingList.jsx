@@ -90,7 +90,7 @@ const IngredientsShoppingList = () => {
                   
                             
                             <StyledQuantity>
-                              <p>{item.measure}</p>
+                        {item.measure}
                               </StyledQuantity>
                               <StyledCloseIcon
                                 onClick={() => deleteButton(item)}
