@@ -41,7 +41,6 @@ const StyledListContainerIngridient = styled.ul`
 `;
 
 const StyledIngridientsContainer = styled.div`
-   width: 100%;
    padding-top: 50px;
 
    @media (min-width: 768px) {
@@ -56,12 +55,12 @@ const StyledIngridientsHeader = styled.div`
    margin-bottom: 32px;
    border-radius: 8px;
 
-   color: var(--text-light);
+   color: var(--color-text-7);
    font-size: 12px;
    font-style: normal;
    font-weight: 600;
    line-height: 1.5;
-   background-color: var(--button-background-primary);
+   background-color: var(  --color-icons-3);
 
    & div {
       display: flex;
@@ -74,8 +73,6 @@ const StyledIngridientsHeader = styled.div`
       padding: 20px;
    }
    @media (min-width: 1440px) {
-      min-width: 1216px;
-      max-width: 1280px;
       padding: 21px 40px;
       line-height: normal;
       letter-spacing: 0.54px;
@@ -174,11 +171,7 @@ const StyledIngridientsItem = styled.li`
 `;
 
 
-const StyledFlexRow = styled.div`
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-`;
+
 
 const StyledCloseIcon = styled(MdClear)`
    width: 20px;
@@ -197,7 +190,7 @@ const StyledCloseIcon = styled(MdClear)`
 `;
 
 export {
-   StyledFlexRow,
+
    StyledIngridientsHeader,
    StyledIngridientsItem,
    StyledIngrsHeadThumb,
