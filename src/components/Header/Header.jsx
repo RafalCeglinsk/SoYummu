@@ -47,8 +47,7 @@ export const Header = () => {
             </NavContainer>
 
             <UserInfo onClick={toggleUserModal}>
-              {/* <UserName>{user.name}</UserName> */}
-   <UserName>Rafał,jak tu się dobrać do  user.name </UserName>
+              <UserName>{user.name}</UserName>
               {isUserModalOpen && <UserLogoutModal />}
             </UserInfo>
 
