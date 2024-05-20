@@ -47,15 +47,12 @@ const StyledIngridientsContainer = styled.div`
 const StyledIngridientsHeader = styled.div`
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   padding: 10px;
   margin-bottom: 32px;
   border-radius: 8px;
-
   color: var(--color-text-7);
   font-size: 12px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.5;
   background-color: var(--color-icons-3);
@@ -74,9 +71,14 @@ const StyledIngridientsHeader = styled.div`
 `;
 const StyledIngrsHeadThumb = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  width: 25%;
+  width: 35%;
+  @media (min-width: 1440px) {
+    width: 40%;
+  }
 `;
 const StyledImageCardThumb = styled.div`
   color: var(--color-text-2);
@@ -107,11 +109,11 @@ const StyledImage = styled.img`
 
 const StyledQuantity = styled.p`
   display: flex;
- padding: 3px;
+  padding: 3px;
   justify-content: center;
   align-items: center;
   min-width: 37px;
-  max-width: 45%;
+  max-width: 20%;
   height: fit-content;
   margin-bottom: 4px;
   color: #fafafa;
@@ -122,14 +124,21 @@ const StyledQuantity = styled.p`
   background-color: #8baa36;
   border-radius: 8px;
   @media (min-width: 768px) {
-   padding: 10px;
+    padding: 10px;
     font-size: 18px;
+  }
+  @media (min-width: 1440px) {
+    max-width: 40%;
   }
 `;
 const StyledFlexQuantity = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 25%;
+  justify-content: space-between;
+  width: 35%;
+  padding-right: 1%;
+  @media (min-width: 1440px) {
+    width: 40%;
+  }
 `;
 
 const StyledIngridientsItem = styled.li`
