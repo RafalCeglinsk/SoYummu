@@ -8,7 +8,6 @@ import {
   StyledImageCardThumb,
   StyledImage,
   StyledQuantity,
-  StyledFlexRow,
   StyledFlexQuantity,
   StyledListContainerIngridient,
   EmptyStyled,
@@ -87,18 +86,10 @@ const IngredientsShoppingList = () => {
                           <p>{item.ingredientId.ttl}</p>
                         </StyledImageCardThumb>
                         <StyledFlexQuantity>
-                  
-                            
-                            <StyledQuantity>
-                        {item.measure}
-                              </StyledQuantity>
-                              <StyledCloseIcon
-                                onClick={() => deleteButton(item)}
-                              >
-                              </StyledCloseIcon>
-            
-                            
-              
+                          <StyledQuantity>{item.measure}</StyledQuantity>
+                          <StyledCloseIcon
+                            onClick={() => deleteButton(item)}
+                          ></StyledCloseIcon>
                         </StyledFlexQuantity>
                       </StyledIngridientsItem>
                     );
