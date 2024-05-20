@@ -8,7 +8,6 @@ import {
   StyledImageCardThumb,
   StyledImage,
   StyledQuantity,
-  StyledFlexRow,
   StyledFlexQuantity,
   StyledListContainerIngridient,
   EmptyStyled,
@@ -47,7 +46,7 @@ const IngredientsShoppingList = () => {
         <>
           {shoppingItems.length > 0 && (
             <StyledIngridientsHeader>
-              <h3>Product</h3>
+              <p>Product</p>
               <StyledIngrsHeadThumb>
                 <p>Number</p>
                 <p>Remove</p>
@@ -84,21 +83,13 @@ const IngredientsShoppingList = () => {
                             alt={item.ingredientId.desc}
                             height="60"
                           />
-                          <p>{item.ttl}</p>
+                          <p>{item.ingredientId.ttl}</p>
                         </StyledImageCardThumb>
                         <StyledFlexQuantity>
-                          <StyledFlexRow>
-                            (
-                            <StyledQuantity>
-                              <p>{item.measure}</p>
-                              <StyledCloseIcon
-                                onClick={() => deleteButton(item)}
-                              >
-                                Delete
-                              </StyledCloseIcon>
-                            </StyledQuantity>
-                            )
-                          </StyledFlexRow>
+                          <StyledQuantity>{item.measure}</StyledQuantity>
+                          <StyledCloseIcon
+                            onClick={() => deleteButton(item)}
+                          ></StyledCloseIcon>
                         </StyledFlexQuantity>
                       </StyledIngridientsItem>
                     );
