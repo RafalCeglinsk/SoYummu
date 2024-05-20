@@ -33,7 +33,10 @@ function App() {
           }
         />
         <Route path="/" element={<ShareedLayout />}>
-          <Route path="/main" element={<Main />} />
+          <Route
+            path="/main"
+            element={<PrivateRoute redirectTo="/" component={<Main />} />}
+          />
           <Route
             path="/categories"
             element={
