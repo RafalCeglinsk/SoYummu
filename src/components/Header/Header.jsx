@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 import { StartLogoBig } from "../RenderSvg/RenderSvg";
 import { HamburgerMenu } from "./Hamburger/Hamburger";
@@ -21,6 +22,8 @@ export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isUserModalOpen, setUserModalOpen] = useState(false);
   const location = useLocation();
+
+  const { user } = useAuth();
 
   const toggleBurgerMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -44,8 +47,8 @@ export const Header = () => {
             </NavContainer>
 
             <UserInfo onClick={toggleUserModal}>
-              <UserName>user.name</UserName>
-
+              {/* <UserName>{user.name}</UserName> */}
+   <UserName>Rafał,jak tu się dobrać do  user.name </UserName>
               {isUserModalOpen && <UserLogoutModal />}
             </UserInfo>
 
