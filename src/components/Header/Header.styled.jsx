@@ -57,3 +57,17 @@ export const CloseButton = styled.div`
   }
 
 `
+export const UserInfo =styled.div`
+  cursor: pointer;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  position: relative;
+`
+export const UserName = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+`;
