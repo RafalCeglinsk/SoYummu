@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Notiflix from "notiflix";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
@@ -16,10 +17,12 @@ export const register = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post("/auth/register", credentials);
-      const token = response.data.RequestBody["Current token"];
-      setAuthHeader(token);
-      return response.data.RequestBody;
+      return response.data.ResponseBody;
     } catch (error) {
+      if (error.response && error.response.status === 409) {
+        Notiflix.Notify.failure("User already registered");
+        return thunkAPI.rejectWithValue("User already registered");
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -36,6 +39,7 @@ export const login = createAsyncThunk(
       setAuthHeader(token);
       return { user, token };
     } catch (error) {
+      Notiflix.Notify.failure("Invalid email or password");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -45,6 +49,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
     await axios.post("/auth/logout");
     clearAuthHeader();
+    Notiflix.Notify.success("Logged out successfully");
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }

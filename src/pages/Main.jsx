@@ -3,13 +3,10 @@ import { MainPage } from "../components/MainPageHero/MainPage";
 import SearchBar from "../components/SearchPage/SearchBar/SearchBar";
 import { MainGallery } from "../components/MainPageHero/PreviewCategories/MainGallery";
 import { MainContainer } from "../components/Footer/Footer.styled";
-// import Footer from "../components/footer/footer";
 import { CurvedButtonMain } from "../components/Buttons/CurvedButton";
 
 import { MainWrapper } from "../components/MainPageHero/MainPage.styled";
 import { SbMobileStyle } from "../components/MainPageHero/MainPage.styled";
-
-import Footer from "../components/Footer/Footer";
 
 const Main = () => {
   return (
@@ -26,7 +23,6 @@ const Main = () => {
           </Link>
         </MainWrapper>
       </MainContainer>
-      <Footer />
     </>
   );
 };

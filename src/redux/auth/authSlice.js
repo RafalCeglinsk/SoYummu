@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { register, login, logout, refreshUser } from "./operations";
 
-const persistedToken = localStorage.getItem("auth:token");
-
 const isPendingAction = (action) => {
   return action.type.endsWith("/pending");
 };
@@ -38,7 +36,6 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLoggedIn = true;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
