@@ -14,14 +14,20 @@ import {
   FavRecipeTopInfo,
 } from "./MyRecipe.styled.jsx";
 
-export const FavoritesElement = ({ recipes, handleDelete }) => {
+export const FavoritesElement = ({
+  recipes,
+  handleDelete,
+  handlePrev,
+  handleNext,
+  currentPage,
+  recipesPerPage,
+}) => {
   return (
     <>
       <PageWarpper>
         {recipes.map((recipe) => (
           <div key={recipe._id}>
             {" "}
-            {/* Wrap the elements with a parent div */}
             <FavRecipeItem>
               <Link to={`/recipes/${recipe._id}`}>
                 <RecipeImageThumb>
@@ -48,6 +54,12 @@ export const FavoritesElement = ({ recipes, handleDelete }) => {
           </div>
         ))}
       </PageWarpper>
+      <button onClick={handlePrev} disabled={currentPage === 1}>
+        Prev
+      </button>
+      <button onClick={handleNext} disabled={recipes.length < recipesPerPage}>
+        Next
+      </button>
     </>
   );
 };

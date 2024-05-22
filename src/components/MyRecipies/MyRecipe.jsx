@@ -1,47 +1,31 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { selectToken } from "../../redux/auth/selectors.js";
-import { selectOwnRecipe } from "../../redux/recipes/recipes/selectors.js";
+import { useRecipePagination } from "../../hooks/useRecipePagination";
 import {
   deleteRecipe,
   getMyRecipes,
-} from "../../redux/recipes/recipes/operations.js";
-import { FavoritesElement } from "../FavoritesElement/FavoritesElement.jsx";
-import { useState } from "react";
+} from "../../redux/recipes/recipes/operations";
+import { selectOwnRecipe } from "../../redux/recipes/recipes/selectors";
+import { FavoritesElement } from "../FavoritesElement/FavoritesElement";
 
 export const MyRecipe = () => {
-  const token = useSelector(selectToken);
-  const recipes = useSelector(selectOwnRecipe);
-  const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
-  const recipesPerPage = 4;
-
-  useEffect(() => {
-    dispatch(getMyRecipes({ token, limit: recipesPerPage, page: currentPage }));
-  }, [dispatch, token, currentPage]);
-
-  const handleDelete = (recipeId) => {
-    dispatch(deleteRecipe({ token, recipeId }));
-  };
-
-  const handlePrev = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-    console.log(currentPage);
-  };
-
-  const handleNext = () => {
-    if (recipes.length === recipesPerPage) setCurrentPage(currentPage + 1);
-  };
+  const {
+    recipes,
+    handleDelete,
+    handlePrev,
+    handleNext,
+    currentPage,
+    recipesPerPage,
+  } = useRecipePagination(getMyRecipes, deleteRecipe, selectOwnRecipe);
 
   return (
     <>
-      <button onClick={handlePrev} disabled={currentPage === 1}>
-        Prev
-      </button>
-      <button onClick={handleNext} disabled={recipes.length < recipesPerPage}>
-        Next
-      </button>
-      <FavoritesElement recipes={recipes} handleDelete={handleDelete} />
+      <FavoritesElement
+        recipes={recipes}
+        handleDelete={handleDelete}
+        handlePrev={handlePrev}
+        handleNext={handleNext}
+        currentPage={currentPage}
+        recipesPerPage={recipesPerPage}
+      />
     </>
   );
 };
