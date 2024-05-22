@@ -56,7 +56,6 @@ export const AuthForm = () => {
       navigate("/auth/login");
     } else {
       dispatch(login({ email: e.Email, password: e.Password }));
-      navigate("/main");
     }
   };
 
