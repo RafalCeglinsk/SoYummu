@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../redux/auth/selectors";
+import { scrollToTop } from "../utils/scrollToTop";
 
 export const useRecipePagination = (
   getRecipesAction,
@@ -12,13 +13,6 @@ export const useRecipePagination = (
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 4;
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     dispatch(

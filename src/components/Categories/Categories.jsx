@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { selectCategory } from "../../redux/categories/selectors";
 import { HorizontalScrollList } from "./HorizontalScrollList/HorizontalScrollList";
 import { useParams } from "react-router-dom";
-import { PageTitle } from "../PageTitle/PageTitle";
 
 export const Categories = () => {
   const { category } = useParams();
