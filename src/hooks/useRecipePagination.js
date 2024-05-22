@@ -13,6 +13,13 @@ export const useRecipePagination = (
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 4;
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     dispatch(
       getRecipesAction({ token, limit: recipesPerPage, page: currentPage })
@@ -25,10 +32,12 @@ export const useRecipePagination = (
 
   const handlePrev = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
+    scrollToTop();
   };
 
   const handleNext = () => {
     if (recipes.length === recipesPerPage) setCurrentPage(currentPage + 1);
+    scrollToTop();
   };
 
   return {
