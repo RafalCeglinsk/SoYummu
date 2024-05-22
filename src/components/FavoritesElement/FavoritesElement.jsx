@@ -12,36 +12,62 @@ import {
   DeleteButton,
   SeeRecipeBtn,
   FavRecipeTopInfo,
+  PaginationContainer,
+  PaginationBtn,
 } from "./MyRecipe.styled.jsx";
 
-export const FavoritesElement = ({ recipes, handleDelete }) => {
+export const FavoritesElement = ({
+  recipes,
+  handleDelete,
+  handlePrev,
+  handleNext,
+  currentPage,
+  recipesPerPage,
+}) => {
   return (
-    <PageWarpper>
-      {recipes.map((recipe) => (
-        <FavRecipeItem key={recipe._id}>
-          <Link to={`/recipes/${recipe._id}`}>
-            <RecipeImageThumb>
-              <RecipeImage src={recipe.thumb} alt={recipe.title} />
-            </RecipeImageThumb>
-          </Link>
-          <FavRecipeTopInfo>
-            <div>
-              <RecipeTitle>{recipe.title}</RecipeTitle>
-              <RecipeDescription>{recipe.description}</RecipeDescription>
-            </div>
-            <RecipePrepTime>
-              <FaRegClock />
-              {recipe.time} min
-            </RecipePrepTime>
-          </FavRecipeTopInfo>
-          <DeleteButton onClick={() => handleDelete(recipe._id)}>
-            <IoTrashOutline />
-          </DeleteButton>
-          <Link to={`/recipes/${recipe._id}`}>
-            <SeeRecipeBtn>See Recipe</SeeRecipeBtn>
-          </Link>
-        </FavRecipeItem>
-      ))}
-    </PageWarpper>
+    <>
+      <PageWarpper>
+        {recipes.map((recipe) => (
+          <div key={recipe._id}>
+            {" "}
+            <FavRecipeItem>
+              <Link to={`/recipes/${recipe._id}`}>
+                <RecipeImageThumb>
+                  <RecipeImage src={recipe.thumb} alt={recipe.title} />
+                </RecipeImageThumb>
+              </Link>
+              <FavRecipeTopInfo>
+                <div>
+                  <RecipeTitle>{recipe.title}</RecipeTitle>
+                  <RecipeDescription>{recipe.description}</RecipeDescription>
+                </div>
+                <RecipePrepTime>
+                  <FaRegClock />
+                  {recipe.time} min
+                </RecipePrepTime>
+              </FavRecipeTopInfo>
+              <DeleteButton onClick={() => handleDelete(recipe._id)}>
+                <IoTrashOutline />
+              </DeleteButton>
+              <Link to={`/recipes/${recipe._id}`}>
+                <SeeRecipeBtn>See Recipe</SeeRecipeBtn>
+              </Link>
+            </FavRecipeItem>
+          </div>
+        ))}
+      </PageWarpper>
+      <PaginationContainer>
+        <PaginationBtn onClick={handlePrev} disabled={currentPage === 1}>
+          Prev
+        </PaginationBtn>
+
+        <PaginationBtn
+          onClick={handleNext}
+          disabled={recipes.length < recipesPerPage}
+        >
+          Next
+        </PaginationBtn>
+      </PaginationContainer>
+    </>
   );
 };

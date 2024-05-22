@@ -1,22 +1,22 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const PageWarpper=styled.ul`
+export const PageWarpper = styled.ul`
   display: flex;
   flex-direction: column;
-  gap:18px;
+  gap: 18px;
   padding: 40px 16px;
   @media (min-width: 768px) {
     padding: 40px 32px;
-    gap:40px;
+    gap: 40px;
   }
   @media (min-width: 1280px) {
     padding: 50px 100px;
-    gap:50px;
+    gap: 50px;
   }
-`
+`;
 
 export const FavRecipeItem = styled.li`
-   background-color: var( --color-bg-modal);
+  background-color: var(--color-bg-modal);
   position: relative;
   display: flex;
   padding: 14px 9px;
@@ -44,7 +44,6 @@ export const RecipeImageThumb = styled.div`
     height: 324px;
     margin-right: 40px;
   }
-
 `;
 export const RecipeImage = styled.img`
   max-height: 100%;
@@ -56,7 +55,7 @@ export const RecipeImage = styled.img`
 `;
 
 export const RecipeTitle = styled.h3`
-width: 80%;
+  width: 80%;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.24px;
@@ -65,7 +64,6 @@ width: 80%;
     font-size: 24px;
     margin-bottom: 34px;
   }
-
 `;
 export const RecipeDescription = styled.p`
   font-weight: 400;
@@ -83,9 +81,9 @@ export const RecipeDescription = styled.p`
   }
 `;
 export const RecipePrepTime = styled.div`
-display: flex;
-align-items: center;
-gap:5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: 10px;
   font-weight: 500;
   line-height: 1.4;
@@ -106,16 +104,16 @@ export const DeleteButton = styled.button`
   border: none;
   border-radius: 4px;
   transition: background-color 0.2s ease-in-out;
-  background-color: var(  --color-icons-3);
+  background-color: var(--color-icons-3);
   &:hover {
-    background-color: var( --color-text-1);
+    background-color: var(--color-text-1);
   }
   svg {
-    stroke: #FAFAFA;
+    stroke: #fafafa;
     width: 100%;
     height: 100%;
   }
- 
+
   @media (min-width: 768px) {
     top: 28px;
     right: 24px;
@@ -142,12 +140,12 @@ export const SeeRecipeBtn = styled.button`
   line-height: 1.5;
   width: 87px;
   height: 27px;
-  color: #FAFAFA;
+  color: #fafafa;
   transition: background-color 0.2s ease-in-out;
-  background-color: #8BAA36;
+  background-color: #8baa36;
   &:hover {
-    background-color: #22252A;
-    color: #FAFAFA;
+    background-color: #22252a;
+    color: #fafafa;
   }
   @media (min-width: 768px) {
     right: 24px;
@@ -168,4 +166,24 @@ export const FavRecipeTopInfo = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+`;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+`;
+
+export const PaginationBtn = styled.button`
+  width: 54px;
+  height: 54px;
+  color: #fafafa;
+  background-color: var(--color-icons-3);
+  border-radius: 50px;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: #22252a;
+    color: #fafafa;
+  }
 `;

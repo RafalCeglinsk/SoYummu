@@ -3,10 +3,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getFavorites = createAsyncThunk(
   "favorites/get",
-  async (token, thunkAPI) => {
+  async ({ token, limit = 4, page = 1 }, thunkAPI) => {
     try {
       const response = await axios.get("/favorites", {
         headers: { Authorization: `Bearer ${token}` },
+        params: { limit, page },
       });
       const data = response.data;
       const favorites = data.result;
