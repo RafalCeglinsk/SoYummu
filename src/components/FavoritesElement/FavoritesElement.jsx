@@ -12,6 +12,8 @@ import {
   DeleteButton,
   SeeRecipeBtn,
   FavRecipeTopInfo,
+  PaginationContainer,
+  PaginationBtn,
 } from "./MyRecipe.styled.jsx";
 
 export const FavoritesElement = ({
@@ -54,12 +56,18 @@ export const FavoritesElement = ({
           </div>
         ))}
       </PageWarpper>
-      <button onClick={handlePrev} disabled={currentPage === 1}>
-        Prev
-      </button>
-      <button onClick={handleNext} disabled={recipes.length < recipesPerPage}>
-        Next
-      </button>
+      <PaginationContainer>
+        <PaginationBtn onClick={handlePrev} disabled={currentPage === 1}>
+          Prev
+        </PaginationBtn>
+
+        <PaginationBtn
+          onClick={handleNext}
+          disabled={recipes.length < recipesPerPage}
+        >
+          Next
+        </PaginationBtn>
+      </PaginationContainer>
     </>
   );
 };
