@@ -7,21 +7,44 @@ import {
   getFavorites,
   removeFavorite,
 } from "../../../redux/recipes/favorites/operations";
+import { useState } from "react";
 
 const FavoriteRecipes = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const favorites = useSelector(selectFavorites);
+  console.log(favorites);
+  const [currentPage, setCurrentPage] = useState(1);
+  const recipesPerPage = 4;
 
   useEffect(() => {
-    dispatch(getFavorites(token));
-  }, [token, dispatch]);
+    dispatch(getFavorites({ token, limit: recipesPerPage, page: currentPage }));
+  }, [token, dispatch, currentPage]);
 
   const handleDelete = (recipeId) => {
     dispatch(removeFavorite({ token, recipeId }));
   };
 
-  return <FavoritesElement recipes={favorites} handleDelete={handleDelete} />;
+  const handlePrev = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+    console.log(currentPage);
+  };
+
+  const handleNext = () => {
+    if (favorites.length === recipesPerPage) setCurrentPage(currentPage + 1);
+  };
+
+  return (
+    <>
+      <button onClick={handlePrev} disabled={currentPage === 1}>
+        Prev
+      </button>
+      <button onClick={handleNext} disabled={favorites.length < recipesPerPage}>
+        Next
+      </button>
+      <FavoritesElement recipes={favorites} handleDelete={handleDelete} />;
+    </>
+  );
 };
 
 export default FavoriteRecipes;

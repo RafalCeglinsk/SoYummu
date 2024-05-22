@@ -30,10 +30,11 @@ export const getRecipeId = createAsyncThunk(
 
 export const getMyRecipes = createAsyncThunk(
   "recipes/getMyRecipes",
-  async (token, thunkAPI) => {
+  async ({ token, limit = 4, page = 1 }, thunkAPI) => {
     try {
       const response = await axios.get("/ownRecipes", {
         headers: { Authorization: `Bearer ${token}` },
+        params: { limit, page },
       });
       const data = response.data;
       const result = data.result;

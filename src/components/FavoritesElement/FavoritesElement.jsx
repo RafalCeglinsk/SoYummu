@@ -16,32 +16,38 @@ import {
 
 export const FavoritesElement = ({ recipes, handleDelete }) => {
   return (
-    <PageWarpper>
-      {recipes.map((recipe) => (
-        <FavRecipeItem key={recipe._id}>
-          <Link to={`/recipes/${recipe._id}`}>
-            <RecipeImageThumb>
-              <RecipeImage src={recipe.thumb} alt={recipe.title} />
-            </RecipeImageThumb>
-          </Link>
-          <FavRecipeTopInfo>
-            <div>
-              <RecipeTitle>{recipe.title}</RecipeTitle>
-              <RecipeDescription>{recipe.description}</RecipeDescription>
-            </div>
-            <RecipePrepTime>
-              <FaRegClock />
-              {recipe.time} min
-            </RecipePrepTime>
-          </FavRecipeTopInfo>
-          <DeleteButton onClick={() => handleDelete(recipe._id)}>
-            <IoTrashOutline />
-          </DeleteButton>
-          <Link to={`/recipes/${recipe._id}`}>
-            <SeeRecipeBtn>See Recipe</SeeRecipeBtn>
-          </Link>
-        </FavRecipeItem>
-      ))}
-    </PageWarpper>
+    <>
+      <PageWarpper>
+        {recipes.map((recipe) => (
+          <div key={recipe._id}>
+            {" "}
+            {/* Wrap the elements with a parent div */}
+            <FavRecipeItem>
+              <Link to={`/recipes/${recipe._id}`}>
+                <RecipeImageThumb>
+                  <RecipeImage src={recipe.thumb} alt={recipe.title} />
+                </RecipeImageThumb>
+              </Link>
+              <FavRecipeTopInfo>
+                <div>
+                  <RecipeTitle>{recipe.title}</RecipeTitle>
+                  <RecipeDescription>{recipe.description}</RecipeDescription>
+                </div>
+                <RecipePrepTime>
+                  <FaRegClock />
+                  {recipe.time} min
+                </RecipePrepTime>
+              </FavRecipeTopInfo>
+              <DeleteButton onClick={() => handleDelete(recipe._id)}>
+                <IoTrashOutline />
+              </DeleteButton>
+              <Link to={`/recipes/${recipe._id}`}>
+                <SeeRecipeBtn>See Recipe</SeeRecipeBtn>
+              </Link>
+            </FavRecipeItem>
+          </div>
+        ))}
+      </PageWarpper>
+    </>
   );
 };
