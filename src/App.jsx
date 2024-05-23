@@ -14,10 +14,12 @@ import AddRecipeForm from "./components/AddRecipe/AddRecipeForm/AddRecipeForm";
 import { RecipesPage } from "./pages/RecipePage";
 import { ShareedLayout } from "./pages/ShrayedLayout";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop.jsx";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToken } from "../redux/auth/selectors";
-import { scrollToTop } from "../utils/scrollToTop";
 
 export const useRecipePagination = (
   getRecipesAction,
@@ -18,7 +17,7 @@ export const useRecipePagination = (
     dispatch(
       getRecipesAction({ token, limit: recipesPerPage, page: currentPage })
     );
-  }, [dispatch, token, currentPage]);
+  }, [dispatch, token, currentPage, getRecipesAction]);
 
   const handleDelete = (recipeId) => {
     dispatch(deleteRecipeAction({ token, recipeId }));
@@ -26,12 +25,10 @@ export const useRecipePagination = (
 
   const handlePrev = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
-    scrollToTop();
   };
 
   const handleNext = () => {
     if (recipes.length === recipesPerPage) setCurrentPage(currentPage + 1);
-    scrollToTop();
   };
 
   return {
