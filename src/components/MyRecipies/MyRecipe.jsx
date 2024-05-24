@@ -1,25 +1,31 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { selectToken } from "../../redux/auth/selectors.js";
-import { selectOwnRecipe } from "../../redux/recipes/recipes/selectors.js";
+import { useRecipePagination } from "../../hooks/useRecipePagination";
 import {
   deleteRecipe,
   getMyRecipes,
-} from "../../redux/recipes/recipes/operations.js";
-import { FavoritesElement } from "../FavoritesElement/FavoritesElement.jsx";
+} from "../../redux/recipes/recipes/operations";
+import { selectOwnRecipe } from "../../redux/recipes/recipes/selectors";
+import { FavoritesElement } from "../FavoritesElement/FavoritesElement";
 
 export const MyRecipe = () => {
-  const token = useSelector(selectToken);
-  const recipes = useSelector(selectOwnRecipe);
-  const dispatch = useDispatch();
+  const {
+    recipes,
+    handleDelete,
+    handlePrev,
+    handleNext,
+    currentPage,
+    recipesPerPage,
+  } = useRecipePagination(getMyRecipes, deleteRecipe, selectOwnRecipe);
 
-  useEffect(() => {
-    dispatch(getMyRecipes(token));
-  }, [dispatch, token]);
-
-  const handleDelete = (recipeId) => {
-    dispatch(deleteRecipe({ token, recipeId }));
-  };
-
-  return <FavoritesElement recipes={recipes} handleDelete={handleDelete} />;
+  return (
+    <>
+      <FavoritesElement
+        recipes={recipes}
+        handleDelete={handleDelete}
+        handlePrev={handlePrev}
+        handleNext={handleNext}
+        currentPage={currentPage}
+        recipesPerPage={recipesPerPage}
+      />
+    </>
+  );
 };

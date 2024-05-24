@@ -2,7 +2,7 @@ import React from "react";
 
 import { NavLinkStyled, NavContainer } from "./Navigation.styled";
 
-const Nav = ({ handleCloseMenu, isHeader, isFooter }) => {
+const Nav = ({ handleCloseMenu, isFooter }) => {
   return (
     <nav>
       <NavContainer className={isFooter ? "NavFooter" : ""}>

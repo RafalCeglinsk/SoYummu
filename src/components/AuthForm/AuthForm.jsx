@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { login, register } from "../../redux/auth/operations";
+import { login, register as registerAction } from "../../redux/auth/operations";
 import {
   Form,
   Flex,
@@ -20,7 +20,7 @@ import {
 const formConfig = {
   "/auth/register": {
     fields: ["Name", "Email", "Password"],
-    action: register,
+    action: registerAction,
     headerText: "Registration",
     buttonText: "Sign Up",
     linkText: "Sign In",
@@ -38,7 +38,7 @@ const formConfig = {
 
 export const AuthForm = () => {
   const {
-    register,
+    register: registerField,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -51,11 +51,11 @@ export const AuthForm = () => {
   const onSubmit = async (e) => {
     if (location === "/auth/register") {
       dispatch(
-        register({ name: e.Name, email: e.Email, password: e.Password })
+        registerAction({ name: e.Name, email: e.Email, password: e.Password })
       );
+      navigate("/auth/login");
     } else {
       dispatch(login({ email: e.Email, password: e.Password }));
-      navigate("/main");
     }
   };
 
@@ -71,7 +71,8 @@ export const AuthForm = () => {
                 <StyledInput
                   key={field}
                   name={field}
-                  {...register(field, { required: true })}
+                  autoComplete="off"
+                  {...registerField(field, { required: true })}
                   error={errors[field]}
                   placeholder={field}
                   type={field === "Password" ? "password" : "text"}
