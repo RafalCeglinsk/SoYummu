@@ -71,7 +71,7 @@ const AddRecipeForm = () => {
     formData.append("description", recipeData.description);
     formData.append("time", recipeData.time);
     recipeData.ingredients.forEach((ingredient, index) => {
-      formData.append(`ingredients[${index}][name]`, ingredient.name);
+      formData.append(`ingredients[${index}][id]`, ingredient.id);
       formData.append(`ingredients[${index}][measure]`, ingredient.measure);
     });
     formData.append("instructions", recipeData.instructions);
