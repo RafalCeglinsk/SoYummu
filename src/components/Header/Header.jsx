@@ -15,6 +15,7 @@ import {
   HeaderContainer,
   UserInfo,
   UserName,
+  UserAvatar,
 } from "./Header.styled";
 import { useLocation } from "react-router-dom";
 
@@ -47,6 +48,7 @@ export const Header = () => {
             </NavContainer>
 
             <UserInfo onClick={toggleUserModal}>
+              <UserAvatar src={user.avatar} />
               <UserName>{user.name}</UserName>
               {isUserModalOpen && <UserLogoutModal />}
             </UserInfo>
