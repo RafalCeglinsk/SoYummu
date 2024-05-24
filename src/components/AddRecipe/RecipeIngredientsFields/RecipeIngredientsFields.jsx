@@ -32,7 +32,7 @@ const RecipeIngredientsFields = ({ recipeData, setRecipeData }) => {
   }, [dispatch]);
 
   const addIngredient = () => {
-    const newIngredient = { name: "", measure: "" };
+    const newIngredient = { id: "", measure: "" };
     setRecipeData({
       ...recipeData,
       ingredients: [...recipeData.ingredients, newIngredient],
@@ -61,7 +61,7 @@ const RecipeIngredientsFields = ({ recipeData, setRecipeData }) => {
   };
 
   const handleSelectNameChange = (index, selectedOption) => {
-    handleChange(index, "name", selectedOption.value);
+    handleChange(index, "id", selectedOption.value);
   };
 
   const handleSelectChange = (index, value) => {
@@ -83,7 +83,7 @@ const RecipeIngredientsFields = ({ recipeData, setRecipeData }) => {
               styles={ingredientSelect}
               options={ingredients}
               value={ingredients.find(
-                (option) => option.value === ingredient.name
+                (option) => option.value === ingredient.id
               )}
               onChange={(selectedOption) =>
                 handleSelectNameChange(index, selectedOption)
