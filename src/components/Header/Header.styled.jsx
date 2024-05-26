@@ -1,13 +1,27 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0px;
+  padding: 10px 16px;
+  @media screen and (min-width: 768px) {
+    padding: 18px 32px;
+  }
 `;
 
+export const LogoWrapper=styled.div`
+  max-width: 30%;
+width: 100%;
+@media screen and (min-width: 768px) {
+  max-width: 50%;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 20%;
+  }
+`
 export const NavContainer = styled.div`
   display: none;
   @media (min-width: 1440px) {
@@ -17,7 +31,11 @@ export const NavContainer = styled.div`
 export const HamburgerButton = styled.div`
   cursor: pointer;
   position: absolute;
-  right: 20px;
+  right: 16px;
+
+  @media screen and (min-width: 768px) {
+    right: 32px;
+  }
   > svg {
     transition: color var(--transition-time) var(--cubic);
     color: inherit;
@@ -53,7 +71,7 @@ export const CloseButton = styled.div`
 export const UserInfo = styled.div`
   cursor: pointer;
   display: flex;
-  gap: 14px;
+  gap: 8px;
   align-items: center;
   position: relative;
 `;
@@ -67,8 +85,8 @@ export const UserName = styled.span`
 
 export const UserAvatar = styled.img`
   position: relative;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

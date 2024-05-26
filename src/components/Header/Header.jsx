@@ -16,6 +16,7 @@ import {
   UserInfo,
   UserName,
   UserAvatar,
+  LogoWrapper,
 } from "./Header.styled";
 import { useLocation } from "react-router-dom";
 
@@ -40,9 +41,11 @@ export const Header = () => {
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
           <HeaderContainer>
+            <LogoWrapper>
             <NavLink to="/main">
               <StartLogoBig />
             </NavLink>
+            </LogoWrapper>
             <NavContainer>
               <Nav />
             </NavContainer>
