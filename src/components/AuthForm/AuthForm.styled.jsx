@@ -180,7 +180,6 @@ export const Background = styled.div`
   }
 
   @media (min-width: ${device.desktop}) {
-    height: 325px;
     background-image: -webkit-image-set(url(${desktopBackground})),
       -webkit-image-set(url(${desktopBackgroundRetina}) 2x);
   }

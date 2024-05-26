@@ -10,6 +10,9 @@ export const HeaderContainer = styled.div`
   @media screen and (min-width: 768px) {
     padding: 18px 32px;
   }
+  @media screen and (min-width: 1440px) {
+    padding: 18px 100px;
+  }
 `;
 
 export const LogoWrapper=styled.div`
