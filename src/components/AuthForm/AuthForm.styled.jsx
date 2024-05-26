@@ -37,9 +37,8 @@ export const Container = styled.div`
   background-color: var(--color-bg-start);
   padding: 32px 28px 40px;
   z-index: 20;
-width: 100%;
+  width: 100%;
   @media (min-width: ${device.tablet}) {
-    /* max-width: 500px; */
     padding: 44px 50px;
   }
 `;
@@ -77,11 +76,10 @@ export const H2 = styled.h2`
 `;
 
 export const StyledLabel = styled.label`
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: wrap;
   padding-bottom: 12px;
 
   @media (min-width: ${device.tablet}) {
@@ -96,7 +94,6 @@ export const StyledInput = styled.input`
   border-radius: 6px;
   padding: 12px;
   margin-bottom: 24px;
-  /* width: 70vw; */
   color: var(--color-default-1);
 
   &::placeholder {
@@ -106,7 +103,6 @@ export const StyledInput = styled.input`
 
   @media (min-width: ${device.tablet}) {
     padding: 17.5px;
-    /* max-width: 400px; */
     font-size: 18px;
   }
 `;
@@ -123,10 +119,8 @@ export const FormButton = styled.button`
   color: var(--color-default-1);
   border-radius: 6px;
 
-
   @media (min-width: ${device.tablet}) {
     padding: 19px;
-
   }
 `;
 
@@ -136,7 +130,6 @@ export const Logo = styled.div`
   background-image: -webkit-image-set(url(${mobileLogo})),
     -webkit-image-set(url(${mobileLogoRetina}) 2x);
   background-repeat: no-repeat;
-  /* margin-bottom: -32px; */
 
   @media (min-width: ${device.tablet}) {
     width: 409px;
