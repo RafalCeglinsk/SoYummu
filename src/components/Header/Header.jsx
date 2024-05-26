@@ -16,6 +16,7 @@ import {
   UserInfo,
   UserName,
   UserAvatar,
+  RightWrapper,
 } from "./Header.styled";
 import { useLocation } from "react-router-dom";
 
@@ -39,14 +40,17 @@ export const Header = () => {
       {location.pathname !== "/auth/login" &&
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
+          <>
           <HeaderContainer>
+         
             <NavLink to="/main">
               <StartLogoBig />
             </NavLink>
+  
             <NavContainer>
               <Nav />
             </NavContainer>
-
+            <RightWrapper>
             <UserInfo onClick={toggleUserModal}>
               <UserAvatar src={user.avatar} />
               <UserName>{user.name}</UserName>
@@ -56,12 +60,15 @@ export const Header = () => {
             <HamburgerButton>
               <GiHamburgerMenu onClick={toggleBurgerMenu} />
             </HamburgerButton>
+            </RightWrapper>
 
-            <HamburgerMenu
+        
+          </HeaderContainer>
+              <HamburgerMenu
               openState={isMenuOpen}
               handleCloseMenu={toggleBurgerMenu}
             />
-          </HeaderContainer>
+            </>
         )}
     </>
   );
