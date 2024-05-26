@@ -63,7 +63,6 @@ export const TextContainer = styled.div`
 `;
 
 export const LinkRecipies = styled.div`
-  position: relative;
   text-decoration: none;
   display: flex;
   justify-content: flex-end;
@@ -72,15 +71,19 @@ export const LinkRecipies = styled.div`
   align-items: center;
   padding-right: 20px;
   cursor: pointer;
+a{
+  color: var(--color-text-2);
+  display: flex;
+    align-items: center;
+}
+
+  svg {
+    stroke: var(--color-text-2);
+  }
 
   &:hover,
   &:focus {
     color: var(--color-text-4);
-  }
-  svg {
-    stroke: var(--color-text-2);
-    position: absolute;
-    top: -13%;
   }
 `;
 
