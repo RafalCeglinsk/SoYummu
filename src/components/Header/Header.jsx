@@ -16,7 +16,7 @@ import {
   UserInfo,
   UserName,
   UserAvatar,
-  LogoWrapper,
+  RightWrapper,
 } from "./Header.styled";
 import { useLocation } from "react-router-dom";
 
@@ -42,15 +42,15 @@ export const Header = () => {
         location.pathname !== "/" && (
           <>
           <HeaderContainer>
-            <LogoWrapper>
+         
             <NavLink to="/main">
               <StartLogoBig />
             </NavLink>
-            </LogoWrapper>
+  
             <NavContainer>
               <Nav />
             </NavContainer>
-
+            <RightWrapper>
             <UserInfo onClick={toggleUserModal}>
               <UserAvatar src={user.avatar} />
               <UserName>{user.name}</UserName>
@@ -60,6 +60,7 @@ export const Header = () => {
             <HamburgerButton>
               <GiHamburgerMenu onClick={toggleBurgerMenu} />
             </HamburgerButton>
+            </RightWrapper>
 
         
           </HeaderContainer>

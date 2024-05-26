@@ -15,14 +15,11 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const LogoWrapper=styled.div`
-  max-width: 30%;
-width: 100%;
+export const RightWrapper=styled.div`
+display: flex;
+gap:20px;
 @media screen and (min-width: 768px) {
-  max-width: 50%;
-  }
-  @media screen and (min-width: 1440px) {
-    max-width: 20%;
+gap:50px;
   }
 `
 export const NavContainer = styled.div`
@@ -33,8 +30,8 @@ export const NavContainer = styled.div`
 `;
 export const HamburgerButton = styled.div`
   cursor: pointer;
-  position: absolute;
-  right: 16px;
+  /* position: absolute;
+  right: 16px; */
 
   @media screen and (min-width: 768px) {
     right: 32px;
