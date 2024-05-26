@@ -40,6 +40,7 @@ export const Header = () => {
       {location.pathname !== "/auth/login" &&
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
+          <>
           <HeaderContainer>
             <LogoWrapper>
             <NavLink to="/main">
@@ -60,11 +61,13 @@ export const Header = () => {
               <GiHamburgerMenu onClick={toggleBurgerMenu} />
             </HamburgerButton>
 
-            <HamburgerMenu
+        
+          </HeaderContainer>
+              <HamburgerMenu
               openState={isMenuOpen}
               handleCloseMenu={toggleBurgerMenu}
             />
-          </HeaderContainer>
+            </>
         )}
     </>
   );
