@@ -9,14 +9,13 @@ export const ProfieleModalContainer = styled.div`
   gap: 12px;
   padding: 18px;
   border-radius: 8px;
-  border: 1px solid var( --color-icons-3);
+  border: 1px solid var(--color-icons-3);
   background-color: var(--color-bg-modal);
   width: 160px;
-
-`
+`;
 
 export const EditButton = styled.button`
-  color:var(  --color-text-3);
+  color: var(--color-text-3);
   background-color: transparent;
   border: none;
   padding: 10px 0;
@@ -28,9 +27,8 @@ export const EditButton = styled.button`
   font-weight: 500;
   transition: color var(--transition-time) var(--cubic);
 
-
   &:hover {
-color: green;
+    color: green;
   }
 
   > svg {
@@ -39,8 +37,8 @@ color: green;
   }
 `;
 export const LogoutButton = styled.button`
-  background-color: var(  --color-icons-3);
-  color: var(  --color-text-7);
+  background-color: var(--color-icons-3);
+  color: var(--color-text-7);
   padding: 12px 27px;
   border-radius: 24px 44px;
   display: flex;
@@ -52,7 +50,7 @@ export const LogoutButton = styled.button`
   width: 100%;
 
   &:hover {
-    background-color: var(  --color-icons-1);
+    background-color: var(--color-icons-1);
   }
 
   svg {

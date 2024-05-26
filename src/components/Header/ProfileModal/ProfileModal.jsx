@@ -22,10 +22,10 @@ const UserLogoutModal = ({ handleEditProfileOpen }) => {
 
   return (
     <ProfieleModalContainer>
-      <EditButton onClick={handleEditProfileOpen}>
+      {/* <EditButton onClick={handleEditProfileOpen}>
         Edit profile
         <HiOutlinePencil />
-      </EditButton>
+      </EditButton> */}
       <LogoutButton onClick={handleLogout}>
         Log out
         <FiArrowRight />
