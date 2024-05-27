@@ -80,7 +80,16 @@ const AddRecipeForm = () => {
     }
     dispatch(addRecipe({ recipeData: formData, token: token }));
     if (isFormValid) {
-      return console.log("Recipe added successfully");
+      setRecipeData({
+        title: "",
+        category: "",
+        description: "",
+        time: "",
+        ingredients: [],
+        instructions: "",
+        recipeImg: null,
+      });
+      return Notiflix.Notify.success("Recipe added successfully");
     }
   };
 
