@@ -15,11 +15,10 @@ export function ChooseYourBreakfast() {
       <TextContainer>
         <span>Delicious and healthy</span> way to enjoy a variety of fresh
         ingredients in one satisfying meal.
-        <LinkRecipies>
-        <Link to="/categories/breakfast">
+        <LinkRecipies to="/categories/Breakfast">
           See recipes
           <RenderArrow />
-        </Link>
+   
         </LinkRecipies>
       </TextContainer>
       <ArrowStyle>

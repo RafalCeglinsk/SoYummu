@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import BgMbDown from "../../images/MainPageHero/left-MB-2x.png";
+import BgMbDown from "../../images/MainPageHero/down-right-MB-2x.png";
 import BgMbLeft from "../../images/MainPageHero/left-MB-2x.png";
 import BgMbTri from "../../images/MainPageHero/triangle-Mb.png";
 
@@ -17,7 +17,7 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  padding: 132px 10px 83px 0px;
+padding: 70px 36px;
   background-image: -webkit-image-set(url(${BgMbLeft}) 2x),
     -webkit-image-set(url(${BgMbDown}) 2x), url(${BgMbTri});
 
@@ -28,8 +28,8 @@ export const MainWrapper = styled.div`
     background-image: -webkit-image-set(url(${BgTbLeft}) 2x),
       -webkit-image-set(url(${BgTbDown}) 2x), url(${BgTriangle});
     background-position: top left, top -25px right, top -480px right -350px;
-    padding-top: 159px;
     gap: 50px;
+    padding: 100px 36px;
   }
   @media screen and (min-width: 1440px) {
     background-image: -webkit-image-set(url(${BgDskLeft}) 2x),
@@ -49,7 +49,7 @@ export const HeroWrapper = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: space-evenly;
     width: 100%;

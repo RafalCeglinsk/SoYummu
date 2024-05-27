@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import BgImg from "../../../images/MainPageHero/ChooseYour1x.png";
 import BgImg2x from "../../../images/MainPageHero/ChooseYour2x.png";
@@ -19,13 +20,15 @@ export const SaladContainer = styled.div`
   background-image: -webkit-image-set(url(${BgImg}) 1x, url(${BgImg2x}) 2x);
   @media screen and (min-width: 768px) {
     background-image: -webkit-image-set(url(${BgTb2x}) 2x);
-    width: 378px;
+    max-width: 370px;
+    width: 100%;
     height: 351px;
     margin-bottom: 0;
   }
   @media screen and (min-width: 1440px) {
     background-image: -webkit-image-set(url(${BgDSK2x}) 2x);
-    width: 578px;
+    max-width: 578px;
+    width: 100%;
     height: 539px;
   }
 `;
@@ -62,8 +65,8 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const LinkRecipies = styled.div`
-  text-decoration: none;
+export const LinkRecipies = styled(Link)`
+
   display: flex;
   justify-content: flex-end;
   color: var(--color-text-2);
@@ -71,19 +74,17 @@ export const LinkRecipies = styled.div`
   align-items: center;
   padding-right: 20px;
   cursor: pointer;
-a{
-  color: var(--color-text-2);
-  display: flex;
-    align-items: center;
-}
+
+
 
   svg {
     stroke: var(--color-text-2);
   }
 
   &:hover,
-  &:focus {
-    color: var(--color-text-4);
+  &:focus{
+    color: var(--color-text-5);
+    stroke: var(--color-text-5);
   }
 `;
 
