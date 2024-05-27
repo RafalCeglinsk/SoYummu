@@ -10,7 +10,7 @@ import LoginPage from "./pages/LoginPage";
 import { HomePage } from "./pages/Home";
 import Main from "./pages/Main";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import AddRecipeForm from "./components/AddRecipe/AddRecipeForm/AddRecipeForm";
+import AddRecipePage from "./pages/AddRecipePage.jsx";
 import { RecipesPage } from "./pages/RecipePage";
 import { ShareedLayout } from "./pages/ShrayedLayout";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
@@ -63,7 +63,7 @@ function App() {
           <Route
             path="/add"
             element={
-              <PrivateRoute redirectTo="/" component={<AddRecipeForm />} />
+              <PrivateRoute redirectTo="/" component={<AddRecipePage />} />
             }
           />
           <Route
