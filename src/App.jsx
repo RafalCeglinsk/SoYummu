@@ -12,7 +12,7 @@ import Main from "./pages/Main";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import AddRecipeForm from "./components/AddRecipe/AddRecipeForm/AddRecipeForm";
 import { RecipesPage } from "./pages/RecipePage";
-import { ShareedLayout } from "./pages/ShrayedLayout";
+import { ShareedLayout } from "./components/SharedLayout/SharedLayout";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop.jsx";
 
