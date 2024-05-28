@@ -2,19 +2,14 @@ import styled from "styled-components";
 
 const SearchPageStyled = styled.div`
   margin: 0 auto;
-
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  @media (min-width: 480px) {
-    width: 480px;
-  }
+  padding-bottom: 100px;
 
   @media (min-width: 768px) {
     width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0px 32px 100px 32px;
   }
 
   @media (min-width: 1440px) {
@@ -31,10 +26,10 @@ const NoResults = styled.div`
   color: var(--color-text-1);
   gap: 16px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 
   @media (min-width: 768px) {
-    margin-bottom: 200px;
+    padding-bottom: 200px;
   }
 `;
 

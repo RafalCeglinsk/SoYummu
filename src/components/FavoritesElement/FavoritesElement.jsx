@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { IoTrashOutline } from "react-icons/io5";
 import { FaRegClock } from "react-icons/fa6";
+import SearchImg from "../../images/SearchForSomethingElse/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png";
 import {
   PageWarpper,
   FavRecipeItem,
@@ -14,7 +15,8 @@ import {
   FavRecipeTopInfo,
   PaginationContainer,
   PaginationBtn,
-} from "./MyRecipe.styled.jsx";
+  NoRecipes,
+} from "./FavoritesElement.styled.jsx";
 
 export const FavoritesElement = ({
   recipes,
@@ -56,18 +58,26 @@ export const FavoritesElement = ({
           </div>
         ))}
       </PageWarpper>
-      <PaginationContainer>
-        <PaginationBtn onClick={handlePrev} disabled={currentPage === 1}>
-          Prev
-        </PaginationBtn>
+      {recipes.length > 0 && (
+        <PaginationContainer>
+          <PaginationBtn onClick={handlePrev} disabled={currentPage === 1}>
+            Prev
+          </PaginationBtn>
 
-        <PaginationBtn
-          onClick={handleNext}
-          disabled={recipes.length < recipesPerPage}
-        >
-          Next
-        </PaginationBtn>
-      </PaginationContainer>
+          <PaginationBtn
+            onClick={handleNext}
+            disabled={!recipes.length < recipesPerPage}
+          >
+            Next
+          </PaginationBtn>
+        </PaginationContainer>
+      )}
+      {!recipes.length && (
+        <NoRecipes>
+          <img src={SearchImg} alt="No searching results vegetable img"></img>
+          <p>You don't have any recipes yet!</p>
+        </NoRecipes>
+      )}
     </>
   );
 };
