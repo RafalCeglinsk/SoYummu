@@ -4,11 +4,10 @@ import SearchBar from "../../components/SearchPage/SearchBar/SearchBar.jsx";
 import { useSelector } from "react-redux";
 import { SearchedRecipesList } from "../../components/SearchPage/SearchedRecipesList/SearchedRecipesList.jsx";
 import { PageTitle } from "../../components/PageTitle/PageTitle.jsx";
-import SearchImg from "../../images/NoImage/NoImageSmall.png";
+import SearchImg from "../../images/SearchForSomethingElse/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png";
+import { selectSearchResults } from "../../redux/searchBar/selectors.js";
 const SearchPage = () => {
-  const searchResults = useSelector((state) => {
-    return state.search.searchResults;
-  });
+  const searchResults = useSelector(selectSearchResults);
   return (
     <>
       <PageTitle>Search</PageTitle>

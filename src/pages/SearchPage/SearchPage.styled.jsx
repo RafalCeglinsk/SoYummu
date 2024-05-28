@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 const SearchPageStyled = styled.div`
-
   margin: 0 auto;
 
   width: 100%;
-display: flex;
-flex-direction: column;
-
-
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 480px) {
     width: 480px;
@@ -25,16 +22,20 @@ flex-direction: column;
   }
 `;
 
-
 const NoResults = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
   max-width: 400px;
   color: var(--color-text-1);
-  gap:16px;
+  gap: 16px;
   margin: 0 auto;
-`
+  margin-bottom: 100px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 200px;
+  }
+`;
 
 export { SearchPageStyled, NoResults };
