@@ -17,9 +17,7 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 const HomePage = lazy(() => import("./pages/Home"));
 const Main = lazy(() => import("./pages/Main"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
-const AddRecipeForm = lazy(() =>
-  import("./components/AddRecipe/AddRecipeForm/AddRecipeForm")
-);
+const AddRecipePage = lazy(() => import("./pages/AddRecipePage"));
 const RecipesPage = lazy(() => import("./pages/RecipePage"));
 
 function App() {
@@ -71,7 +69,7 @@ function App() {
             <Route
               path="/add"
               element={
-                <PrivateRoute redirectTo="/" component={<AddRecipeForm />} />
+                <PrivateRoute redirectTo="/" component={<AddRecipePage />} />
               }
             />
             <Route

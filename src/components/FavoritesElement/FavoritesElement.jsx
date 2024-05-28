@@ -66,7 +66,7 @@ export const FavoritesElement = ({
 
           <PaginationBtn
             onClick={handleNext}
-            disabled={!recipes.length < recipesPerPage}
+            disabled={recipes.length < recipesPerPage}
           >
             Next
           </PaginationBtn>

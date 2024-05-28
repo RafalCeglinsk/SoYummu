@@ -7,7 +7,6 @@ import {
   Right,
   Left,
   Container,
-  StyledH1,
   StyledH2,
   FollowUs,
 } from "./AddRecipeForm.styled";
@@ -98,7 +97,6 @@ const AddRecipeForm = () => {
       <Main>
         <Form onSubmit={handleSubmit}>
           <Left>
-            <StyledH1>Add Recipe</StyledH1>
             <RecipeDescriptionFields
               recipeData={recipeData}
               setRecipeData={setRecipeData}

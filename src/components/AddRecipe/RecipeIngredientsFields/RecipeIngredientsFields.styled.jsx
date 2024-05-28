@@ -60,6 +60,7 @@ export const AddIngredientButton = styled.button`
   border: none;
   border-radius: 24px 44px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
   align-self: center;
   @media screen and (min-width: 768px) {
     width: 20vw;
@@ -70,7 +71,7 @@ export const AddIngredientButton = styled.button`
   }
 
   &:hover {
-    background-color: #45a049;
+    background-color: #22252a;
   }
   &:focus {
     background-color: var(--color-text-5);

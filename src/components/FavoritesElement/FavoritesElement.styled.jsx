@@ -4,13 +4,13 @@ export const PageWarpper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 40px 16px;
+  padding: 40px 16px 50px 16px;
   @media (min-width: 768px) {
-    padding: 40px 32px;
+    padding: 40px 32px 100px 32px;
     gap: 40px;
   }
-  @media (min-width: 1280px) {
-    padding: 50px 100px;
+  @media (min-width: 1440px) {
+    padding: 0px 50px 100px 50px;
     gap: 50px;
   }
 `;
@@ -172,7 +172,10 @@ export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 20px;
+  padding-bottom: 50px;
+  @media (min-width: 768px) {
+    padding-bottom: 100px;
+  }
 `;
 
 export const PaginationBtn = styled.button`
@@ -185,6 +188,10 @@ export const PaginationBtn = styled.button`
   &:hover {
     background-color: #22252a;
     color: #fafafa;
+  }
+  &:disabled {
+    background-color: var(--checkbox-color);
+    color: var(--color-text-3);
   }
 `;
 
