@@ -17,7 +17,6 @@ import { selectPopularRecipes } from "../../../redux/recipes/popular/selectors";
 
 const PopularRecipe = () => {
   const recipes = useSelector(selectPopularRecipes);
-  const [error, setError] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -45,7 +44,7 @@ const PopularRecipe = () => {
             </RecipeCard>
           ))
         ) : (
-          <p>{error || "Loading..."}</p>
+          <p>"Loading..."</p>
         )}
       </RecipeCardContainer>
     </PopularRecipeContainer>

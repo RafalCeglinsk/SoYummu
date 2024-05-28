@@ -1,93 +1,106 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import CategoriesPage from "./pages/CategoriesPage";
-import { MyRecipePage } from "./pages/MyRecipies";
-import Favorites from "./pages/Favorites";
-import ShoppingList from "./pages/ShoppingList";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
-import RegisterPage from "./pages/RegisterPage";
-import LoginPage from "./pages/LoginPage";
-import { HomePage } from "./pages/Home";
-import Main from "./pages/Main";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import AddRecipeForm from "./components/AddRecipe/AddRecipeForm/AddRecipeForm";
-import { RecipesPage } from "./pages/RecipePage";
-import { ShareedLayout } from "./components/SharedLayout/SharedLayout";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop.jsx";
+import { Suspense, lazy } from "react";
+
+const ShareedLayout = lazy(() =>
+  import("./components/SharedLayout/SharedLayout")
+);
+const CategoriesPage = lazy(() => import("./pages/CategoriesPage"));
+const MyRecipePage = lazy(() => import("./pages/MyRecipies"));
+const Favorites = lazy(() => import("./pages/Favorites"));
+const ShoppingList = lazy(() => import("./pages/ShoppingList"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const HomePage = lazy(() => import("./pages/Home"));
+const Main = lazy(() => import("./pages/Main"));
+const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
+const AddRecipeForm = lazy(() =>
+  import("./components/AddRecipe/AddRecipeForm/AddRecipeForm")
+);
+const RecipesPage = lazy(() => import("./pages/RecipePage"));
 
 function App() {
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/auth/register"
-          element={
-            <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
-          }
-        />
-        <Route
-          path="/auth/login"
-          element={
-            <RestrictedRoute redirectTo="/main" component={<LoginPage />} />
-          }
-        />
-        <Route path="/" element={<ShareedLayout />}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route
-            path="/main"
-            element={<PrivateRoute redirectTo="/" component={<Main />} />}
-          />
-          <Route
-            path="/categories"
+            path="/auth/register"
             element={
-              <PrivateRoute
-                redirectTo="/"
-                component={<Navigate to="/categories/beef" />}
-              />
+              <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
             }
           />
           <Route
-            path="/categories/:category"
+            path="/auth/login"
             element={
-              <PrivateRoute redirectTo="/" component={<CategoriesPage />} />
+              <RestrictedRoute redirectTo="/main" component={<LoginPage />} />
             }
           />
-          <Route
-            path="/recipes/:recipeId"
-            element={
-              <PrivateRoute redirectTo="/" component={<RecipesPage />} />
-            }
-          />
-          <Route
-            path="/add"
-            element={
-              <PrivateRoute redirectTo="/" component={<AddRecipeForm />} />
-            }
-          />
-          <Route
-            path="/my"
-            element={
-              <PrivateRoute redirectTo="/" component={<MyRecipePage />} />
-            }
-          />
-          <Route
-            path="/favorite"
-            element={<PrivateRoute redirectTo="/" component={<Favorites />} />}
-          />
-          <Route
-            path="/shoppingList"
-            element={
-              <PrivateRoute redirectTo="/" component={<ShoppingList />} />
-            }
-          />
-          <Route
-            path="/search?"
-            element={<PrivateRoute redirectTo="/" component={<SearchPage />} />}
-          />
-        </Route>
-      </Routes>
+
+          <Route path="/" element={<ShareedLayout />}>
+            <Route
+              path="/main"
+              element={<PrivateRoute redirectTo="/" component={<Main />} />}
+            />
+            <Route
+              path="/categories"
+              element={
+                <PrivateRoute
+                  redirectTo="/"
+                  component={<Navigate to="/categories/beef" />}
+                />
+              }
+            />
+            <Route
+              path="/categories/:category"
+              element={
+                <PrivateRoute redirectTo="/" component={<CategoriesPage />} />
+              }
+            />
+            <Route
+              path="/recipes/:recipeId"
+              element={
+                <PrivateRoute redirectTo="/" component={<RecipesPage />} />
+              }
+            />
+            <Route
+              path="/add"
+              element={
+                <PrivateRoute redirectTo="/" component={<AddRecipeForm />} />
+              }
+            />
+            <Route
+              path="/my"
+              element={
+                <PrivateRoute redirectTo="/" component={<MyRecipePage />} />
+              }
+            />
+            <Route
+              path="/favorite"
+              element={
+                <PrivateRoute redirectTo="/" component={<Favorites />} />
+              }
+            />
+            <Route
+              path="/shoppingList"
+              element={
+                <PrivateRoute redirectTo="/" component={<ShoppingList />} />
+              }
+            />
+            <Route
+              path="/search?"
+              element={
+                <PrivateRoute redirectTo="/" component={<SearchPage />} />
+              }
+            />
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   );
 }

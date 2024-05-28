@@ -11,7 +11,6 @@ const ImageUploadField = ({ onImageUpload }) => {
       onImageUpload(event.target.files[0]);
     }
   };
-  // multipart/form-data
   return (
     <ImageUploadContainer>
       <ImageUploadButton type="button">
