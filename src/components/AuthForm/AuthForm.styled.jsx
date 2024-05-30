@@ -104,6 +104,7 @@ export const StyledInput = styled.input`
   @media (min-width: ${device.tablet}) {
     padding: 17.5px;
     font-size: 18px;
+    width: 90%;
   }
 `;
 
