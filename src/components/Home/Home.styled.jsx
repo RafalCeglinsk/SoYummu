@@ -30,10 +30,10 @@ export const BackgroundSection = styled.div`
   }
 
   @media (min-width: 1440px) {
-    background-image: url(${(props) => props.desktopimage});
+    background-image: url(${(props) => props.$desktopimage});
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url(${(props) => props.desktopretinaimage});
+      background-image: url(${(props) => props.$desktopretinaimage});
     }
   }
 `;
