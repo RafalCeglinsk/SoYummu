@@ -93,8 +93,6 @@ const RecipeDescriptionFields = ({ recipeData, setRecipeData }) => {
   }, [dispatch]);
 
   const handleImageUpload = (file) => {
-    console.log(file);
-
     dispatch(updateField({ name: "recipeImg", value: file }));
   };
 

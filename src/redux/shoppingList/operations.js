@@ -30,7 +30,6 @@ export const getShopping = createAsyncThunk(
       const items = data.shoppingList;
       return items;
     } catch (error) {
-      console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -43,7 +42,6 @@ export const addShopping = createAsyncThunk(
       const result = await axios.post("/shopping-lists", credentials, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(result);
       return result.data;
     } catch (error) {
       return thunkAPI.rejectedWithValue(error.message);

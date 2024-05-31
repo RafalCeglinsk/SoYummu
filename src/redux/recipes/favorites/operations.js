@@ -13,7 +13,6 @@ export const getFavorites = createAsyncThunk(
       const favorites = data.result;
       return favorites;
     } catch (error) {
-      console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -30,7 +29,6 @@ export const toggleFavorite = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      console.log("Error:", error);
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
@@ -47,7 +45,6 @@ export const removeFavorite = createAsyncThunk(
       });
       return { data: response.data, _id: recipeId };
     } catch (error) {
-      console.log("Error:", error);
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }

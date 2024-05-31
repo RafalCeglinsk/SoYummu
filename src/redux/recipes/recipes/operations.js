@@ -40,7 +40,6 @@ export const getMyRecipes = createAsyncThunk(
       const result = data.result;
       return result;
     } catch (error) {
-      console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -55,7 +54,6 @@ export const deleteRecipe = createAsyncThunk(
       });
       return { data: response.data, _id: recipeId };
     } catch (error) {
-      console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
