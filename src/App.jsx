@@ -4,6 +4,7 @@ import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop.jsx";
 import { Suspense, lazy } from "react";
+import PageNotFound from "#components/PageNotFound/PageNotFound.jsx";
 
 const ShareedLayout = lazy(() =>
   import("./components/SharedLayout/SharedLayout")
@@ -96,6 +97,7 @@ function App() {
                 <PrivateRoute redirectTo="/" component={<SearchPage />} />
               }
             />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
       </Suspense>
