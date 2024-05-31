@@ -35,7 +35,6 @@ const StyledListContainerIngridient = styled.ul`
   @media (min-width: 768px) {
     padding: 0px 40px;
   }
-
 `;
 
 const StyledIngridientsContainer = styled.div`
@@ -118,7 +117,7 @@ const StyledQuantity = styled.p`
   justify-content: center;
   align-items: center;
   min-width: 37px;
-  max-width: 20%;
+  max-width: 50%;
   height: fit-content;
   margin-bottom: 4px;
   color: #fafafa;
@@ -131,9 +130,6 @@ const StyledQuantity = styled.p`
   @media (min-width: 768px) {
     padding: 10px;
     font-size: 18px;
-  }
-  @media (min-width: 1440px) {
-    max-width: 40%;
   }
 `;
 const StyledFlexQuantity = styled.div`
