@@ -1,5 +1,5 @@
-import { MyRecipe } from "../components/MyRecipies/MyRecipe";
-import { PageTitle } from "../components/PageTitle/PageTitle";
+import { MyRecipe } from "#components/MyRecipies/MyRecipe";
+import { PageTitle } from "#components/PageTitle/PageTitle";
 
 const MyRecipePage = () => {
   return (

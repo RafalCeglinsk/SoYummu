@@ -1,9 +1,10 @@
+import Select from "react-select";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { performSearch } from "../../../redux/searchBar/operations.js";
+
 import SearchBarStyled from "./SearchBar.styled.jsx";
-import Select from "react-select";
+import { performSearch } from "#redux/searchBar/operations.js";
 import {
   Form,
   SearchSpan,

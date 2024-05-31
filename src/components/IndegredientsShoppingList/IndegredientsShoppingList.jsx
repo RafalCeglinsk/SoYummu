@@ -1,5 +1,11 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+import vegetableBasket from "#images/IndegredientsShoppingList/vegetableBasket.jpg";
+import vegetableBasket2x from "#images/IndegredientsShoppingList/vegetableBasket2x.jpg";
+import { selectToken } from "#redux/auth/selectors.js";
+import { selectShoppingList } from "#redux/shoppingList/selectors.js";
+import { deleteShopping, getShopping } from "#redux/shoppingList/operations.js";
 import {
   StyledIngridientsHeader,
   StyledIngridientsItem,
@@ -14,14 +20,6 @@ import {
   PictrueContainerStyled,
   StyledCloseIcon,
 } from "./IndegredientsShoppingListStyled.js";
-import {
-  deleteShopping,
-  getShopping,
-} from "../../redux/shoppingList/operations.js";
-import vegetableBasket from "../../images/IndegredientsShoppingList/vegetableBasket.jpg";
-import vegetableBasket2x from "../../images/IndegredientsShoppingList/vegetableBasket2x.jpg";
-import { selectToken } from "../../redux/auth/selectors.js";
-import { selectShoppingList } from "../../redux/shoppingList/selectors.js";
 
 const IngredientsShoppingList = () => {
   const token = useSelector(selectToken);

@@ -1,4 +1,4 @@
-import RecipePage from "../components/RecipePage/RecipePage";
+import RecipePage from "#components/RecipePage/RecipePage";
 
 const RecipesPage = () => {
   return (

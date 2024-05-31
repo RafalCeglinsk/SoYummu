@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import Notiflix from "notiflix";
+import { useDispatch, useSelector } from "react-redux";
+
+import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
+import { addRecipe } from "#redux/recipes/addRecipe/operations";
+import { SocialMediaBar } from "../../SocialMediaBar/SocialMediaBar";
+import { selectToken } from "#redux/auth/selectors";
 import {
   Form,
   SubmitButton,
@@ -10,15 +16,10 @@ import {
   StyledH2,
   FollowUs,
 } from "./AddRecipeForm.styled";
-import { RecipeDescriptionFields } from "../RecipeDescriptionFields/RecipeDescriptionFields";
+
 import RecipePreparationFields from "../RecipePreparationFields/RecipePreparationFields";
 import RecipeIngredientsFields from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import PopularRecipe from "../PopularRecipe/PopularRecipe";
-import { SocialMediaBar } from "../../SocialMediaBar/SocialMediaBar";
-import Notiflix from "notiflix";
-import { addRecipe } from "../../../redux/recipes/addRecipe/operations";
-import { useDispatch, useSelector } from "react-redux";
-import { selectToken } from "../../../redux/auth/selectors";
 
 const AddRecipeForm = () => {
   const dispatch = useDispatch();

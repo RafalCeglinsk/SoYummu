@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import NoImage from "#images/NoImage/NoImageSmall.png";
+import { getRecipesLimit } from "#hooks/useWidth";
 import {
   GalleryLi,
   ElementWrapper,
   RecipeImg,
   RecipeDescription,
 } from "./MainGallery.styled";
-import NoImage from "../../../images/NoImage/NoImageSmall.png";
-import { getRecipesLimit } from "../../../hooks/useWidth";
 
 export const PreviewCategories = ({ categoryRecipes, viewMode }) => {
   const renderRecipes = (recipes, limit) => {

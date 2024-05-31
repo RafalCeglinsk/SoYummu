@@ -1,5 +1,6 @@
-import FavoriteRecipes from "../components/Favorites/FavoriteRecipies/FavoriteRecipies";
-import { PageTitle } from "../components/PageTitle/PageTitle";
+import FavoriteRecipes from "#components/Favorites/FavoriteRecipies/FavoriteRecipies";
+import { PageTitle } from "#components/PageTitle/PageTitle";
+
 function Favorites() {
   return (
     <div>

@@ -2,7 +2,12 @@ import React, { useRef, useEffect, useState } from "react";
 import Notiflix from "notiflix";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
+
 import { CameraIcon } from "../../RenderSvg/RenderSvg";
+import { getCategories } from "#redux/categories/operations";
+import { updateField } from "#redux/recipes/addRecipe/addRecipeSlice.js";
+import { selectCategories } from "#redux/categories/selectors";
+import { addRecipe } from "#redux/recipes/addRecipe/operations";
 import {
   FieldContainer,
   Input,
@@ -14,12 +19,8 @@ import {
   Form,
   ImagePreview,
 } from "./RecipeDescriptionFields.styled";
-import { getCategories } from "../../../redux/categories/operations";
-import { updateField } from "../../../redux/recipes/addRecipe/addRecipeSlice.js";
-import { selectCategories } from "../../../redux/categories/selectors.js";
-import { addRecipe } from "../../../redux/recipes/addRecipe/operations.js";
 
-const ImageUploadField = ({ onImageUpload, setRecipeData }) => {
+const ImageUploadField = ({ setRecipeData }) => {
   const fileInputRef = useRef(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState("");
 

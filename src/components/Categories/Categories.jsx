@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { GalleryElement } from "../GalleryElement/GalleryElement";
-
-import { CategoriesWrapper } from "./Categories.styled";
-import { getCategory } from "../../redux/categories/operations";
-import { useEffect } from "react";
-import { selectCategory } from "../../redux/categories/selectors";
-import { HorizontalScrollList } from "./HorizontalScrollList/HorizontalScrollList";
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
+import { GalleryElement } from "../GalleryElement/GalleryElement";
+import { CategoriesWrapper } from "./Categories.styled";
+import { getCategory } from "#redux/categories/operations";
+import { selectCategory } from "#redux/categories/selectors";
+import { HorizontalScrollList } from "./HorizontalScrollList/HorizontalScrollList";
 
 export const Categories = () => {
   const { category } = useParams();

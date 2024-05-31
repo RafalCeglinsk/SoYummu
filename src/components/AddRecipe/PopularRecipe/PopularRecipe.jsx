@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getPopularRecipes } from "#redux/recipes/popular/operations";
+import { selectPopularRecipes } from "#redux/recipes/popular/selectors";
 import {
   PopularRecipeContainer,
   RecipeCard,
@@ -10,9 +14,6 @@ import {
   RecipeInfo,
   StyledLink,
 } from "./PopularRecipe.styled";
-import { useDispatch, useSelector } from "react-redux";
-import { getPopularRecipes } from "../../../redux/recipes/popular/operations";
-import { selectPopularRecipes } from "../../../redux/recipes/popular/selectors";
 
 const PopularRecipe = () => {
   const recipes = useSelector(selectPopularRecipes);

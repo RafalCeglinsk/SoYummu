@@ -1,5 +1,5 @@
-import { PageTitle } from "../components/PageTitle/PageTitle.jsx";
-import IngredientsShoppingList from "../components/IndegredientsShoppingList/IndegredientsShoppingList.jsx";
+import { PageTitle } from "#components/PageTitle/PageTitle";
+import IngredientsShoppingList from "#components/IndegredientsShoppingList/IndegredientsShoppingList";
 
 const ShoppingList = () => {
   return (

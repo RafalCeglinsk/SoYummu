@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { getMainPageRecipes } from "./operations";
 
 const isPendingAction = (action) => {

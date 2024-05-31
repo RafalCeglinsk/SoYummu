@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { getFavorites, removeFavorite, toggleFavorite } from "./operations";
 
 const isPendingAction = (action) => {

@@ -1,13 +1,14 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
 
-import { StartLogoBig } from "../RenderSvg/RenderSvg";
-import { HamburgerMenu } from "./Hamburger/Hamburger";
 import Nav from "../Navigation/Navigation";
 import UserLogoutModal from "./ProfileModal/ProfileModal";
+import { useAuth } from "#hooks/useAuth";
+import { StartLogoBig } from "../RenderSvg/RenderSvg";
+import { HamburgerMenu } from "./Hamburger/Hamburger";
 
 import {
   NavContainer,
@@ -18,7 +19,6 @@ import {
   UserAvatar,
   RightWrapper,
 } from "./Header.styled";
-import { useLocation } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -41,34 +41,31 @@ export const Header = () => {
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
           <>
-          <HeaderContainer>
-         
-            <NavLink to="/main">
-              <StartLogoBig />
-            </NavLink>
-  
-            <NavContainer>
-              <Nav />
-            </NavContainer>
-            <RightWrapper>
-            <UserInfo onClick={toggleUserModal}>
-              <UserAvatar src={user.avatar} />
-              <UserName>{user.name}</UserName>
-              {isUserModalOpen && <UserLogoutModal />}
-            </UserInfo>
+            <HeaderContainer>
+              <NavLink to="/main">
+                <StartLogoBig />
+              </NavLink>
 
-            <HamburgerButton>
-              <GiHamburgerMenu onClick={toggleBurgerMenu} />
-            </HamburgerButton>
-            </RightWrapper>
+              <NavContainer>
+                <Nav />
+              </NavContainer>
+              <RightWrapper>
+                <UserInfo onClick={toggleUserModal}>
+                  <UserAvatar src={user.avatar} />
+                  <UserName>{user.name}</UserName>
+                  {isUserModalOpen && <UserLogoutModal />}
+                </UserInfo>
 
-        
-          </HeaderContainer>
-              <HamburgerMenu
+                <HamburgerButton>
+                  <GiHamburgerMenu onClick={toggleBurgerMenu} />
+                </HamburgerButton>
+              </RightWrapper>
+            </HeaderContainer>
+            <HamburgerMenu
               openState={isMenuOpen}
               handleCloseMenu={toggleBurgerMenu}
             />
-            </>
+          </>
         )}
     </>
   );

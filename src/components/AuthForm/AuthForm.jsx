@@ -1,9 +1,9 @@
+import Notiflix from "notiflix";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Notiflix from "notiflix";
 
-import { login, register as registerAction } from "../../redux/auth/operations";
+import { login, register as registerAction } from "#redux/auth/operations";
 import {
   Form,
   Flex,
@@ -17,7 +17,7 @@ import {
   StyledLink,
   Background,
 } from "./AuthForm.styled";
-import { validationRules } from "../../utils/authValidation";
+import { validationRules } from "#utils/authValidation";
 
 const formConfig = {
   "/auth/register": {

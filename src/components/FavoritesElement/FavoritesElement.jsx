@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { IoTrashOutline } from "react-icons/io5";
 import { FaRegClock } from "react-icons/fa6";
-import SearchImg from "../../images/SearchForSomethingElse/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png";
+
+import SearchImg from "#images/SearchForSomethingElse/kisspng-vegetable-fruit-basket-century-farms-international-fruits-and-vegetables-5abfb9c60122f5 1.png";
 import {
   PageWarpper,
   FavRecipeItem,

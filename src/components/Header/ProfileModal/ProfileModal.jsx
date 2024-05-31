@@ -1,15 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../../redux/auth/operations";
-
 import { FiArrowRight } from "react-icons/fi";
-import { HiOutlinePencil } from "react-icons/hi";
-import {
-  ProfieleModalContainer,
-  EditButton,
-  LogoutButton,
-} from "./ProfileModal.styled";
+
+import { logout } from "#redux/auth/operations";
+import { ProfieleModalContainer, LogoutButton } from "./ProfileModal.styled";
 
 const UserLogoutModal = ({ handleEditProfileOpen }) => {
   const dispatch = useDispatch();

@@ -1,13 +1,14 @@
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { getCategories } from "#redux/categories/operations";
+import { selectCategories } from "#redux/categories/selectors";
 import {
   ScrollContainer,
   ScrollItem,
   StyledUl,
 } from "../HorizontalScrollList/HorizontalScrollList.styled";
-import { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { getCategories } from "../../../redux/categories/operations";
-import { selectCategories } from "../../../redux/categories/selectors";
 
 export const HorizontalScrollList = () => {
   const scrollRef = useRef();
