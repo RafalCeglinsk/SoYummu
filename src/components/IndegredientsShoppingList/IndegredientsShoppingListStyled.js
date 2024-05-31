@@ -27,7 +27,8 @@ const PictrueContainerStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  padding-bottom: 100px;
+  padding-top: 100px;
 `;
 
 const StyledListContainerIngridient = styled.ul`
@@ -71,6 +72,7 @@ const StyledIngridientsHeader = styled.div`
     padding: 21px 40px;
     line-height: normal;
     letter-spacing: 0.54px;
+
   }
 `;
 const StyledIngrsHeadThumb = styled.div`
