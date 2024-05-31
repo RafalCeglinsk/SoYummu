@@ -20,12 +20,12 @@ export const Home = () => {
 
   return (
     <BackgroundSection
-      mobileimage={mobileSmallPhoto}
-      mobileiretinaimage={mobileBigPhoto}
-      tabletimage={tabletSmallPhoto}
-      tabletretinaimage={tabletBigPhoto}
-      desktopimage={desktopSmallPhoto}
-      desktopretinaimage={desktopBigPhoto}
+      $mobileimage={mobileSmallPhoto}
+      $mobileiretinaimage={mobileBigPhoto}
+      $tabletimage={tabletSmallPhoto}
+      $tabletretinaimage={tabletBigPhoto}
+      $desktopimage={desktopSmallPhoto}
+      $desktopretinaimage={desktopBigPhoto}
     >
       <Div>
         {isDesktop ? <StartLogoBig /> : <StartLogoSmall />}
