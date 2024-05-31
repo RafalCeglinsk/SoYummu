@@ -4,8 +4,8 @@ import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop.jsx";
 import { Suspense, lazy } from "react";
-import PageNotFound from "#components/PageNotFound/PageNotFound.jsx";
 
+import PageNotFound from "#components/PageNotFound/PageNotFound";
 const ShareedLayout = lazy(() =>
   import("./components/SharedLayout/SharedLayout")
 );
