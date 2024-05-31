@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const IngredientsContainer = styled.div`
   margin-bottom: 44px;
 
-  @media screen and (min-width: 1440px) {
-    max-width: 35vw;
-  }
 `;
 
 export const IngredientsHeader = styled.div`

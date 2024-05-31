@@ -6,7 +6,6 @@ export const ImageUploadContainer = styled.div`
   justify-content: center;
   align-items: center;
   align-self: center;
-  width: 70vw;
   height: 230px;
   border-radius: 18px;
   cursor: pointer;

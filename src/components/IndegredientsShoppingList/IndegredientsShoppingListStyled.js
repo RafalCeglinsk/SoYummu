@@ -27,21 +27,26 @@ const PictrueContainerStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  padding-bottom: 100px;
+  padding-top: 100px;
 `;
 
 const StyledListContainerIngridient = styled.ul`
   padding: 0px 16px;
-  @media (min-width: 1440px) {
+  @media (min-width: 768px) {
     padding: 0px 40px;
   }
 `;
 
 const StyledIngridientsContainer = styled.div`
   padding-top: 50px;
-
+  padding: 0px 16px;
   @media (min-width: 768px) {
     padding-top: 72px;
+    padding: 0px 32px;
+  }
+  @media (min-width: 1440px) {
+    padding: 0px 100px;
   }
 `;
 const StyledIngridientsHeader = styled.div`
@@ -67,6 +72,7 @@ const StyledIngridientsHeader = styled.div`
     padding: 21px 40px;
     line-height: normal;
     letter-spacing: 0.54px;
+
   }
 `;
 const StyledIngrsHeadThumb = styled.div`
@@ -113,7 +119,7 @@ const StyledQuantity = styled.p`
   justify-content: center;
   align-items: center;
   min-width: 37px;
-  max-width: 20%;
+  max-width: 50%;
   height: fit-content;
   margin-bottom: 4px;
   color: #fafafa;
@@ -127,15 +133,12 @@ const StyledQuantity = styled.p`
     padding: 10px;
     font-size: 18px;
   }
-  @media (min-width: 1440px) {
-    max-width: 40%;
-  }
 `;
 const StyledFlexQuantity = styled.div`
   display: flex;
   justify-content: space-between;
   width: 35%;
-  padding-right: 1%;
+
   @media (min-width: 1440px) {
     width: 40%;
   }
@@ -159,6 +162,7 @@ const StyledCloseIcon = styled(MdClear)`
   border-radius: 50%;
   cursor: pointer;
   padding: 3px;
+  padding-right: 3%;
   color: var(--text-primary);
 
   transition: color 250ms var(--cubic-bezier),

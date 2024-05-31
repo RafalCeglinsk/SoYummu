@@ -19,11 +19,9 @@ export const RecipeCardContainer = styled.div`
   flex-direction: column;
 
   @media (min-width: 768px) {
-    /* Ustawienie dla tabletów */
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around; /* Dodaje przestrzeń wokół elementów */
-    width: 100%;
+    justify-content: space-around;
   }
 
   @media (min-width: 1440px) {
@@ -42,20 +40,15 @@ export const RecipeCard = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  width: 100%; /* Pełna szerokość dla urządzeń mobilnych */
 
   @media (min-width: 768px) {
-    /* Ustawienie dla tabletów */
-    width: calc(
-      50% - 20px
-    ); /* Oblicza szerokość, aby zmieścić dwa elementy w wierszu */
-    flex-direction: row; /* Elementy obok siebie */
+    width: calc(50% - 20px);
+    flex-direction: row;
   }
 `;
 
 export const StyledLink = styled(Link)`
   display: flex;
-  width: 100%; /* Zapewnia, że link rozciąga się na całą szerokość karty */
 `;
 
 export const RecipeImage = styled.img`
@@ -63,7 +56,7 @@ export const RecipeImage = styled.img`
   height: 120px;
   object-fit: cover;
   flex-shrink: 0;
-  border-radius: 8px 0 0 8px; /* Zaokrągla tylko lewe rogi */
+  border-radius: 8px 0 0 8px;
 `;
 
 export const RecipeInfo = styled.div`
@@ -72,7 +65,7 @@ export const RecipeInfo = styled.div`
   justify-content: center;
   padding: 5px 10px;
   overflow: hidden;
-  flex-grow: 1; /* Pozwala na rozciągnięcie i wypełnienie dostępnej przestrzeni */
+  flex-grow: 1;
 `;
 
 export const RecipeTitle = styled.h3`
