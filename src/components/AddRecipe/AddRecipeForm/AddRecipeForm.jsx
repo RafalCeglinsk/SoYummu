@@ -11,7 +11,6 @@ import {
   SubmitButton,
   Main,
   Right,
-  Left,
   Container,
   StyledH2,
   FollowUs,
@@ -97,7 +96,7 @@ const AddRecipeForm = () => {
     <Container>
       <Main>
         <Form onSubmit={handleSubmit}>
-          <Left>
+      
             <RecipeDescriptionFields
               recipeData={recipeData}
               setRecipeData={setRecipeData}
@@ -111,7 +110,7 @@ const AddRecipeForm = () => {
               setRecipeData={setRecipeData}
             />
             <SubmitButton type="submit">Add recipe</SubmitButton>
-          </Left>
+   
         </Form>
 
         <Right>

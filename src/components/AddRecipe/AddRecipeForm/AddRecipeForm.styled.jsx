@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 0 16px;
+  margin: 0px 16px;
   padding-bottom: 100px;
   @media screen and (min-width: 768px) {
-    margin: 0 32px;
+    margin: 0px 32px;
     padding-bottom: 200px;
   }
   @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 100px;
   }
 `;
 
@@ -19,22 +20,21 @@ export const Main = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media screen and (min-width: 768px) {
-  }
   @media screen and (min-width: 1440px) {
     flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 50px;
   }
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 72px;
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1440px) {
-    margin: 0 100px;
-    max-width: 800px;
+    width: 50%;
   }
 `;
 
@@ -74,23 +74,10 @@ export const SubmitButton = styled.button`
 
 export const Right = styled.div`
   @media screen and (min-width: 1440px) {
-    margin-top: 150px;
+    margin-left: 50px;
   }
 `;
-export const Left = styled.div``;
 
-export const StyledH1 = styled.h1`
-  font-size: 28px;
-  margin-bottom: 72px;
-  @media screen and (min-width: 768px) {
-    font-size: 32px;
-    margin-bottom: 100px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 44px;
-  }
-`;
 export const StyledH2 = styled.h2`
   display: none;
   @media screen and (min-width: 768px) {
@@ -99,7 +86,6 @@ export const StyledH2 = styled.h2`
 
   @media screen and (min-width: 1440px) {
     display: block;
-    margin-bottom: 40px;
   }
 `;
 
@@ -110,6 +96,8 @@ export const FollowUs = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 `;
