@@ -32,16 +32,21 @@ const PictrueContainerStyled = styled.div`
 
 const StyledListContainerIngridient = styled.ul`
   padding: 0px 16px;
-  @media (min-width: 1440px) {
+  @media (min-width: 768px) {
     padding: 0px 40px;
   }
+
 `;
 
 const StyledIngridientsContainer = styled.div`
   padding-top: 50px;
-
+  padding: 0px 16px;
   @media (min-width: 768px) {
     padding-top: 72px;
+    padding: 0px 32px;
+  }
+  @media (min-width: 1440px) {
+    padding: 0px 100px;
   }
 `;
 const StyledIngridientsHeader = styled.div`
@@ -135,7 +140,7 @@ const StyledFlexQuantity = styled.div`
   display: flex;
   justify-content: space-between;
   width: 35%;
-  padding-right: 1%;
+
   @media (min-width: 1440px) {
     width: 40%;
   }
@@ -159,6 +164,7 @@ const StyledCloseIcon = styled(MdClear)`
   border-radius: 50%;
   cursor: pointer;
   padding: 3px;
+  padding-right: 3%;
   color: var(--text-primary);
 
   transition: color 250ms var(--cubic-bezier),
