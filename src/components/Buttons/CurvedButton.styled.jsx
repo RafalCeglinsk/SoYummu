@@ -10,7 +10,7 @@ export const ButtonColor = styled.button`
   padding: 12px 24px;
   color: var(--color-default-1);
   margin-right: 12px;
-
+  transition: color var(--transition-time) var(--cubic);
   &:hover,
   &:focus {
     background-color: var(--color-icons-1);
