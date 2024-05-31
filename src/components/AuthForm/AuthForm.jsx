@@ -39,11 +39,9 @@ const formConfig = {
 };
 
 export const AuthForm = () => {
-  const {
-    register: registerField,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ mode: "onBlur" });
+  const { register: registerField, handleSubmit } = useForm({
+    mode: "onSubmit",
+  });
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation().pathname;
