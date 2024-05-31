@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { getCategories, getCategory } from "./operations";
 
 const isPendingAction = (action) => {

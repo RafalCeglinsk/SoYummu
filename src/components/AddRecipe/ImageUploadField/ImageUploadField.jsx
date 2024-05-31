@@ -1,9 +1,10 @@
 import React from "react";
+
+import { RenderFacebook } from "../../RenderSvg/RenderSvg";
 import {
   ImageUploadContainer,
   ImageUploadButton,
 } from "./ImageUploadField.styled";
-import { RenderFacebook } from "../../RenderSvg/RenderSvg";
 
 const ImageUploadField = ({ onImageUpload }) => {
   const handleImageChange = (event) => {
@@ -11,7 +12,6 @@ const ImageUploadField = ({ onImageUpload }) => {
       onImageUpload(event.target.files[0]);
     }
   };
-  // multipart/form-data
   return (
     <ImageUploadContainer>
       <ImageUploadButton type="button">

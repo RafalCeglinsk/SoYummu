@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { GalleryUl, MainGalleryH2, ButtonWrapper } from "./MainGallery.styled";
 import { PreviewCategories } from "./PreviewCategories";
 import { ButtonSeeAll } from "../../Buttons/GalleryButtonSeeAll";
-import { getViewMode } from "../../../hooks/useWidth";
-import { getMainPageRecipes } from "../../../redux/recipes/main-page/operations";
-import { selectMainPage } from "../../../redux/recipes/main-page/selectors";
+import { getViewMode } from "#hooks/useWidth";
+import { getMainPageRecipes } from "#redux/recipes/main-page/operations";
+import { selectMainPage } from "#redux/recipes/main-page/selectors";
 
 export const MainGallery = () => {
   const [viewMode, setViewMode] = useState(getViewMode());

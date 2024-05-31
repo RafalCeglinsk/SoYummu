@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { getFavorites, removeFavorite, toggleFavorite } from "./operations";
 
 const isPendingAction = (action) => {
@@ -30,7 +31,6 @@ export const favoriteSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getFavorites.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.error = null;
         state.items = payload;
         state.isLoading = false;
@@ -41,7 +41,6 @@ export const favoriteSlice = createSlice({
         state.error = null;
       })
       .addCase(removeFavorite.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.error = null;
         state.items = state.items.filter((id) => {
           return id !== payload._id;

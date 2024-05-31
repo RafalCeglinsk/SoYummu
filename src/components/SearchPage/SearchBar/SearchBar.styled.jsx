@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
- export const Form =styled.form`
+export const Form = styled.form`
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -10,26 +10,25 @@ import styled from "styled-components";
   @media screen and (min-width: 768px) {
     gap: 28px;
   }
-`
+`;
 
 const SearchBarStyled = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 295px;
-  
+
   position: relative;
   @media screen and (min-width: 768px) {
     max-width: 368px;
- 
   }
   @media screen and (min-width: 1440px) {
     max-width: 510px;
   }
   input {
     padding: 16px 113px 16px 32px;
-width: 100%;
-position: relative;
+    width: 100%;
+    position: relative;
     font-size: 12px;
     line-height: 21px;
     border: none;
@@ -39,9 +38,8 @@ position: relative;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     color: var(--color-text-3);
     transition: background-color var(--transition-time) var(--cubic);
-    &:hover{
-   
-        transform: translateX(-2px);
+    &:hover {
+      transform: translateX(-2px);
     }
     &::placeholder {
       color: #bdbdbd;
@@ -52,6 +50,7 @@ position: relative;
     top: 0px;
     right: 0px;
     background-color: var(--color-icons-1);
+    transition: background-color 0.2s ease-in-out;
     color: var(--color-text-7);
     border-radius: 15px 35px;
     border: 1px;
@@ -60,23 +59,21 @@ position: relative;
     height: 100%;
     width: 30%;
     &:hover,
-  &:focus {
-    background-color: var(--color-icons-3);
-  }
+    &:focus {
+      background-color: var(--color-icons-3);
+    }
   }
 `;
 
 export default SearchBarStyled;
 
-
 export const Label = styled.label`
-padding: 35px 0px ;
+  padding: 35px 0px;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
 
   font-weight: 500;
-
 `;
 
 export const SearchSpan = styled.span`
@@ -89,8 +86,6 @@ export const SelectStyle = styled.div`
   font-size: 16px;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
-
- 
 `;
 export const customSelectStyles = {
   menuList: (provided) => ({
@@ -148,13 +143,10 @@ export const customSelectStyles = {
   }),
   indicatorSeparator: () => ({
     display: "none",
-  })
-
+  }),
 };
 
-
 export const Option = styled.option`
-
   padding: 8px 16px;
   font-size: 16px;
   font-weight: 400;

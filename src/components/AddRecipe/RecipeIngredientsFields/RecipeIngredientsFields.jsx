@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import Select from "react-select";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getIngredients } from "#redux/ingredients/operations";
+import { selectIngredients } from "#redux/ingredients/selectors";
 import {
   IngredientsContainer,
   IngredientsHeader,
@@ -12,9 +16,6 @@ import {
   ingredientSelect,
   Span,
 } from "./RecipeIngredientsFields.styled";
-import { useDispatch, useSelector } from "react-redux";
-import { getIngredients } from "../../../redux/ingredients/operations";
-import { selectIngredients } from "../../../redux/ingredients/selectors";
 
 const unitOptions = [
   { value: "tbs", label: "tbs" },

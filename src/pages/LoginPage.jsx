@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
-import { AuthForm } from "../components/AuthForm/AuthForm";
+
+import { AuthForm } from "#components/AuthForm/AuthForm";
 
 const LoginPage = () => {
   return (

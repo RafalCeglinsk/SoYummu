@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px 16px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
   @media screen and (min-width: 768px) {
     padding: 18px 32px;
   }
@@ -15,13 +18,13 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const RightWrapper=styled.div`
-display: flex;
-gap:20px;
-@media screen and (min-width: 768px) {
-gap:50px;
+export const RightWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  @media screen and (min-width: 768px) {
+    gap: 50px;
   }
-`
+`;
 export const NavContainer = styled.div`
   display: none;
   @media (min-width: 1440px) {
@@ -30,8 +33,6 @@ export const NavContainer = styled.div`
 `;
 export const HamburgerButton = styled.div`
   cursor: pointer;
-  /* position: absolute;
-  right: 16px; */
 
   @media screen and (min-width: 768px) {
     right: 32px;

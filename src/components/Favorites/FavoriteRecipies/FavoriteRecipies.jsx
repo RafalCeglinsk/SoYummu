@@ -1,11 +1,11 @@
 import React from "react";
 import { FavoritesElement } from "../../FavoritesElement/FavoritesElement";
-import { selectFavorites } from "../../../redux/recipes/favorites/selectors";
+import { selectFavorites } from "#redux/recipes/favorites/selectors";
 import {
   getFavorites,
   removeFavorite,
-} from "../../../redux/recipes/favorites/operations";
-import { useRecipePagination } from "../../../hooks/useRecipePagination";
+} from "#redux/recipes/favorites/operations";
+import { useRecipePagination } from "#hooks/useRecipePagination";
 
 const FavoriteRecipes = () => {
   const {

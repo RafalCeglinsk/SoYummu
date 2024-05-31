@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 16px;
+  padding-bottom: 100px;
   @media screen and (min-width: 768px) {
     margin: 0 32px;
+    padding-bottom: 200px;
   }
   @media screen and (min-width: 1440px) {
     display: flex;
@@ -55,7 +57,7 @@ export const SubmitButton = styled.button`
   }
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #8baa36;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 

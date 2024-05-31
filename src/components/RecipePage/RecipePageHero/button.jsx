@@ -1,11 +1,12 @@
-import { Button } from "./RecipePage.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsFavorite } from "../../../redux/recipes/favorites/selectors";
+
+import { selectIsFavorite } from "#redux/recipes/favorites/selectors";
 import {
   removeFavorite,
   toggleFavorite,
-} from "../../../redux/recipes/favorites/operations";
-import { selectToken } from "../../../redux/auth/selectors";
+} from "#redux/recipes/favorites/operations";
+import { selectToken } from "#redux/auth/selectors";
+import { Button } from "./RecipePage.styled";
 
 export const AddButton = ({ recipe }) => {
   const dispatch = useDispatch();

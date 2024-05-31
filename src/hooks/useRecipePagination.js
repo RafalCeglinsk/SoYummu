@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectToken } from "../redux/auth/selectors";
+
+import { selectToken } from "#redux/auth/selectors";
 
 export const useRecipePagination = (
   getRecipesAction,

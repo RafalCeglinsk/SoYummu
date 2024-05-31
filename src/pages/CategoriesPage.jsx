@@ -1,5 +1,6 @@
-import { Categories } from "../components/Categories/Categories";
-import { PageTitle } from "../components/PageTitle/PageTitle";
+import { Categories } from "#components/Categories/Categories";
+import { PageTitle } from "#components/PageTitle/PageTitle";
+
 function CategoriesPage() {
   return (
     <>

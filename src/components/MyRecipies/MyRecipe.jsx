@@ -1,9 +1,6 @@
-import { useRecipePagination } from "../../hooks/useRecipePagination";
-import {
-  deleteRecipe,
-  getMyRecipes,
-} from "../../redux/recipes/recipes/operations";
-import { selectOwnRecipe } from "../../redux/recipes/recipes/selectors";
+import { useRecipePagination } from "#hooks/useRecipePagination";
+import { deleteRecipe, getMyRecipes } from "#redux/recipes/recipes/operations";
+import { selectOwnRecipe } from "#redux/recipes/recipes/selectors";
 import { FavoritesElement } from "../FavoritesElement/FavoritesElement";
 
 export const MyRecipe = () => {

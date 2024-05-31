@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
+
 import { SectionWrapper } from "./RecipeIngredients.styled";
+import { addShopping } from "#redux/shoppingList/operations";
+import { selectToken } from "#redux/auth/selectors";
 import {
   IngredientsListContainer,
   HeadUl,
@@ -9,8 +12,6 @@ import {
   CheckBoxWrapper,
   Measure,
 } from "./RecipeIngredients.styled";
-import { addShopping } from "../../../redux/shoppingList/operations";
-import { selectToken } from "../../../redux/auth/selectors";
 
 export const RecipeIngredientsList = ({ recipe }) => {
   const ingredients = recipe.ingredients;

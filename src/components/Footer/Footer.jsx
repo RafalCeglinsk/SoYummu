@@ -1,9 +1,9 @@
 import React from "react";
 
-import { SocialMediaBar } from "../SocialMediaBar/SocialMediaBar";
-import { StartLogoSmall } from "../RenderSvg/RenderSvg";
 import Nav from "../Navigation/Navigation";
 import SubscribeForm from "./SubscribeForm/SubscribeForm";
+import { SocialMediaBar } from "../SocialMediaBar/SocialMediaBar";
+import { StartLogoSmall } from "../RenderSvg/RenderSvg";
 
 import {
   FooterContent,
@@ -13,6 +13,7 @@ import {
   FooterBarText,
   RightText,
 } from "./Footer.styled";
+
 function Footer() {
   return (
     <>

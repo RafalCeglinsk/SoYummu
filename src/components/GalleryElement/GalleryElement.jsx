@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+
 import {
   GalleryUl,
   GalleryLi,
   RecipeImg,
   RecipeDescription,
 } from "../SearchPage/SearchedRecipesList/SearchedRecipesList.styled";
+
 export const GalleryElement = ({ category }) => {
   const recipes = category;
   return (

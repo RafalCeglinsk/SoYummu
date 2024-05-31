@@ -1,7 +1,7 @@
-import { MyRecipe } from "../components/MyRecipies/MyRecipe";
-import { PageTitle } from "../components/PageTitle/PageTitle";
+import { MyRecipe } from "#components/MyRecipies/MyRecipe";
+import { PageTitle } from "#components/PageTitle/PageTitle";
 
-export const MyRecipePage = () => {
+const MyRecipePage = () => {
   return (
     <div>
       <PageTitle>My Recipes</PageTitle>
@@ -9,3 +9,5 @@ export const MyRecipePage = () => {
     </div>
   );
 };
+
+export default MyRecipePage;

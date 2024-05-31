@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import { RecipePageHero } from "./RecipePageHero/RecipePageHero";
 import { RecipePreparation } from "./RecipePreparation/RecipePreparation";
 import { RecipeIngredientsList } from "./RecipeIngredientsList/RecipeIngredientsList";
-import { getRecipeId } from "../../redux/recipes/recipes/operations";
-import { selectRecipe } from "../../redux/recipes/recipes/selectors";
+import { getRecipeId } from "#redux/recipes/recipes/operations";
+import { selectRecipe } from "#redux/recipes/recipes/selectors";
 
 export const RecipePage = () => {
   const { recipeId } = useParams();

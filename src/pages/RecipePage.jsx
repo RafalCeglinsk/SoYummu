@@ -1,9 +1,11 @@
-import RecipePage from "../components/RecipePage/RecipePage";
+import RecipePage from "#components/RecipePage/RecipePage";
 
-export const RecipesPage = () => {
+const RecipesPage = () => {
   return (
     <>
       <RecipePage />
     </>
   );
 };
+
+export default RecipesPage;

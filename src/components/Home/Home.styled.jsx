@@ -12,20 +12,20 @@ export const Div = styled.div`
 export const BackgroundSection = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url(${(props) => props.mobileiretinaimage});
+  background-image: url(${(props) => props.$mobileiretinaimage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background-image: url(${(props) => props.mobileiretinaimage});
+    background-image: url(${(props) => props.$mobileiretinaimage});
   }
 
   @media (min-width: 768px) {
-    background-image: url(${(props) => props.tabletimage});
+    background-image: url(${(props) => props.$tabletimage});
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url(${(props) => props.tabletretinaimage});
+      background-image: url(${(props) => props.$tabletretinaimage});
     }
   }
 

@@ -1,8 +1,9 @@
+import Notiflix from "notiflix";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { login, register as registerAction } from "../../redux/auth/operations";
+import { login, register as registerAction } from "#redux/auth/operations";
 import {
   Form,
   Flex,
@@ -16,6 +17,7 @@ import {
   StyledLink,
   Background,
 } from "./AuthForm.styled";
+import { validationRules } from "#utils/authValidation";
 
 const formConfig = {
   "/auth/register": {
@@ -37,11 +39,9 @@ const formConfig = {
 };
 
 export const AuthForm = () => {
-  const {
-    register: registerField,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register: registerField, handleSubmit } = useForm({
+    mode: "onSubmit",
+  });
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation().pathname;
@@ -59,8 +59,16 @@ export const AuthForm = () => {
     }
   };
 
+  const onError = (errors) => {
+    Object.keys(errors).forEach((field) => {
+      if (errors[field]) {
+        Notiflix.Notify.failure(errors[field].message);
+      }
+    });
+  };
+
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit, onError)}>
       <Flex>
         <Logo />
         <Desktop>
@@ -68,15 +76,16 @@ export const AuthForm = () => {
             <H2>{headerText}</H2>
             <StyledLabel>
               {fields.map((field) => (
-                <StyledInput
-                  key={field}
-                  name={field}
-                  autoComplete="off"
-                  {...registerField(field, { required: true })}
-                  error={errors[field]}
-                  placeholder={field}
-                  type={field === "Password" ? "password" : "text"}
-                />
+                <div key={field}>
+                  <StyledInput
+                    key={field}
+                    name={field}
+                    autoComplete="off"
+                    {...registerField(field, validationRules[field])}
+                    placeholder={field}
+                    type={field === "Password" ? "password" : "text"}
+                  />
+                </div>
               ))}
             </StyledLabel>
             <FormButton type="submit">{buttonText}</FormButton>

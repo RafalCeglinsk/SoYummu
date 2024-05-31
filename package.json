@@ -47,5 +47,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "imports": {
+    "#components/*": "./src/components/*",
+    "#images/*": "./src/images/*",
+    "#redux/*": "./src/redux/*",
+    "#pages/*": "./src/pages/*",
+    "#utils/*": "./src/utils/*",
+    "#hooks/*": "./src/hooks/*"
   }
 }
