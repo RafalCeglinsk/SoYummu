@@ -6,6 +6,8 @@ import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop.jsx";
 import { Suspense, lazy } from "react";
 
 import PageNotFound from "#components/PageNotFound/PageNotFound";
+import Loader from "#components/Loader/Loader.jsx";
+
 const ShareedLayout = lazy(() =>
   import("./components/SharedLayout/SharedLayout")
 );
@@ -25,7 +27,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
