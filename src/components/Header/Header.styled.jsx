@@ -16,6 +16,10 @@ export const HeaderContainer = styled.div`
   @media screen and (min-width: 1440px) {
     padding: 18px 100px;
   }
+  &.scrolling {
+    height: 10px;
+    opacity: 0.9;
+  }
 `;
 
 export const RightWrapper = styled.div`
