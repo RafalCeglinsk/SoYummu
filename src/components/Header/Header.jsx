@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -19,6 +19,7 @@ import {
   UserAvatar,
   RightWrapper,
 } from "./Header.styled";
+import useScrollingEffect from "#hooks/useScrollingEffect.js";
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -26,6 +27,7 @@ export const Header = () => {
   const location = useLocation();
 
   const { user } = useAuth();
+  useScrollingEffect(".header", "scrolling");
 
   const toggleBurgerMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -41,7 +43,7 @@ export const Header = () => {
         location.pathname !== "/auth/register" &&
         location.pathname !== "/" && (
           <>
-            <HeaderContainer>
+            <HeaderContainer className="header">
               <NavLink to="/main">
                 <StartLogoBig />
               </NavLink>
